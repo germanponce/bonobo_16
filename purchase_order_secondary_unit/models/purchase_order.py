@@ -16,7 +16,7 @@ class PurchaseOrderLine(models.Model):
         store=True, readonly=False, compute="_compute_product_qty", copy=True
     )
 
-    @api.depends("secondary_uom_qty", "secondary_uom_id")
+    @api.depends("secondary_uom_qty", "secondary_uom_id","product_packaging_qty")
     def _compute_product_qty(self):
         if hasattr(super(), "_compute_product_qty"):
             return super()._compute_product_qty()
