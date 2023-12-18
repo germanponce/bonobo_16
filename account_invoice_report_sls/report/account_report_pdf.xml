@@ -16,7 +16,7 @@
   <template id="report_invoice_document_sls">
     <t t-call="web.basic_layout">
           <t t-set="o" t-value="o.with_context({'lang':o.partner_id.lang})"/>
-                <div class="page" >
+                <div class="page">
     <title>Factura</title>
         <style media="screen">
         
@@ -158,8 +158,8 @@ body {margin-top: 0px;margin-left: 0px;}
 .tr19{height: 43px;}
 
 .t0{width: 100%;font: 11px 'Arial';}
-.t1{width: 100%;margin-top: 147px;font: bold 14px 'Arial';}
-.t2{width: 100%;margin-top: 141px;font: 11px 'Arial';}
+.t1{width: 100%;margin-top: 20px;font: bold 14px 'Arial';}
+.t2{width: 100%;margin-top: 20px;font: 11px 'Arial';}
         </style>
 
 <style media="print">
@@ -383,153 +383,157 @@ body {
 
 <TABLE cellpadding="0" cellspacing="0" style="font: 11px 'Arial';width: 100%">
 <TR>
-    <TD colspan="2" class="tr5 td17"><P class="p0 ft2">SECURITY LIFE SOLUTION S.L.</P></TD>
-    <TD class="tr5 td2"><P class="p0 ft0"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr5 td3"><P class="p0 ft0"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr5 td4"><P class="p0 ft0"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr5 td5"><P class="p0 ft0"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr5 td6"><P class="p0 ft0"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr5 td7"><P class="p0 ft0"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr5 td2"><P class="p0 ft0"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr5 td18"><P class="p0 ft0"><![CDATA[&nbsp;]]></P></TD>
+    <TD colspan="2" class="tr5 td17"><P class="p0 ft2">BONOBO FRUIT S.L.</P></TD>
+    <TD class="tr5 td2"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr5 td3"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr5 td4"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr5 td5"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr5 td6"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr5 td7"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr5 td2"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr5 td18"><P class="p0 ft0">&amp;nbsp;</P></TD>
 </TR>
 <TR>
-    <TD class="tr6 td0"><P class="p0 ft2">NIF: B93475135</P></TD>
-    <TD class="tr6 td1"><P class="p0 ft0"><![CDATA[&nbsp;]]></P></TD>
-    <TD colspan="7" rowspan="2" class="tr7 td19"><P class="p5 ft3"><span t-field="o.partner_id.name" /></P></TD>
-    <TD class="tr6 td20"><P class="p0 ft0"><![CDATA[&nbsp;]]></P></TD>
+    <TD class="tr6 td0"><P class="p0 ft2">NIF: ESB72644818</P></TD>
+    <TD class="tr6 td1"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD colspan="7" rowspan="2" class="tr7 td19"><P class="p5 ft3"> <span t-field="o.partner_id.name"/></P></TD>
+    <TD class="tr6 td20"><P class="p0 ft0">&amp;nbsp;</P></TD>
 </TR>
 <TR>
-    <TD colspan="2" rowspan="2" class="tr6 td17"><P class="p0 ft2"><span t-field="o.company_id.street" /></P></TD>
-    <TD class="tr8 td20"><P class="p0 ft4"><![CDATA[&nbsp;]]></P></TD>
+    <TD colspan="2" rowspan="2" class="tr6 td17"><P class="p0 ft2"><span t-field="o.company_id.street"/></P></TD>
+    <TD class="tr8 td20"><P class="p0 ft4">&amp;nbsp;</P></TD>
 </TR>
 <TR>
-    <TD colspan="5" rowspan="2" class="tr9 td21"><P class="p5 ft5"><span t-field="o.partner_id.street" /></P></TD>
-    <TD class="tr8 td22"><P class="p0 ft4"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr8 td23"><P class="p0 ft4"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr8 td20"><P class="p0 ft4"><![CDATA[&nbsp;]]></P></TD>
+    <TD colspan="5" rowspan="2" class="tr9 td21"><P class="p5 ft5"><span t-field="o.partner_id.street"/></P></TD>
+    <TD class="tr8 td22"><P class="p0 ft4">&amp;nbsp;</P></TD>
+    <TD class="tr8 td23"><P class="p0 ft4">&amp;nbsp;</P></TD>
+    <TD class="tr8 td20"><P class="p0 ft4">&amp;nbsp;</P></TD>
 </TR>
 <TR>
-    <TD colspan="2" rowspan="2" class="tr2 td17"><P class="p0 ft2"><span t-field="o.company_id.street2" /></P></TD>
-    <TD class="tr10 td22"><P class="p0 ft6"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr10 td23"><P class="p0 ft6"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr10 td20"><P class="p0 ft6"><![CDATA[&nbsp;]]></P></TD>
+    <TD colspan="2" rowspan="2" class="tr2 td17"><P class="p0 ft2"><span t-field="o.company_id.street2"/></P></TD>
+    <TD class="tr10 td22"><P class="p0 ft6">&amp;nbsp;</P></TD>
+    <TD class="tr10 td23"><P class="p0 ft6">&amp;nbsp;</P></TD>
+    <TD class="tr10 td20"><P class="p0 ft6">&amp;nbsp;</P></TD>
 </TR>
 <TR>
-    <TD colspan="5" class="tr9 td21"><P class="p5 ft5"><span t-field="o.partner_id.street2" /></P></TD>
-    <TD class="tr9 td22"><P class="p0 ft7"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr9 td23"><P class="p0 ft7"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr9 td20"><P class="p0 ft7"><![CDATA[&nbsp;]]></P></TD>
+    <TD colspan="5" class="tr9 td21"><P class="p5 ft5"><span t-field="o.partner_id.street2"/></P></TD>
+    <TD class="tr9 td22"><P class="p0 ft7">&amp;nbsp;</P></TD>
+    <TD class="tr9 td23"><P class="p0 ft7">&amp;nbsp;</P></TD>
+    <TD class="tr9 td20"><P class="p0 ft7">&amp;nbsp;</P></TD>
 </TR>
 <TR>
-    <TD colspan="2" class="tr11 td17"><P class="p0 ft2"><span t-field="o.company_id.zip_id" /></P></TD>
-    <TD colspan="4" class="tr11 td24"><P class="p5 ft2"><span t-field="o.partner_id.zip" /> <span t-field="o.partner_id.city" /></P></TD>
-    <TD class="tr11 td25"><P class="p0 ft0"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr11 td22"><P class="p0 ft0"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr11 td23"><P class="p0 ft0"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr11 td20"><P class="p0 ft0"><![CDATA[&nbsp;]]></P></TD>
+    <TD colspan="2" class="tr11 td17"><P class="p0 ft2"><span t-field="o.company_id.zip"/></P></TD>
+    <TD colspan="4" class="tr11 td24"><P class="p5 ft2"><span t-field="o.partner_id.zip"/> <span t-field="o.partner_id.city"/></P></TD>
+    <TD class="tr11 td25"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr11 td22"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr11 td23"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr11 td20"><P class="p0 ft0">&amp;nbsp;</P></TD>
 </TR>
 <TR>
     <TD class="tr6 td0"><P class="p0 ft2">Málaga - España</P></TD>
-    <TD class="tr6 td1"><P class="p0 ft0"><![CDATA[&nbsp;]]></P></TD>
-    <TD colspan="4" class="tr6 td24"><P class="p5 ft2"><span t-field="o.partner_id.country_id.name" /></P></TD>
-    <TD class="tr6 td25"><P class="p0 ft0"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr6 td22"><P class="p0 ft0"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr6 td23"><P class="p0 ft0"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr6 td20"><P class="p0 ft0"><![CDATA[&nbsp;]]></P></TD>
+    <TD class="tr6 td1"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD colspan="4" class="tr6 td24"><P class="p5 ft2"><span t-field="o.partner_id.country_id.name"/></P></TD>
+    <TD class="tr6 td25"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr6 td22"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr6 td23"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr6 td20"><P class="p0 ft0">&amp;nbsp;</P></TD>
 </TR>
 <TR>
-    <TD colspan="2" class="tr6 td17"><P class="p0 ft2">Tlf: <span t-field="o.company_id.phone" /></P></TD>
-    <TD colspan="4" rowspan="2" class="tr12 td24"><P class="p5 ft3">NIF: <span t-field="o.partner_id.vat" /></P></TD>
-    <TD class="tr6 td25"><P class="p0 ft0"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr6 td22"><P class="p0 ft0"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr6 td23"><P class="p0 ft0"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr6 td20"><P class="p0 ft0"><![CDATA[&nbsp;]]></P></TD>
+    <TD colspan="2" class="tr6 td17"><P class="p0 ft2">Tlf: <span t-field="o.company_id.phone"/></P></TD>
+    <TD colspan="4" rowspan="2" class="tr12 td24"><P class="p5 ft3">NIF: <span t-field="o.partner_id.vat"/></P></TD>
+    <TD class="tr6 td25"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr6 td22"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr6 td23"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr6 td20"><P class="p0 ft0">&amp;nbsp;</P></TD>
 </TR>
 <TR>
-    <TD colspan="2" rowspan="2" class="tr9 td17"><P class="p0 ft5"><span t-field="o.company_id.email" /></P></TD>
-    <TD class="tr13 td25"><P class="p0 ft8"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr13 td22"><P class="p0 ft8"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr13 td23"><P class="p0 ft8"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr13 td20"><P class="p0 ft8"><![CDATA[&nbsp;]]></P></TD>
+    <TD colspan="2" rowspan="2" class="tr9 td17"><P class="p0 ft5"><span t-field="o.company_id.email"/></P></TD>
+    <TD class="tr13 td25"><P class="p0 ft8">&amp;nbsp;</P></TD>
+    <TD class="tr13 td22"><P class="p0 ft8">&amp;nbsp;</P></TD>
+    <TD class="tr13 td23"><P class="p0 ft8">&amp;nbsp;</P></TD>
+    <TD class="tr13 td20"><P class="p0 ft8">&amp;nbsp;</P></TD>
 </TR>
 <TR>
-    <TD class="tr14 td23"><P class="p0 ft9"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr14 td26"><P class="p0 ft9"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr14 td27"><P class="p0 ft9"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr14 td28"><P class="p0 ft9"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr14 td25"><P class="p0 ft9"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr14 td22"><P class="p0 ft9"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr14 td23"><P class="p0 ft9"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr14 td20"><P class="p0 ft9"><![CDATA[&nbsp;]]></P></TD>
+    <TD class="tr14 td23"><P class="p0 ft9">&amp;nbsp;</P></TD>
+    <TD class="tr14 td26"><P class="p0 ft9">&amp;nbsp;</P></TD>
+    <TD class="tr14 td27"><P class="p0 ft9">&amp;nbsp;</P></TD>
+    <TD class="tr14 td28"><P class="p0 ft9">&amp;nbsp;</P></TD>
+    <TD class="tr14 td25"><P class="p0 ft9">&amp;nbsp;</P></TD>
+    <TD class="tr14 td22"><P class="p0 ft9">&amp;nbsp;</P></TD>
+    <TD class="tr14 td23"><P class="p0 ft9">&amp;nbsp;</P></TD>
+    <TD class="tr14 td20"><P class="p0 ft9">&amp;nbsp;</P></TD>
 </TR>
 <TR>
-    <TD colspan="2" class="tr5 td17"><P class="p0 ft2"><span t-field="o.company_id.website" /></P></TD>
-    <TD class="tr5 td2"><P class="p0 ft0"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr5 td3"><P class="p0 ft0"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr5 td4"><P class="p0 ft0"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr5 td5"><P class="p0 ft0"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr5 td6"><P class="p0 ft0"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr5 td7"><P class="p0 ft0"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr5 td2"><P class="p0 ft0"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr5 td18"><P class="p0 ft0"><![CDATA[&nbsp;]]></P></TD>
+    <TD colspan="2" class="tr5 td17"><P class="p0 ft2"><span t-field="o.company_id.website"/></P></TD>
+    <TD class="tr5 td2"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr5 td3"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr5 td4"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr5 td5"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr5 td6"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr5 td7"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr5 td2"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr5 td18"><P class="p0 ft0">&amp;nbsp;</P></TD>
 </TR>
 <TR>
-    <TD colspan="2" class="tr1 td17"><P class="p0 ft0"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr1 td2"><P class="p0 ft0"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr1 td3"><P class="p0 ft0"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr1 td4"><P class="p0 ft0"><![CDATA[&nbsp;]]></P></TD>
-    <TD colspan="2" class="tr1 td29"><P class="p0 ft0"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr1 td7"><P class="p0 ft0"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr1 td2"><P class="p0 ft0"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr1 td18"><P class="p0 ft0"><![CDATA[&nbsp;]]></P></TD>
+    <TD colspan="2" class="tr1 td17"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr1 td2"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr1 td3"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr1 td4"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD colspan="2" class="tr1 td29"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr1 td7"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr1 td2"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr1 td18"><P class="p0 ft0">&amp;nbsp;</P></TD>
 </TR>
 <TR>
-    <TD colspan="2" class="tr12 td30"><P class="p6 ft2">NOMBRE DE LA OBRA</P></TD>
-    <TD class="tr12 td31"><P class="p0 ft0"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr15 td3"><P class="p0 ft0"><![CDATA[&nbsp;]]></P></TD>
+    <TD colspan="2" class="tr12 td30"><P class="p6 ft2">Dirección de Entrega:</P></TD>
+    <TD class="tr12 td31"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr15 td3"><P class="p0 ft0">&amp;nbsp;</P></TD>
     <TD colspan="3" class="tr12 td32"><P class="p7 ft2">Nº PEDIDO:</P></TD>
-    <TD class="tr12 td15"><P class="p0 ft0"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr12 td31"><P class="p0 ft0"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr12 td33"><P class="p0 ft0"><![CDATA[&nbsp;]]></P></TD>
+    <TD class="tr12 td15"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr12 td31"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr12 td33"><P class="p0 ft0">&amp;nbsp;</P></TD>
 </TR>
 <TR>
-    <TD class="tr13 td0"><P class="p0 ft8"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr13 td1"><P class="p0 ft8"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr13 td2"><P class="p0 ft8"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr13 td3"><P class="p0 ft8"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr13 td4"><P class="p0 ft8"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr13 td5"><P class="p0 ft8"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr13 td6"><P class="p0 ft8"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr13 td7"><P class="p0 ft8"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr13 td2"><P class="p0 ft8"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr13 td18"><P class="p0 ft8"><![CDATA[&nbsp;]]></P></TD>
+    <TD class="tr13 td0"><P class="p0 ft8">&amp;nbsp;</P></TD>
+    <TD class="tr13 td1"><P class="p0 ft8">&amp;nbsp;</P></TD>
+    <TD class="tr13 td2"><P class="p0 ft8">&amp;nbsp;</P></TD>
+    <TD class="tr13 td3"><P class="p0 ft8">&amp;nbsp;</P></TD>
+    <TD class="tr13 td4"><P class="p0 ft8">&amp;nbsp;</P></TD>
+    <TD class="tr13 td5"><P class="p0 ft8">&amp;nbsp;</P></TD>
+    <TD class="tr13 td6"><P class="p0 ft8">&amp;nbsp;</P></TD>
+    <TD class="tr13 td7"><P class="p0 ft8">&amp;nbsp;</P></TD>
+    <TD class="tr13 td2"><P class="p0 ft8">&amp;nbsp;</P></TD>
+    <TD class="tr13 td18"><P class="p0 ft8">&amp;nbsp;</P></TD>
 </TR>
 <TR>
-    <TD class="tr12 td34" colspan="3"><span style="padding-left: 10px;" t-esc="o.project_reference" /></TD>
-    <TD class="tr12 td3"><P class="p0 ft0"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr12 td27" colspan="6"><span style="padding-left: 30px;" t-esc="o.get_sale_order_name()" /></TD>
+    <TD class="tr12 td34" colspan="3"><span style="padding-left: 10px;" t-esc="o.project_reference"/></TD>
+    <TD class="tr12 td3"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr12 td27" colspan="6"><span style="padding-left: 30px;" t-esc="o.get_sale_order_name()"/></TD>
 </TR>
 <TR>
-    <TD class="tr1 td0"><P class="p0 ft0"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr1 td1"><P class="p0 ft0"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr1 td2"><P class="p0 ft0"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr1 td3"><P class="p0 ft0"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr1 td4"><P class="p0 ft0"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr1 td5"><P class="p0 ft0"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr1 td6"><P class="p0 ft0"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr1 td7"><P class="p0 ft0"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr1 td2"><P class="p0 ft0"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr1 td18"><P class="p0 ft0"><![CDATA[&nbsp;]]></P></TD>
+    <TD class="tr1 td0"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr1 td1"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr1 td2"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr1 td3"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr1 td4"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr1 td5"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr1 td6"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr1 td7"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr1 td2"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr1 td18"><P class="p0 ft0">&amp;nbsp;</P></TD>
 </TR>
+</TABLE>
+<TABLE cellpadding="0" cellspacing="0" style="font: 13px 'Arial';width: 100%">
+
 <TR>
     <TD class="tr2 td36"><P class="p6 ft2">Código</P></TD>
     <TD class="tr2 td37"><P class="p0 ft2">Concepto</P></TD>
-    <TD class="tr2 td38"><P class="p0 ft0"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr2 td39"><P class="p0 ft0"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr2 td40"><P class="p0 ft0"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr2 td9"><P class="p0 ft0"><![CDATA[&nbsp;]]></P></TD>
+    <TD class="tr2 td38"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr2 td39"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr2 td40"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr2 td9"><P class="p0 ft0">&amp;nbsp;</P></TD>
     <TD class="tr2 td10"><P class="p8 ft2">Cantidad</P></TD>
+    <TD class="tr2 td10"><P class="p8 ft2">Cantidad Secundaria</P></TD>
     <TD class="tr2 td41"><P class="p9 ft2">Precio unit.</P></TD>
     <TD class="tr2 td41"><P class="p9 ft2">Descuento</P></TD>
     <TD class="tr2 td42"><P class="p10 ft2">Total</P></TD>
@@ -540,18 +544,25 @@ body {
 <t t-foreach="lines" t-as="line">
     <TR>
         <TD class="tr1 td0"><P class="p6 ft2">
-                                <span t-field="line.product_id.default_code" />
+                                <span t-field="line.product_id.default_code"/>
                             </P>
         </TD>
         <TD colspan="5" class="tr1 td44"><P class="p0 ft2">
-                                            <span t-field="line.product_id.name" />
+                                            <span t-field="line.product_id.name"/>
                                         </P>
         </TD>
         <TD class="tr1 td6"><P class="p8 ft2">
                                 <span t-field="line.quantity"/>
-                                <!-- <span t-field="line.product_uom_id"  groups="uom.group_uom"/> -->
+                                <span t-field="line.product_uom_id"  groups="uom.group_uom"/>
                             </P>
         </TD>
+
+          <TD class="tr1 td6"><P class="p8 ft2">
+                                <span t-field="line.secondary_uom_qty"/>
+                                 <span t-field="line.secondary_uom_id" />
+                            </P>
+        </TD>
+        
         <TD class="tr1 td45"><P class="p9 ft2">
                                             <span class="text-nowrap" t-field="line.price_unit"/>
                                         </P>
@@ -581,13 +592,13 @@ body {
         <t t-if="len(o.line_ids.filtered(lambda line: line.tax_line_id)) in [0, 1] and o.amount_untaxed == amount_by_group[2]">
             <TR>
                 <TD class="tr18 td55"><P class="p12 ft12"><span class="text-nowrap" t-esc="amount_by_group[0]"/></P></TD>
-                <TD class="tr18 td56"><P class="p11 ft12"><span class="text-nowrap" t-esc="amount_by_group[3]" /></P></TD>
+                <TD class="tr18 td56"><P class="p11 ft12"><span class="text-nowrap" t-esc="amount_by_group[3]"/></P></TD>
             </TR>
         </t>
         <t t-else="">
             <TR>
                 <TD class="tr18 td55"><P class="p12 ft12"><span class="text-nowrap" t-esc="amount_by_group[0]"/></P></TD>
-                <TD class="tr18 td56"><P class="p11 ft12"><span class="text-nowrap" t-esc="amount_by_group[3]" /></P></TD>
+                <TD class="tr18 td56"><P class="p11 ft12"><span class="text-nowrap" t-esc="amount_by_group[3]"/></P></TD>
             </TR>
         </t>
     </tr>
@@ -598,44 +609,121 @@ body {
     <TD class="tr3 td56"><P class="p11 ft11"><span class="text-nowrap" t-field="o.amount_total"/></P></TD>
 </TR>
 <TR>
-    <TD class="tr14 td55"><P class="p0 ft9"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr14 td56"><P class="p0 ft9"><![CDATA[&nbsp;]]></P></TD>
+    <TD class="tr14 td55"><P class="p0 ft9">&amp;nbsp;</P></TD>
+    <TD class="tr14 td56"><P class="p0 ft9">&amp;nbsp;</P></TD>
 </TR>
-</TABLE>
-<TABLE cellpadding="0" cellspacing="0" class="t2">
-<TR>
-    <TD class="tr19 td57"><P class="p14 ft3">Fecha vencimiento</P></TD>
-    <TD class="tr19 td58"><P class="p15 ft3"><![CDATA[&nbsp;]]></P></TD>
-    <TD class="tr19 td59"><P class="p16 ft3">Importe</P></TD>
-    <TD class="tr19 td60"><P class="p0 ft0"><![CDATA[&nbsp;]]></P></TD>
-</TR>
-<t t-set="payment_lines" t-value="o.get_payments_from_terms()"/>
-<t t-foreach="payment_lines" t-as="paymentline">
-    <TR>
-        <TD class="tr1 td57"><P class="p17 ft2"><NOBR><span class="text-nowrap" t-esc="paymentline[0]"/></NOBR></P></TD>
-        <TD class="tr1 td58"><P class="p18 ft2"></P></TD>
-        <TD class="tr1 td59"><P class="p19 ft2"><span class="text-nowrap" t-esc="paymentline[1]"/></P></TD>
-        <TD class="tr1 td60"><P class="p0 ft2"><!-- Pagado el <NOBR>14-06-2021</NOBR> --></P> </TD>
-    </TR>
-</t>
 </TABLE>
 <br/>
-<!-- <div align="center">
-    <span style="font: 11px 'Arial';line-height: 14px;text-align: left;"><strong>BBVA: ES52 0182 4284 1302 0165 8385 SWIFT: BBVAESMMXXX BANCO SABADELL: ES52 0081 5165 4800 0136 0345 SWIFT: BSABESBB</strong></span>
+<span><strong>LOTE(s)/SERIE(s):</strong></span>
+<t t-set="lot_values" t-value="o._get_invoiced_lot_values()"/>
+<t t-if="lot_values">
     <br/>
-    <span style="font: 11px 'Arial';line-height: 14px;text-align: left;">Si desea ejercitar sus derechos, diríjase por escrito a SECURITY LIFE SOLUTION S.L., C/ Santa María B14, 29130 Alhaurín de la Torre, Málaga, España o por correo electrónico a info@gruposls.eu Empresa inscrita en registro mercantil de Málaga Tomo 5509 Folio 189 Inscripción 133766.</span>
-</div> -->
+    <table groups="sale_stock.group_lot_on_invoice" class="table table-sm" style="width: 70%;" name="invoice_snln_table">
+        <thead>
+            <tr>
+                <th  style="font: 11px 'Arial';"><span>Product</span></th>
+                <th class="text-right" style="font: 11px 'Arial';"><span>Quantity</span></th>
+                <th class="text-right" style="font: 11px 'Arial';"><span>SN/LN</span></th>
+            </tr>
+        </thead>
+        <tbody>
+            <t t-foreach="lot_values" t-as="snln_line">
+                <tr>
+                    <td style="font: 11px 'Arial';"><t t-esc="snln_line['product_name']"/></td>
+                    <td style="font: 11px 'Arial';" class="text-right">
+                        <t t-esc="snln_line['quantity']"/>
+                        <t t-esc="snln_line['uom_name']" groups="uom.group_uom"/>
+                    </td>
+                    <td class="text-right" style="font: 11px 'Arial';"><t t-esc="snln_line['lot_name']"/></td>
+                </tr>
+            </t>
+        </tbody>
+    </table>
+</t>
 
+<span t-raw="o.company_id.x_footer_info" t-if="o.company_id.x_footer_info"/>
+  
+
+<!-- <div>
+    <span style="font: 11px 'Arial';line-height: 14px;text-align: left;">
+        <strong>
+        Producto procedente de la Agricultura Ecológica
+        <br/>
+        Certificado por ECOAND-22-C17/22
+        <br/>
+        INSTRUCCIONES DE PAGO :
+        </strong>
+    </span>
+    <br/>
+    <span style="font: 11px 'Arial';line-height: 14px;text-align: left;">
+        <ul>
+            <li>
+                <strong>Vencimiento:</strong> TRANSFERENCIA 30 DÍAS
+            </li>
+            <li>
+                <strong>Banco:</strong> ABANCA
+            </li>
+            <li>
+                <strong>IBAN:</strong> ES52 2080 1134 2030 4010 4979
+            </li>
+            <li>
+                <strong>Swift Code:</strong> CAGLESMMXXX
+            </li>
+            <li>
+                <strong>Beneficiario:</strong> BONOBO FRUIT, S.L. 
+            </li>
+        </ul>
+      </span>
+</div> -->
 
 </div> <!-- Fin del  div class page -->
 
         <div class="footer">
-            <div align="center">
-                <span style="font: 11px 'Arial';line-height: 14px;text-align: left;"><strong>BBVA: ES52 0182 4284 1302 0165 8385 SWIFT: BBVAESMMXXX -- BANCO SABADELL: ES52 0081 5165 4800 0136 0345 SWIFT: BSABESBB</strong></span>
-                <br/>
-                <span style="font: 11px 'Arial';line-height: 14px;text-align: left;">Si desea ejercitar sus derechos, diríjase por escrito a SECURITY LIFE SOLUTION S.L., C/ Santa María B14, 29130 Alhaurín de la Torre, Málaga, España o por correo electrónico a info@gruposls.eu Empresa inscrita en registro mercantil de Málaga Tomo 5509 Folio 189 Inscripción 133766.</span>
-            </div>
-            <br/>
+            
+            <table style="width: 100%">
+                <tr>
+                  <td width="40%;padding: 0px;">
+                    <span style="font: 8px 'Arial';text-align: left;">
+                          <strong>
+                          Producto procedente de la Agricultura Ecológica
+                          <br/>
+                          Certificado por ES-ECO-011-AN
+                          <br/>
+                          INSTRUCCIONES DE PAGO :
+                          </strong>
+                      </span>
+                      <br/>
+                      <span style="font: 8px 'Arial';text-align: left;">
+                          <ul>
+                              <li>
+                                  <strong>Vencimiento:</strong> TRANSFERENCIA 30 DÍAS
+                              </li>
+                              <li>
+                                  <strong>Banco:</strong> ABANCA
+                              </li>
+                              <li>
+                                  <strong>IBAN:</strong> ES52 2080 1134 2030 4010 4979
+                              </li>
+                              <li>
+                                  <strong>Swift Code:</strong> CAGLESMMXXX
+                              </li>
+                              <li>
+                                  <strong>Beneficiario:</strong> BONOBO FRUIT, S.L. 
+                              </li>
+                          </ul>
+                      </span>
+                  </td>
+                  <td width="70%;padding: 0px;" align="justify">
+                    <span style="font: 8px 'Arial';padding: 0px;" align="justify">
+                      Entrega intracomunitaria exenta por aplicación del art. 25 de la Ley 37/1992, del IVA. Operación asegurada por Solunion España. REGISTRO MERCANTIL DE MÁLAGA, TOMO 6235, LIBRO 5142, FOLIO 223, HOJA MA169974.
+                      En cumplimiento con lo establecido en la ley de protección de datos, le comunicamos que los datos que usted nos facilite quedarán incorporados y serán tratados en los ficheros de titularidad BONOBO FRUIT, S.L., únicamente, por motivos contables y fiscales. Para ejecer los derechos de acceso, rectificación, cancelación y oposición de sus datos de carácter personal. Debe dirigirse a BONOBO FRUIT, S.L.
+                    </span>
+
+                  </td>
+                </tr>
+                
+            </table>
+            
             
             <table style="width: 100%">
                 <tr>
