@@ -1,0 +1,10 @@
+
+Despues de migrar borramos la vista que tenga el chatter:
+select * from ir_ui_view where arch_db::text like '%o_chatter_position%';
+delete from ir_ui_view where id=1103;
+
+Despues de migrar, conectamos con odoo-bin shell:
+
+env['ir.asset'].search([('path', '=', '/web_responsive/static/src/scss/web_responsive.scss')]).unlink()
+env['ir.asset'].search([('path', '=', '/web_responsive/static/src/scss/search_view_mobile.scss')]).unlink()
+env['ir.asset'].search([('path', '=', '/web_responsive/static/src/scss/kanban_view_mobile.scss')]).unlink()
