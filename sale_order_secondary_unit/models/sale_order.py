@@ -11,18 +11,9 @@ class SaleOrderLine(models.Model):
         "uom_field": "product_uom",
     }
 
-    secondary_uom_qty = fields.Float(string="2nd Qty", digits="Product Unit of Measure")
-    secondary_uom_id = fields.Many2one(
-        comodel_name="product.secondary.unit",
-        string="2nd uom",
-        ondelete="restrict",
-    )
-
     secondary_uom_unit_price = fields.Float(
         string="2nd unit price",
-        digits="Product Unit of Measure",
-        store=False,
-        readonly=True,
+        digits="Product Price",
         compute="_compute_secondary_uom_unit_price",
     )
 
@@ -47,10 +38,14 @@ class SaleOrderLine(models.Model):
         purpose.
         """
         res = super().product_id_change()
+        line_uom_qty = self.product_uom_qty
         self.secondary_uom_id = self.product_id.sale_secondary_uom_id
-        if self.secondary_uom_id:
-            self.secondary_uom_qty = 1.0
-            self.onchange_product_uom_for_secondary()
+        if self.product_id.sale_secondary_uom_id:
+            if line_uom_qty == 1.0:
+                self.secondary_uom_qty = 1.0
+                self.onchange_product_uom_for_secondary()
+            else:
+                self.product_uom_qty = line_uom_qty
         return res
 
     @api.depends("secondary_uom_qty", "product_uom_qty", "price_unit")
@@ -65,7 +60,6 @@ class SaleOrderLine(models.Model):
                     line.secondary_uom_unit_price = 0
             else:
                 line.secondary_uom_unit_price = 0
-
 
 
 class AccountMoveLine(models.Model):
@@ -104,15 +98,24 @@ class AccountMoveLine(models.Model):
     def onchange_product_uom_for_secondary(self):
         self._onchange_helper_product_uom_for_secondary()
 
-    @api.onchange("product_id")
-    def _onchange_product_id(self):
-        """
-        If default sales secondary unit set on product, put on secondary
-        quantity 1 for being the default quantity. We override this method,
-        that is the one that sets by default 1 on the other quantity with that
-        purpose.
-        """
-        res = super()._onchange_product_id()
+    # @api.onchange("product_id")
+    # def _onchange_product_id(self):
+    #     """
+    #     If default sales secondary unit set on product, put on secondary
+    #     quantity 1 for being the default quantity. We override this method,
+    #     that is the one that sets by default 1 on the other quantity with that
+    #     purpose.
+    #     """
+    #     res = super()._onchange_product_id()
+    #     self.secondary_uom_id = self.product_id.sale_secondary_uom_id
+    #     if self.secondary_uom_id:
+    #         self.secondary_uom_qty = 1.0
+    #         self.onchange_product_uom_for_secondary()
+    #     return res
+
+    @api.onchange('product_id')
+    def _inverse_product_id(self):
+        res = super()._inverse_product_id()
         self.secondary_uom_id = self.product_id.sale_secondary_uom_id
         if self.secondary_uom_id:
             self.secondary_uom_qty = 1.0

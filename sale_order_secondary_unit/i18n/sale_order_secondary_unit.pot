@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 14.0\n"
+"Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -14,8 +14,8 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: sale_order_secondary_unit
-#: model:ir.model.fields,field_description:sale_order_secondary_unit.field_sale_order_line__secondary_uom_qty
-msgid "2nd Qty"
+#: model_terms:ir.ui.view,arch_db:sale_order_secondary_unit.view_order_form
+msgid "-&gt;"
 msgstr ""
 
 #. module: sale_order_secondary_unit
@@ -24,8 +24,8 @@ msgid "2nd unit price"
 msgstr ""
 
 #. module: sale_order_secondary_unit
-#: model:ir.model.fields,field_description:sale_order_secondary_unit.field_sale_order_line__secondary_uom_id
-msgid "2nd uom"
+#: model_terms:ir.ui.view,arch_db:sale_order_secondary_unit.report_saleorder_document
+msgid "<span>Second. Qty</span>"
 msgstr ""
 
 #. module: sale_order_secondary_unit
@@ -35,15 +35,8 @@ msgid "Default secondary unit for sales"
 msgstr ""
 
 #. module: sale_order_secondary_unit
-#: model:ir.model.fields,field_description:sale_order_secondary_unit.field_product_template__display_name
-#: model:ir.model.fields,field_description:sale_order_secondary_unit.field_sale_order_line__display_name
-msgid "Display Name"
-msgstr ""
-
-#. module: sale_order_secondary_unit
-#: model:ir.model.fields,field_description:sale_order_secondary_unit.field_product_template__id
-#: model:ir.model.fields,field_description:sale_order_secondary_unit.field_sale_order_line__id
-msgid "ID"
+#: model_terms:ir.ui.view,arch_db:sale_order_secondary_unit.product_secondary_unit_view_search
+msgid "Group By"
 msgstr ""
 
 #. module: sale_order_secondary_unit
@@ -55,14 +48,28 @@ msgid ""
 msgstr ""
 
 #. module: sale_order_secondary_unit
-#: model:ir.model.fields,field_description:sale_order_secondary_unit.field_product_template____last_update
-#: model:ir.model.fields,field_description:sale_order_secondary_unit.field_sale_order_line____last_update
-msgid "Last Modified on"
+#: model:ir.model,name:sale_order_secondary_unit.model_product_product
+msgid "Product"
 msgstr ""
 
 #. module: sale_order_secondary_unit
 #: model:ir.model,name:sale_order_secondary_unit.model_product_template
+#: model_terms:ir.ui.view,arch_db:sale_order_secondary_unit.product_secondary_unit_view_search
 msgid "Product Template"
+msgstr ""
+
+#. module: sale_order_secondary_unit
+#: model_terms:ir.ui.view,arch_db:sale_order_secondary_unit.product_secondary_unit_view_search
+msgid "Product Variant"
+msgstr ""
+
+#. module: sale_order_secondary_unit
+#: code:addons/sale_order_secondary_unit/models/product_template.py:0
+#, python-format
+msgid ""
+"Product variants have distinct sale secondary uom:\n"
+"{secondary_uom}\n"
+"All variants will be written with new secondary uom"
 msgstr ""
 
 #. module: sale_order_secondary_unit
@@ -76,6 +83,32 @@ msgid "Sales Order Line"
 msgstr ""
 
 #. module: sale_order_secondary_unit
-#: model_terms:ir.ui.view,arch_db:sale_order_secondary_unit.report_saleorder_document
-msgid "Second. Qty"
+#: model:ir.model.fields,field_description:sale_order_secondary_unit.field_sale_order_line__secondary_uom_id
+msgid "Second unit"
+msgstr ""
+
+#. module: sale_order_secondary_unit
+#: model:ir.model.fields,field_description:sale_order_secondary_unit.field_sale_order_line__secondary_uom_qty
+msgid "Secondary Qty"
+msgstr ""
+
+#. module: sale_order_secondary_unit
+#: model:ir.actions.act_window,name:sale_order_secondary_unit.product_secondary_unit_action
+msgid "Secondary Unit"
+msgstr ""
+
+#. module: sale_order_secondary_unit
+#: model:ir.ui.menu,name:sale_order_secondary_unit.product_secondary_unit_menu
+msgid "Secondary Units of Measure"
+msgstr ""
+
+#. module: sale_order_secondary_unit
+#: model_terms:ir.ui.view,arch_db:sale_order_secondary_unit.product_secondary_unit_view_search
+msgid "UoM"
+msgstr ""
+
+#. module: sale_order_secondary_unit
+#: code:addons/sale_order_secondary_unit/models/product_template.py:0
+#, python-format
+msgid "Warning"
 msgstr ""

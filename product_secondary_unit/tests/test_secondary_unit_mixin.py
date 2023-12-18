@@ -2,10 +2,10 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 from odoo_test_helper import FakeModelLoader
 
-from odoo.tests import SavepointCase
+from odoo.tests import TransactionCase
 
 
-class TestProductSecondaryUnitMixin(SavepointCase, FakeModelLoader):
+class TestProductSecondaryUnitMixin(TransactionCase, FakeModelLoader):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
@@ -60,7 +60,7 @@ class TestProductSecondaryUnitMixin(SavepointCase, FakeModelLoader):
     @classmethod
     def tearDownClass(cls):
         cls.loader.restore_registry()
-        super(TestProductSecondaryUnitMixin, cls).tearDownClass()
+        return super(TestProductSecondaryUnitMixin, cls).tearDownClass()
 
     def test_product_secondary_unit_mixin(self):
         fake_model = self.secondary_unit_fake
@@ -119,7 +119,7 @@ class TestProductSecondaryUnitMixin(SavepointCase, FakeModelLoader):
         fake_model.secondary_uom_id = self.secondary_unit_box_5
         fake_model.secondary_uom_id.write({"dependency_type": "independent"})
         fake_model.write({"secondary_uom_qty": 2})
-        self.assertEqual(fake_model.product_uom_qty, 1)
+        self.assertEqual(fake_model.product_uom_qty, 0.0)
         self.assertEqual(fake_model.secondary_uom_qty, 2)
 
         fake_model.write({"product_uom_qty": 17})

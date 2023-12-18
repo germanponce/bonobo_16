@@ -6,21 +6,21 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-26 10:00+0000\n"
-"PO-Revision-Date: 2019-02-08 13:50+0000\n"
-"Last-Translator: Marta Vázquez Rodríguez <vazrodmar@gmail.com>\n"
+"POT-Creation-Date: 2023-01-11 04:38+0000\n"
+"PO-Revision-Date: 2023-08-29 08:30+0000\n"
+"Last-Translator: Ivorra78 <informatica@totmaterial.es>\n"
 "Language-Team: \n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.4\n"
+"X-Generator: Weblate 4.17\n"
 
 #. module: product_secondary_unit
 #: model:ir.model.fields,field_description:product_secondary_unit.field_product_secondary_unit__active
 msgid "Active"
-msgstr ""
+msgstr "Activo"
 
 #. module: product_secondary_unit
 #: model:ir.model.fields,field_description:product_secondary_unit.field_product_secondary_unit__code
@@ -47,24 +47,20 @@ msgstr "Segunda unidad de medida por defecto."
 #. module: product_secondary_unit
 #: model:ir.model.fields,field_description:product_secondary_unit.field_product_secondary_unit__dependency_type
 msgid "Dependency Type"
-msgstr ""
+msgstr "Tipo de dependencia"
 
 #. module: product_secondary_unit
 #: model:ir.model.fields.selection,name:product_secondary_unit.selection__product_secondary_unit__dependency_type__dependent
 msgid "Dependent"
-msgstr ""
+msgstr "Dependiente"
 
 #. module: product_secondary_unit
 #: model:ir.model.fields,field_description:product_secondary_unit.field_product_secondary_unit__display_name
-#: model:ir.model.fields,field_description:product_secondary_unit.field_product_secondary_unit_mixin__display_name
-#: model:ir.model.fields,field_description:product_secondary_unit.field_product_template__display_name
 msgid "Display Name"
 msgstr "Mostrar nombre"
 
 #. module: product_secondary_unit
 #: model:ir.model.fields,field_description:product_secondary_unit.field_product_secondary_unit__id
-#: model:ir.model.fields,field_description:product_secondary_unit.field_product_secondary_unit_mixin__id
-#: model:ir.model.fields,field_description:product_secondary_unit.field_product_template__id
 msgid "ID"
 msgstr "ID (Identificador)"
 
@@ -76,16 +72,19 @@ msgid ""
 "example if you sell serviceby package (1 unit for example) and you want to "
 "put the real time (ex : 4 hours) to allows employee scheduling"
 msgstr ""
+"Si el tipo de dependencia es 'dependiente' el factor se utiliza para "
+"calcular la cantidad en la unidad primaria, de lo contrario la unidad "
+"primaria y secundaria son independientes. Por ejemplo, si vende un servicio "
+"por paquete (1 unidad, por ejemplo) y desea poner el tiempo real (por "
+"ejemplo, 4 horas) para permitir la programación de los empleados"
 
 #. module: product_secondary_unit
 #: model:ir.model.fields.selection,name:product_secondary_unit.selection__product_secondary_unit__dependency_type__independent
 msgid "Independent"
-msgstr ""
+msgstr "Independiente"
 
 #. module: product_secondary_unit
 #: model:ir.model.fields,field_description:product_secondary_unit.field_product_secondary_unit____last_update
-#: model:ir.model.fields,field_description:product_secondary_unit.field_product_secondary_unit_mixin____last_update
-#: model:ir.model.fields,field_description:product_secondary_unit.field_product_template____last_update
 msgid "Last Modified on"
 msgstr "Última modificación en"
 
@@ -105,31 +104,40 @@ msgid "Name"
 msgstr "Nombre"
 
 #. module: product_secondary_unit
+#: model:ir.model,name:product_secondary_unit.model_product_template
+msgid "Product"
+msgstr "Producto"
+
+#. module: product_secondary_unit
 #: model:ir.model,name:product_secondary_unit.model_product_secondary_unit
-#, fuzzy
 msgid "Product Secondary Unit"
-msgstr "'product.secondary.unit'"
+msgstr "Unidad secundaria del producto"
 
 #. module: product_secondary_unit
 #: model:ir.model,name:product_secondary_unit.model_product_secondary_unit_mixin
 msgid "Product Secondary Unit Mixin"
-msgstr ""
+msgstr "Producto Unidad secundaria Mixin"
 
 #. module: product_secondary_unit
-#: model:ir.model,name:product_secondary_unit.model_product_template
 #: model:ir.model.fields,field_description:product_secondary_unit.field_product_secondary_unit__product_tmpl_id
 msgid "Product Template"
 msgstr "Plantilla de producto"
 
 #. module: product_secondary_unit
+#: model:ir.model,name:product_secondary_unit.model_product_product
+#: model:ir.model.fields,field_description:product_secondary_unit.field_product_secondary_unit__product_id
+msgid "Product Variant"
+msgstr "Variante de producto"
+
+#. module: product_secondary_unit
 #: model:ir.model.fields,field_description:product_secondary_unit.field_product_secondary_unit_mixin__secondary_uom_id
 msgid "Second unit"
-msgstr ""
+msgstr "Unidad secundaria"
 
 #. module: product_secondary_unit
 #: model:ir.model.fields,field_description:product_secondary_unit.field_product_secondary_unit_mixin__secondary_uom_qty
 msgid "Secondary Qty"
-msgstr ""
+msgstr "Cta. Ud. secundaria"
 
 #. module: product_secondary_unit
 #: model:ir.model.fields,field_description:product_secondary_unit.field_product_secondary_unit__factor
@@ -144,10 +152,8 @@ msgstr "Factor segunda unidad"
 msgid "Secondary Unit of Measure"
 msgstr "Segunda unidad de medida"
 
-#. module: product_secondary_unit
-#: model_terms:ir.ui.view,arch_db:product_secondary_unit.product_template_form_view
-msgid "secondary Unit"
-msgstr "Unidad Secundaria"
+#~ msgid "secondary Unit"
+#~ msgstr "Unidad Secundaria"
 
 #~ msgid "secondary unit of measure"
 #~ msgstr "Segunda unidad de medida"

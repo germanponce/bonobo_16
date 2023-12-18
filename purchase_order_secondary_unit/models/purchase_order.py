@@ -10,6 +10,7 @@ class PurchaseOrderLine(models.Model):
         "qty_field": "product_qty",
         "uom_field": "product_uom",
     }
+    _product_uom_field = "uom_po_id"
 
     product_qty = fields.Float(
         store=True, readonly=False, compute="_compute_product_qty", copy=True
@@ -18,8 +19,8 @@ class PurchaseOrderLine(models.Model):
     @api.depends("secondary_uom_qty", "secondary_uom_id")
     def _compute_product_qty(self):
         if hasattr(super(), "_compute_product_qty"):
-            super()._compute_product_qty()
-        self._compute_helper_target_field_qty()
+            return super()._compute_product_qty()
+        return self._compute_helper_target_field_qty()
 
     @api.onchange("product_uom")
     def onchange_product_uom_for_secondary(self):
@@ -33,7 +34,10 @@ class PurchaseOrderLine(models.Model):
         purpose.
         """
         res = super().onchange_product_id()
-        self.secondary_uom_id = self.product_id.purchase_secondary_uom_id
+        # Check to avoid executing onchange unnecessarily,
+        # which can sometimes cause tests of other modules to fail
+        if self.secondary_uom_id != self.product_id.purchase_secondary_uom_id:
+            self.secondary_uom_id = self.product_id.purchase_secondary_uom_id
         if self.secondary_uom_id:
             self.secondary_uom_qty = 1.0
         return res

@@ -4,7 +4,7 @@
 {
     "name": "Purchase Stock Secondary Unit",
     "summary": "Get product quantities in a secondary unit",
-    "version": "14.0.1.0.0",
+    "version": "15.0.1.1.0",
     "development_status": "Beta",
     "category": "stock",
     "website": "https://github.com/OCA/purchase-workflow",
@@ -12,6 +12,10 @@
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": ["purchase_order_secondary_unit", "stock_secondary_unit"],
+    "depends": [
+        "purchase_order_secondary_unit",
+        "stock_secondary_unit",
+        "purchase_stock",
+    ],
     "auto_install": True,
 }
