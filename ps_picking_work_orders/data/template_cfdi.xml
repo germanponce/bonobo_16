@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="l10n_mx_edi_voucher_xml" inherit_id="l10n_mx_edi.cfdiv33">
+        <xpath expr="//*[local-name()='Concepto']" position="attributes">
+            <attribute name="t-att-Descripcion">line.cfdi_compute_concept()</attribute>
+        </xpath>
+    </template>
+</odoo>

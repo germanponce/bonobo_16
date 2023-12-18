@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+
+
+        <record id="workorder_control_tree" model="ir.ui.view">
+            <field name="name">picking.work.order.tree</field>
+            <field name="model">picking.work.order</field>
+            <field name="arch" type="xml">
+                <tree string="Albaranes de Trabajo" >
+                    <field name="name" />
+					<field name="partner_id" />
+					<field name="partner_contact_id" />
+					<field name="presupuesto" />
+					<field name="expediente" optional="hide"/>
+					<field name="workorder_date" optional="hide"/>
+					<field name="start_time" optional="hide"/>
+                    <field name="end_time" optional="hide"/>
+                    <field name="partner_oficial" optional="hide"/>
+                    <field name="partner_ayudante" optional="hide"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="workorder_control_form" model="ir.ui.view">
+            <field name="name">picking.work.order.form</field>
+            <field name="model">picking.work.order</field>
+            <field name="arch" type="xml">
+                <form string="Albaran de Trabajo" >
+                    <header>
+                        <button name="action_draft" states="Cancelada" type="object" string="Regresar a Borrador" icon="fa-pencil-square-o" class="oe_highlight"/>
+
+                        <button name="action_start" states="Borrador,Pausa" type="object" string="Comenzar/Reanudar" icon="fa-play" class="oe_highlight"/>
+
+                        <button name="action_pause" states="Borrador,Proceso" type="object" string="Pause" icon="fa-pause" class="oe_highlight"/>
+
+                        <button name="action_done" type="object" string="Cerrar" states="Proceso" help="Cierra la orden y no permite su manipulación." icon="fa-check-circle-o" class="oe_highlight"/>
+
+                        <button name="action_cancel" states="Borrador,Proceso,Pausa" type="object" string="Cancelar" icon="fa-close" />
+
+                        <field name="state" widget="statusbar" />
+                    </header>
+                    <sheet string="Albaran de Trabajo">
+
+                         <div class="oe_button_box" name="button_box">
+                               <!--  <button name="action_view_invoice" type="object" class="oe_stat_button" icon="fa-cogs" string="Lotes">
+                                </button> -->
+                          </div>
+                                        
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" readonly="1" placeholder="Folio"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="workorder_date" attrs="{'readonly':[('state','=','Finalizada')]}"/>
+                                <field name="partner_id" options="{'no_create': True, 'no_create_edit': True}" required="1" attrs="{'readonly':[('state','!=','Borrador')]}"/>
+                                <field name="partner_contact_id" options="{'no_create': True, 'no_create_edit': True}" required="1" attrs="{'readonly':[('state','!=','Borrador')]}"/>
+                            </group>
+                            <group>
+                                <field name="presupuesto" attrs="{'readonly':[('state','!=','Borrador')]}"/>
+								<field name="expediente" attrs="{'readonly':[('state','!=','Borrador')]}"/>
+
+								<field name="start_time" attrs="{'readonly':[('state','!=','Borrador')]}" widget="float_time"/>
+								<field name="end_time" attrs="{'readonly':[('state','!=','Borrador')]}" widget="float_time"/>
+                                <field name="assigned_user_id" options="{'no_create': True, 'no_create_edit': True}" required="1" attrs="{'readonly':[('state','!=','Borrador')]}"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="partner_oficial" attrs="{'readonly':[('state','!=','Borrador')]}"/>
+                                <field name="address_aditional_info" attrs="{'readonly':[('state','!=','Borrador')]}"/>
+                            </group>
+                            <group>
+                                <field name="partner_ayudante" attrs="{'readonly':[('state','!=','Borrador')]}"/>
+                                <field name="customer_order" attrs="{'readonly':[('state','!=','Borrador')]}"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Facturación">
+                                <group>
+                                    <field name="invoice_line_ids" attrs="{'readonly':[('state','!=','Borrador')]}" nolabel="1">
+                                        <tree string="Facturación" editable="top">
+                                            <field name="quantity" required="1" />
+                                            <field name="product_id" required="1" options="{'no_create': True, 'no_create_edit': True}" />
+                                        </tree>
+                                        <form string="Facturación">
+                                            <group>
+                                                <field name="quantity" required="1" />
+                                                <field name="product_id" required="1" options="{'no_create': True, 'no_create_edit': True}" />
+                                            </group>
+                                        </form>
+                                    </field>
+                                </group>
+                            </page>
+                            <page string="Técnicas y Calificación">
+                                <group>
+                                    <group string="Técnicas empleadas">
+                                        <field name="technical_line_ids" nolabel="1" attrs="{'readonly':[('state','in',('Cancelada','Cerrada'))]}">
+                                            <tree string="Técnicas Empleadas" editable="top">
+                                                <field name="name" required="1" />
+                                            </tree>
+                                            <form string="Técnicas empleadas">
+                                                <group>
+                                                    <field name="name" required="1" />
+                                                </group>
+                                            </form>
+                                        </field>
+                                    </group>
+                                    <group string="Calificación del trabajo">
+                                        <field name="qualify_line_ids" nolabel="1" attrs="{'readonly':[('state','in',('Cancelada','Cerrada'))]}">
+                                            <tree string="Calificación Trabajo" editable="top">
+                                                <field name="name" required="1" />
+                                            </tree>
+                                            <form string="Calificación Trabajo">
+                                                <group>
+                                                    <field name="name" required="1" />
+                                                </group>
+                                            </form>
+                                        </field>
+                                    </group>
+                                </group>
+                                
+                            </page>
+                            <page string="Gastos Imputables">
+                                <group>
+                                    <group string="Oficial">
+                                        <field name="expenses_officer_line_ids" attrs="{'readonly':[('state','in',('Cancelada','Cerrada'))]}" nolabel="1">
+                                            <tree string="Gastos Imputables" editable="top">
+                                                <field name="quantity" />
+                                                <field name="name" required="1" />
+                                                <field name="total" sum="Total"/>
+                                                <field name="parcial_payment" sum="Abonado"/>
+                                                <field name="parcial_residual" sum="Pendiente"/>
+                                            </tree>
+                                            <form string="Gastos Imputables">
+                                                <group>
+                                                    <field name="quantity" />
+                                                    <field name="name" required="1" />
+                                                    <field name="total" />
+                                                    <field name="parcial_payment"/>
+                                                    <field name="parcial_residual"/>
+                                                </group>
+                                            </form>
+                                        </field>
+                                    </group>
+                                    <group string="Ayudante">
+                                        <field name="expenses_auxiliar_line_ids" attrs="{'readonly':[('state','in',('Cancelada','Cerrada'))]}" nolabel="1">
+                                            <tree string="Gastos Imputables" editable="top">
+                                                <field name="quantity" />
+                                                <field name="name" required="1" />
+                                                <field name="total" sum="Total"/>
+                                                <field name="parcial_payment" sum="Abonado"/>
+                                                <field name="parcial_residual" sum="Pendiente"/>
+                                            </tree>
+                                            <form string="Gastos Imputables">
+                                                <group>
+                                                    <field name="quantity" />
+                                                    <field name="name" required="1" />
+                                                    <field name="total"/>
+                                                    <field name="parcial_payment"/>
+                                                    <field name="parcial_residual"/>
+                                                </group>
+                                            </form>
+                                        </field>
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="Firmas">
+                                <group>
+                                    <field name="officer_signature" widget="signature" attrs="{'readonly':[('state','in',('Cancelada','Cerrada'))]}"/>
+                                    <field name="auxiliar_signature" widget="signature" attrs="{'readonly':[('state','in',('Cancelada','Cerrada'))]}"/>
+                                    <field name="customer_signature" widget="signature" attrs="{'readonly':[('state','in',('Cancelada','Cerrada'))]}"/>
+                                    <field name="supervisor_signature" widget="signature" attrs="{'readonly':[('state','in',('Cancelada','Cerrada'))]}"/>
+                                </group>
+                            </page>
+                            <page string="Observaciones">
+                                <group>
+                                    <field name="notes" nolabel="1" placeholder="Notas...." />
+                                </group>
+                            </page>
+                        </notebook>
+                      </sheet>
+                      <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="workorder_control_search" model="ir.ui.view">
+            <field name="name">picking.work.order.search</field>
+            <field name="model">picking.work.order</field>
+            <field name="arch" type="xml">
+                <search string="Albaranes de Trabajo">
+                   	<field name="name" />
+					<field name="partner_id" />
+					<field name="partner_contact_id" />
+					<field name="presupuesto" />
+					<field name="expediente" />
+					<field name="workorder_date" />
+					<field name="start_time" />
+					<field name="end_time" />
+                </search>
+            </field>
+        </record>
+       
+        
+        <record id="action_pick_wo_control" model="ir.actions.act_window">
+            <field name="name">Albaranes de Trabajo</field>
+            <field name="res_model">picking.work.order</field>
+            <field name="view_mode">tree,form</field>                      
+         </record>
+        <!-- Menus -->
+        
+        <!-- Top menu item -->
+        <menuitem id="picking_work_order_menu_root"
+            name="Albaranes de Trabajo"
+            web_icon="ps_picking_work_orders,static/description/icon.png"
+            active="True"
+            sequence="10" groups="group_work_order_stock_user,group_work_order_stock_manager"/>
+
+        <menuitem id="picking_work_order_control_menu"
+            name="Control de Albaranes de Trabajo"
+            parent="picking_work_order_menu_root"
+            sequence="1"/>
+
+        <menuitem id="picking_work_order_control_menu_act"
+            name="Registros"
+            action="action_pick_wo_control"
+            parent="picking_work_order_control_menu"
+            sequence="1"/>
+
+
+
+	</data>
+</odoo>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        
+        <record model="ir.module.category" id="module_work_order_control">
+            <field name="name">Albaranes de Trabajo</field>
+            <field name="description">Modulo para la gestión de albaranes de trabajo</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="group_work_order_stock_user" model="res.groups">
+            <field name="name">Usuario</field>
+            <field name="comment">Tiene acceso al modulo.</field>
+            <field name="users" eval="[(4, ref('base.user_root'))]"/>
+            <field name="category_id" ref="module_work_order_control"/>
+        </record>
+
+        <record id="group_work_order_stock_manager" model="res.groups">
+            <field name="name">Administrador</field>
+            <field name="comment">Tiene acceso al modulo.</field>
+            <field name="users" eval="[(4, ref('base.user_root'))]"/>
+            <field name="category_id" ref="module_work_order_control"/>
+        </record>
+
+    <record model="res.users" id="base.user_root">
+        <field eval="[(4,ref('ps_picking_work_orders.group_work_order_stock_manager'))]" name="groups_id"/>
+    </record>
+
+    <record model="res.users" id="base.user_admin">
+        <field eval="[(4,ref('ps_picking_work_orders.group_work_order_stock_manager'))]" name="groups_id"/>
+    </record>
+    
+    </data>
+
+    <data noupdate="1">
+
+        <record id="picking_workorders_personal" model="ir.rule">
+            <field name="name">Albaranes Asignados a mi Usuario</field>
+            <field ref="model_picking_work_order" name="model_id"/>
+            <field name="domain_force">['|',('assigned_user_id','=',user.id),('assigned_user_id','=',False)]</field>
+            <field name="groups" eval="[(4, ref('ps_picking_work_orders.group_work_order_stock_user'))]"/>
+        </record>
+
+    </data>
+
+</odoo>

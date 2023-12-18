@@ -1,0 +1,17 @@
+NOTAS:
+
+Pendiente la accion de relacionar Manualmente la Subasta en los documentos:
+ * Ventas
+ * Compras
+ * Facturas
+ * Albaranes
+
+Con esto actualizaremos las lineas para que aparezcan en la Subasta, lo mismo con los documentos, hariamos un super al metodo create y write, para verificar si la subasta relacionada no esta asignada a este documento automaticamente lo relacionemos.
+
+Como una Venta, una Compra, etc....
+
+Al validar una venta o compra y esta esta relacionada con un registro de subasta, este cambie el estado automaticamente.
+
+Lo mismo con facturas.
+
+Por ej. una Compra confirmada cambiaria el estado a Recepción y una venta a Entrega, un albaran validado de venta al estado Entregado.

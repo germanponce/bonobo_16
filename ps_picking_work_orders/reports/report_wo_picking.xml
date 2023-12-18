@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+
+        <template id="report_picking_order_report_estructure">
+            <t t-call="web.basic_layout">
+                <div class="page">
+<title>Reporte Albaran de Trabajo</title>
+    <style media="screen">
+        body {
+            font-family: 'Segoe UI','Microsoft Sans Serif',sans-serif;
+        }
+
+        /*
+            These next two styles are apparently the modern way to clear a float. This allows the logo
+            and the word "Invoice" to remain above the From and To sections. Inserting an empty div
+            between them with clear:both also works but is bad style.
+            Reference:
+            http://stackoverflow.com/questions/490184/what-is-the-best-way-to-clear-the-css-style-float
+        */
+        header:before, header:after {
+            content: " ";
+            display: table;
+        }
+
+        header:after {
+            clear: both;
+        }
+
+        .invoiceNbr {
+            font-size: 40px;
+            margin-right: 30px;
+            margin-top: 30px;
+            float: right;
+        }
+
+        .logo {
+            float: left;
+        }
+
+        .from {
+            float: left;
+        }
+
+        .to {
+            float: right;
+        }
+
+        .fromto {
+            border-style: solid;
+            border-width: 1px;
+            border-radius: 5px;
+            margin: 20px;
+            min-width: 200px;
+        }
+
+        .fromtocontent {
+            margin: 10px;
+            margin-right: 15px;
+        }
+
+        .panel {
+            padding: 7px;
+        }
+
+        .items {
+            clear: both;
+            display: table;
+            padding: 20px;
+        }
+
+        /* Factor out common styles for all of the "col-" classes.*/
+        div[class^="col-"] {
+            display: table-cell;
+            padding: 7px;
+        }
+
+        /*for clarity name column styles by the percentage of width */
+        .col-1-10 {
+            width: 10%;
+        }
+
+        .col-1-52 {
+            width: 52%;
+        }
+
+        .row {
+            display: table-row;
+            page-break-inside: avoid;
+        }
+
+    </style>
+
+    <!-- These styles are exactly like the screen styles except they use points (pt) as units
+        of measure instead of pixels (px) -->
+    <style media="print">
+        body {
+            font-family: 'Segoe UI','Microsoft Sans Serif',sans-serif;
+        }
+
+        header:before, header:after {
+            content: " ";
+            display: table;
+        }
+
+        header:after {
+            clear: both;
+        }
+
+        .invoiceNbr {
+            font-size: 30pt;
+            margin-right: 30pt;
+            margin-top: 30pt;
+            float: right;
+        }
+
+        .invoiceNbrCFDI {
+            font-size: 12pt;
+            margin-right: 30pt;
+            margin-top: 30pt;
+            float: right;
+        }
+
+        .companyNM {
+            font-size: 30pt;
+        }
+
+        .logo {
+            float: left;
+        }
+
+        .from {
+            float: left;
+        }
+
+        .to {
+            float: right;
+        }
+
+        .fromto {
+            border-style: solid;
+            border-width: 1pt;
+            border-radius: 5pt;
+            margin: 10pt;
+            min-width: 400pt;
+        }
+
+        .fromtocontent {
+            margin: 10pt;
+            margin-right: 15pt;
+        }
+
+        .panel {
+            padding: 7pt;
+        }
+
+        .items {
+            clear: both;
+            display: table;
+            padding: 20pt;
+        }
+
+        div[class^="col-"] {
+            display: table-cell;
+            padding: 7pt;
+        }
+
+        .col-1-10 {
+            width: 10%;
+        }
+
+        .col-1-52 {
+            width: 52%;
+        }
+
+        .row {
+            display: table-row;
+            page-break-inside: avoid;
+        }
+    </style>
+
+        <header>
+          <br/>
+          <br/>
+        </header>
+        <div>
+            <table  width="100%" style="font-size:14px; border-collapse: collapse;padding: 5px;" id="company_address_data">
+                <tr>
+                    <td width="30%" style="text-align:center;border: 1px solid #07190B;border-collapse: collapse;padding: 1px; text-align: center;">
+                        <img t-if="user.company_id.logo" t-att-src="'data:image/png;base64,%s' % to_text(user.company_id.logo)" 
+                             style="max-height: 100px;height: auto;"/>
+                        <br/>
+                    </td>
+                    <td width="40%" align="center" valign="top" style="text-align:center;border: 1px solid #07190B;border-collapse: collapse;padding: 1px; text-align: center;">
+                        <h3>Albarán de trabajo no: <br/><span t-field="o.name"/> </h3> 
+                    </td>
+                    <td width="30%" align="left" valign="top" style="text-align:left;border: 1px solid #07190B;border-collapse: collapse;padding-left: 5px; text-align: left;">
+                            <span><strong> Presupuesto: </strong> <span t-field="o.presupuesto"/><br/> </span>
+                            <span><strong> Expediente: </strong> <span t-field="o.expediente"/>       </span>
+                    </td>
+                </tr>
+            </table>
+            <table class="table table-condensed" style="font-size:12px;" width="100%">
+            <tbody>
+              <tr>
+                    <td width="70%" style="text-align:left;border: 1px solid #07190B;border-collapse: collapse;padding: 1px; text-align: left; color: black; padding-left: 5px;"  rowspan="2">
+                        <strong>Cliente: </strong> <span t-field="o.partner_id.name"/>
+                        <br/>
+                        <strong>Dirección de trabajo: </strong> 
+                            <span t-field="o.partner_id.street"/>
+                            <span t-if="o.partner_id.street2"> <span t-field="o.partner_id.street2"/></span>
+                            <span t-if="o.partner_id.city">, <span t-field="o.partner_id.city"/>, </span>
+                            <span t-field="o.partner_id.state_id.name"/>, 
+                            <span t-field="o.partner_id.country_id.name"/>
+                            <span t-if="o.partner_id.zip">
+                                CP: <span t-field="o.partner_id.zip"/>
+                            </span>
+                        <br/>
+                        <strong>Contacto: </strong> <span t-field="o.partner_contact_id.name"/>
+                        <br/>
+                        <strong>Oficial: </strong> <span t-field="o.partner_oficial"/>
+                        <br/>
+                        <strong>Ayudante: </strong> <span t-field="o.partner_ayudante"/>
+                    </td>
+                    <td width="30%" style="text-align:left;border: 1px solid #07190B;border-collapse: collapse;padding: 1px; text-align: left; color: black; padding-left: 5px;">
+                        <strong>Fecha albarán: </strong> <span t-field="o.workorder_date"/>
+                        <br/>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="30%" style="text-align:left;border: 1px solid #07190B;border-collapse: collapse;padding: 1px; text-align: left; color: black; padding-left: 5px; vertical-align: middle;" valign="middle">
+                        <strong>Hora comienzo: </strong> <span t-field="o.start_time" t-field-options='{"widget": "float_time"}' />
+                        <br/>
+                        <strong>Hora Final: </strong> <span t-field="o.end_time" t-field-options='{"widget": "float_time"}' />
+                    </td>
+                </tr>
+                <tr>
+                    <td width="100%" style="text-align:left;border: 1px solid #07190B;border-collapse: collapse;padding: 1px; text-align: left; color: black; padding-left: 5px; vertical-align: middle;" colspan="2">
+                        <strong>Datos adicionales dirección: </strong> <span t-field="o.address_aditional_info" />
+                    </td>
+                </tr>
+                <tr>
+                    <td width="100%" style="text-align:left;border: 1px solid #07190B;border-collapse: collapse;padding: 1px; text-align: left; color: black; padding-left: 5px; vertical-align: middle;" colspan="2">
+                        <strong>Pedido cliente: </strong> <span t-field="o.customer_order" />
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+
+
+        <table class="table table-condensed" style="font-size:12px;" width="100%">
+            <thead>
+                <tr>
+                      <th style="font-size:16px;border: 1px solid #07190B;border-collapse: collapse;padding: 1px; text-align: left; color: black; padding-left: 15px;" colspan="2">
+                        <b>Facturación</b>
+                    </th>
+                  </tr>
+                <tr>
+                    <th width="30%" style="text-align:left;border: 1px solid #07190B;border-collapse: collapse;padding: 1px; text-align: left; color: black; padding-left: 5px;" >
+                        <strong>Cliente: </strong>
+                    </th>
+                    <th width="70%" style="text-align:left;border: 1px solid #07190B;border-collapse: collapse;padding: 1px; text-align: left; color: black; padding-left: 5px;" >
+                        <strong>Conceptos de trabajo: </strong>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr t-foreach="o.invoice_line_ids" t-as="invline">
+                    <td width="30%" style="text-align:left;border: 1px solid #07190B;border-collapse: collapse;padding: 1px; text-align: left; color: black; padding-left: 5px; vertical-align: middle;" valign="middle">
+                        <span t-field="invline.quantity" />
+                    </td>
+                    <td width="70%" style="text-align:left;border: 1px solid #07190B;border-collapse: collapse;padding: 1px; text-align: left; color: black; padding-left: 5px; vertical-align: middle;" valign="middle">
+                        <span t-field="invline.product_id" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="table table-condensed" style="font-size:12px;" width="100%">
+            <thead>
+                <tr>
+                    <th width="50%" style="text-align:left;border: 1px solid #07190B;border-collapse: collapse;padding: 1px; text-align: left; color: black; padding-left: 5px;" >
+                        <strong>Técnicas empleadas: </strong>
+                    </th>
+                    <th width="50%" style="text-align:left;border: 1px solid #07190B;border-collapse: collapse;padding: 1px; text-align: left; color: black; padding-left: 5px;" >
+                        <strong>Calificación del trabajo: </strong>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr t-foreach="o.get_technicals_and_qualifications()" t-as="tech_qualify_list">
+                    <t t-set="technical" t-value="tech_qualify_list[0]"/>
+                    <t t-set="qualify" t-value="tech_qualify_list[1]"/>
+
+                    <td width="50%" style="text-align:left;border: 1px solid #07190B;border-collapse: collapse;padding: 1px; text-align: left; color: black; padding-left: 5px; vertical-align: middle;" valign="middle">
+                        <span t-if="technical" t-esc="technical"/>
+                        <span t-if="not technical"></span>
+                    </td>
+                    <td width="50%" style="text-align:left;border: 1px solid #07190B;border-collapse: collapse;padding: 1px; text-align: left; color: black; padding-left: 5px; vertical-align: middle;" valign="middle">
+                        <span t-if="qualify" t-esc="qualify"/>
+                        <span t-if="not qualify"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="100%" style="text-align:left;border: 1px solid #07190B;border-collapse: collapse;padding: 1px; text-align: left; color: black; padding-left: 5px; vertical-align: middle;" valign="middle" colspan="2">
+                        <strong>Observaciones: </strong><br/>
+                        <span t-field="o.notes" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="table table-condensed" style="font-size:12px;" width="100%">
+            <thead>
+                <tr>
+                      <th style="font-size:16px;border: 1px solid #07190B;border-collapse: collapse;padding: 1px; text-align: left; color: black; padding-left: 15px;" colspan="10">
+                        <b>Gastos Imputables:</b>
+                        </th>
+                  </tr>
+                <tr>
+                    <th style="text-align:left;border: 1px solid #07190B;border-collapse: collapse;padding: 1px; text-align: left; color: black; padding-left: 5px;"  colspan="5">
+                        <strong>Oficial: </strong>
+                    </th>
+                    <th style="text-align:left;border: 1px solid #07190B;border-collapse: collapse;padding: 1px; text-align: left; color: black; padding-left: 5px;"  colspan="5">
+                        <strong>Ayudante: </strong>
+                    </th>
+                </tr>
+                <tr>
+                    <th width="10%" style="text-align:left;border: 1px solid #07190B;border-collapse: collapse;padding: 1px; text-align: left; color: black; padding-left: 5px;">
+                        <strong>Cant: </strong>
+                    </th>
+                    <th width="10%" style="text-align:left;border: 1px solid #07190B;border-collapse: collapse;padding: 1px; text-align: left; color: black; padding-left: 5px;">
+                        <strong>Concepto: </strong>
+                    </th>
+                    <th width="10%" style="text-align:left;border: 1px solid #07190B;border-collapse: collapse;padding: 1px; text-align: left; color: black; padding-left: 5px;">
+                        <strong>Total: </strong>
+                    </th>
+                    <th width="10%" style="text-align:left;border: 1px solid #07190B;border-collapse: collapse;padding: 1px; text-align: left; color: black; padding-left: 5px;">
+                        <strong>Abonado: </strong>
+                    </th>
+                    <th width="10%" style="text-align:left;border: 1px solid #07190B;border-collapse: collapse;padding: 1px; text-align: left; color: black; padding-left: 5px;">
+                        <strong>Pendiente: </strong>
+                    </th>
+                    <th width="10%" style="text-align:left;border: 1px solid #07190B;border-collapse: collapse;padding: 1px; text-align: left; color: black; padding-left: 5px;">
+                        <strong>Cant: </strong>
+                    </th>
+                    <th width="10%" style="text-align:left;border: 1px solid #07190B;border-collapse: collapse;padding: 1px; text-align: left; color: black; padding-left: 5px;">
+                        <strong>Concepto: </strong>
+                    </th>
+                    <th width="10%" style="text-align:left;border: 1px solid #07190B;border-collapse: collapse;padding: 1px; text-align: left; color: black; padding-left: 5px;">
+                        <strong>Total: </strong>
+                    </th>
+                    <th width="10%" style="text-align:left;border: 1px solid #07190B;border-collapse: collapse;padding: 1px; text-align: left; color: black; padding-left: 5px;">
+                        <strong>Abonado: </strong>
+                    </th>
+                    <th width="10%" style="text-align:left;border: 1px solid #07190B;border-collapse: collapse;padding: 1px; text-align: left; color: black; padding-left: 5px;">
+                        <strong>Pendiente: </strong>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr t-foreach="o.get_all_expenses()" t-as="expense_line">
+                    <t t-set="oficial" t-value="expense_line[0]"/>
+                    <t t-set="ayudante" t-value="expense_line[1]"/>
+
+                    <td width="10%" style="text-align:left;border: 1px solid #07190B;border-collapse: collapse;padding: 1px; text-align: left; color: black; padding-left: 5px; vertical-align: middle;" valign="middle">
+                        <span t-if="oficial" t-esc="oficial.quantity"/>
+                        <span t-if="not oficial"></span>
+                    </td>
+                    <td width="10%" style="text-align:left;border: 1px solid #07190B;border-collapse: collapse;padding: 1px; text-align: left; color: black; padding-left: 5px; vertical-align: middle;" valign="middle">
+                        <span t-if="oficial" t-esc="oficial.name"/>
+                        <span t-if="not oficial"></span>
+                    </td>
+                    <td width="10%" style="text-align:left;border: 1px solid #07190B;border-collapse: collapse;padding: 1px; text-align: left; color: black; padding-left: 5px; vertical-align: middle;" valign="middle">
+                        <span t-if="oficial" t-esc="oficial.total"/>
+                        <span t-if="not oficial"></span>
+                    </td>
+                    <td width="10%" style="text-align:left;border: 1px solid #07190B;border-collapse: collapse;padding: 1px; text-align: left; color: black; padding-left: 5px; vertical-align: middle;" valign="middle">
+                        <span t-if="oficial" t-esc="oficial.parcial_payment"/>
+                        <span t-if="not oficial"></span>
+                    </td>
+                    <td width="10%" style="text-align:left;border: 1px solid #07190B;border-collapse: collapse;padding: 1px; text-align: left; color: black; padding-left: 5px; vertical-align: middle;" valign="middle">
+                        <span t-if="oficial" t-esc="oficial.parcial_residual"/>
+                        <span t-if="not oficial"></span>
+                    </td>
+
+                    <td width="10%" style="text-align:left;border: 1px solid #07190B;border-collapse: collapse;padding: 1px; text-align: left; color: black; padding-left: 5px; vertical-align: middle;" valign="middle">
+                        <span t-if="ayudante" t-esc="ayudante.quantity"/>
+                        <span t-if="not ayudante"></span>
+                    </td>
+                    <td width="10%" style="text-align:left;border: 1px solid #07190B;border-collapse: collapse;padding: 1px; text-align: left; color: black; padding-left: 5px; vertical-align: middle;" valign="middle">
+                        <span t-if="ayudante" t-esc="ayudante.name"/>
+                        <span t-if="not ayudante"></span>
+                    </td>
+                    <td width="10%" style="text-align:left;border: 1px solid #07190B;border-collapse: collapse;padding: 1px; text-align: left; color: black; padding-left: 5px; vertical-align: middle;" valign="middle">
+                        <span t-if="ayudante" t-esc="ayudante.total"/>
+                        <span t-if="not ayudante"></span>
+                    </td>
+                    <td width="10%" style="text-align:left;border: 1px solid #07190B;border-collapse: collapse;padding: 1px; text-align: left; color: black; padding-left: 5px; vertical-align: middle;" valign="middle">
+                        <span t-if="ayudante" t-esc="ayudante.parcial_payment"/>
+                        <span t-if="not ayudante"></span>
+                    </td>
+                    <td width="10%" style="text-align:left;border: 1px solid #07190B;border-collapse: collapse;padding: 1px; text-align: left; color: black; padding-left: 5px; vertical-align: middle;" valign="middle">
+                        <span t-if="ayudante" t-esc="ayudante.parcial_residual"/>
+                        <span t-if="not ayudante"></span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="table table-condensed" style="font-size:12px;" width="100%">
+            
+            <tbody>
+                <tr>
+                    <td width="50%" style="text-align:left;border: 1px solid #07190B;border-collapse: collapse;padding: 1px; text-align: left; color: black; padding-left: 5px; vertical-align: middle;" valign="middle">
+                        <strong>
+                            Firma Oficial:
+                        </strong>
+                        <br/>
+                        <img t-if="o.officer_signature" t-att-src="'data:image/png;base64,%s' % to_text(o.officer_signature)" 
+                             style="max-height: 100px;height: auto;"/>
+
+                    </td>
+                    <td width="50%" style="text-align:left;border: 1px solid #07190B;border-collapse: collapse;padding: 1px; text-align: left; color: black; padding-left: 5px; vertical-align: middle;" valign="middle">
+                        <strong>
+                            VoBo Cliente:
+                        </strong>
+                        <br/>
+                        <img t-if="o.customer_signature" t-att-src="'data:image/png;base64,%s' % to_text(o.customer_signature)" 
+                             style="max-height: 100px;height: auto;"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="50%" style="text-align:left;border: 1px solid #07190B;border-collapse: collapse;padding: 1px; text-align: left; color: black; padding-left: 5px; vertical-align: middle;" valign="middle">
+                        <strong>
+                            Firma Ayudante:
+                        </strong>
+                        <br/>
+                        <img t-if="o.auxiliar_signature" t-att-src="'data:image/png;base64,%s' % to_text(o.auxiliar_signature)" 
+                             style="max-height: 100px;height: auto;"/>
+                    </td>
+                    <td width="50%" style="text-align:left;border: 1px solid #07190B;border-collapse: collapse;padding: 1px; text-align: left; color: black; padding-left: 5px; vertical-align: middle;" valign="middle">
+                        <strong>
+                            VoB Supervisor:
+                        </strong>
+                        <br/>
+                        <img t-if="o.supervisor_signature" t-att-src="'data:image/png;base64,%s' % to_text(o.supervisor_signature)" 
+                             style="max-height: 100px;height: auto;"/>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        </div>
+    </div>
+
+
+
+            <div class="footer">
+                <table style="width: 100%">
+                    <tr >
+                        <td style="font-size:11px;width: 15%;text-align: center;border: 1px solid #07190B;border-collapse: collapse;padding: 1px;border-bottom: 1px;border-left: 1px;border-right: 1px;">
+                            <span t-esc="user.company_id.name"></span>
+                        </td>
+                        <td style="width: 20%;text-align: left;border: 1px solid #07190B;border-collapse: collapse;padding: 1px;border-bottom: 1px;border-left: 1px;border-right: 1px;">
+                        </td>
+                        <td style="width: 50%;text-align: center;border: 1px solid #07190B;border-collapse: collapse;padding: 1px;border-bottom: 1px;border-left: 1px;border-right: 1px;">
+                        </td>
+                        <td style="width: 15%;text-align: right;border: 1px solid #07190B;border-collapse: collapse;padding: 1px;border-bottom: 1px;border-left: 1px;border-right: 1px;">
+
+                             <strong  style="font-size:11px;text-align: center;" ><span>   Pagina </span><span class="page" /> de <span class="topage" /></strong>                       
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            </t>
+        </template>
+
+
+        <template id="report_picking_order_report_tmpl">
+            <t t-call="web.html_container">
+                <t t-set="data_report_margin_top" t-value="8"/>
+                <t t-set="data_report_header_spacing" t-value="7"/>
+                <t t-set="data_report_dpi" t-value="110"/>
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="ps_picking_work_orders.report_picking_order_report_estructure"/>
+                </t>
+            </t>
+        </template>
+ 
+        
+        <template id="report_template_picking_order_report">
+            <t t-call="web.html_container">
+                <t t-set="data_report_margin_top" t-value="5"/>
+                <t t-set="data_report_header_spacing" t-value="5"/>
+                <!--<t t-set="data_report_dpi" t-value="600"/>-->
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="ps_picking_work_orders.report_picking_order_report_estructure" t-lang="user.partner_id.lang"/>
+                </t>
+            </t>
+        </template>
+
+        
+        <record id="act_report_picking_order_wo" model="ir.actions.report">
+            <field name="name">Reporte Parte de Trabajo</field>
+            <field name="model">picking.work.order</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">ps_picking_work_orders.report_template_picking_order_report</field>
+            <field name="report_file">ps_picking_work_orders.report_template_picking_order_report</field>
+            <!-- <field name="attachment_use" eval="True" /> -->
+            <!-- <field name="attachment">'Falla_'+object.name.replace('/','_') + '.pdf'</field> -->
+            <field name="print_report_name">'Orden_Trabajo_'+object.name.replace('/','_') + '.pdf'</field>
+            <field name="binding_model_id" ref="ps_picking_work_orders.model_picking_work_order"/>
+            <field name="binding_type">report</field>
+        </record>
+        
+
+    </data>
+</odoo>
