@@ -339,14 +339,14 @@ body {
     <div>
         <table width="100%" style="font-size:12px; border-collapse: collapse;padding: 5px;" id="company_address_data">
             <tr>
-                <td width="30%" style="vertical-align: middle;text-align: center;">
+                <td width="30%" style="vertical-align: middle;text-align: center;border: 1px solid white;" >
                     <img t-if="o.company_id.logo"  t-att-src="image_data_uri(o.company_id.logo)" style="max-width:260px;max-height:89px;" alt="Logo"/>
                     <br/>
                 </td>
-                <td width="30%" align="center" valign="top">
+                <td width="30%" align="center" valign="top" style="border: 1px solid white;">
                     
                 </td>
-                <td width="40%" align="center" valign="top">
+                <td width="40%" align="center" valign="top" style="border: 1px solid white;">
                         <strong>
                             <strong>
                               <span style="font-size:26px;color: #000000;text-align: right;" t-if="o.move_type == 'out_invoice'">
