@@ -60,8 +60,25 @@ class InvoiceExportAnalysis(models.TransientModel):
                 subtotal_to_show = subtotal['name']
                 tax_details = tax_totals['groups_by_subtotal'][subtotal_to_show]
                 print ("### tax_details: ", tax_details)
+                for tax_d in tax_details:
+                    tax_group_name = tax_d.get('tax_group_name','')
+                    tax_group_amount = tax_d.get('tax_group_amount', 0.0)
+                    if tax_group_name.upper() not in taxes_name_list:
+                        taxes_name_list.append(tax_group_name.upper())
         for rec in move_obj.browse(active_ids):
-            
+            invoice_taxes_dict = {}
+
+            tax_totals = rec.tax_totals
+            tax_subtotals = tax_totals['subtotals']
+            for subtotal in tax_subtotals:
+                subtotal_to_show = subtotal['name']
+                tax_details = tax_totals['groups_by_subtotal'][subtotal_to_show]
+                print ("### tax_details: ", tax_details)
+                for tax_d in tax_details:
+                    tax_group_name = tax_d.get('tax_group_name','')
+                    tax_group_amount = tax_d.get('tax_group_amount', 0.0)
+                    if tax_group_name.upper() not in invoice_taxes_dict:
+                        invoice_taxes_dict[tax_group_name.upper()] = tax_group_amount
             line_data = {
                             'FECHA': rec.invoice_date,
                             'NUMERO': rec.name,
@@ -70,6 +87,9 @@ class InvoiceExportAnalysis(models.TransientModel):
                             'BASE IMPONIBLE': rec.amount_untaxed,
                             'TOTAL': rec.amount_total,
                         }
+            for tax_name in taxes_name_list:
+                tax_name_amount = invoice_taxes_dict.get('tax_name',0.0)
+                line_data[tax] = tax_name_amount
             xlines.append(line_data)
 
 
@@ -81,6 +101,8 @@ class InvoiceExportAnalysis(models.TransientModel):
                 ['BASE IMPONIBLE', 'FLOAT'],
                 ['TOTAL', 'FLOAT'],
                 ]
+        for tax_name in taxes_name_list:
+            columns.append([tax_name], 'FLOAT')
         return xlines,columns
    
     def prepare_worksheet(self, workbook, data_exists, row=3):
