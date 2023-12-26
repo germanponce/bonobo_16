@@ -37,6 +37,7 @@
     'data': [
         'sale_view.xml',
         'report/sale_report_pdf.xml',
+        'report/sale_report_convencional_pdf.xml',
         ],
     'installable': True,
 }
