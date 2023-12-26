@@ -46,26 +46,26 @@ body {margin-top: 0px;margin-left: 0px;}
 .ft12{font: 14px 'Arial';line-height: 16px;}
 .ft13{font: 11px 'Arial';color: #8f8f8f;line-height: 14px;}
 
-.p0{text-align: left;margin-top: 0px;margin-bottom: 0px;}
-.p1{text-align: left;padding-left: 36px;margin-top: 0px;margin-bottom: 0px;}
-.p2{text-align: right;padding-right: 23px;margin-top: 0px;margin-bottom: 0px;}
-.p3{text-align: right;padding-right: 14px;margin-top: 0px;margin-bottom: 0px;}
-.p4{text-align: right;padding-right: 32px;margin-top: 0px;margin-bottom: 0px;}
-.p5{text-align: left;padding-left: 10px;margin-top: 0px;margin-bottom: 0px;}
-.p6{text-align: left;padding-left: 9px;margin-top: 0px;margin-bottom: 0px;}
-.p7{text-align: right;padding-right: 55px;margin-top: 0px;margin-bottom: 0px;}
-.p8{text-align: right;padding-right: 42px;margin-top: 0px;margin-bottom: 0px;}
-.p9{text-align: right;padding-right: 17px;margin-top: 0px;margin-bottom: 0px;}
-.p10{text-align: right;padding-right: 9px;margin-top: 0px;margin-bottom: 0px;}
-.p11{text-align: right;padding-right: 10px;margin-top: 0px;margin-bottom: 0px;}
-.p12{text-align: left;padding-left: 301px;margin-top: 0px;margin-bottom: 0px;}
-.p13{text-align: left;padding-left: 88px;margin-top: 0px;margin-bottom: 0px;}
-.p14{text-align: center;padding-right: 43px;margin-top: 0px;margin-bottom: 0px;}
-.p15{text-align: center;padding-right: 27px;margin-top: 0px;margin-bottom: 0px;}
-.p16{text-align: center;padding-right: 37px;margin-top: 0px;margin-bottom: 0px;}
-.p17{text-align: center;padding-right: 44px;margin-top: 0px;margin-bottom: 0px;}
-.p18{text-align: center;padding-right: 26px;margin-top: 0px;margin-bottom: 0px;}
-.p19{text-align: center;padding-right: 36px;margin-top: 0px;margin-bottom: 0px;}
+.p0{text-align: left;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p1{text-align: left;padding-left: 36px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p2{text-align: right;padding-right: 23px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p3{text-align: right;padding-right: 14px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p4{text-align: right;padding-right: 32px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p5{text-align: left;padding-left: 10px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p6{text-align: left;padding-left: 9px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p7{text-align: right;padding-right: 55px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p8{text-align: right;padding-right: 42px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p9{text-align: right;padding-right: 17px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p10{text-align: right;padding-right: 9px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p11{text-align: right;padding-right: 10px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p12{text-align: left;padding-left: 301px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p13{text-align: left;padding-left: 88px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p14{text-align: center;padding-right: 43px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p15{text-align: center;padding-right: 27px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p16{text-align: center;padding-right: 37px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p17{text-align: center;padding-right: 44px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p18{text-align: center;padding-right: 26px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p19{text-align: center;padding-right: 36px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
 .p20{text-align: left;padding-left: 26px;margin-top: 59px;margin-bottom: 0px;}
 .p21{text-align: left;padding-left: 238px;margin-top: 1px;margin-bottom: 0px;}
 .p22{text-align: center;padding-right: 46px;margin-top: 8px;margin-bottom: 0px;}
@@ -375,15 +375,15 @@ body {
 
 <TABLE cellpadding="0" cellspacing="0" style="font: 11px 'Arial';width: 100%">
 <TR>
-    <TD colspan="2" class="tr5 td17" style="border: 0;"><P class="p0 ft2">BONOBO FRUIT S.L.</P></TD>
-    <TD class="tr5 td2" style="border: 0;"><P class="p0 ft0">&amp;nbsp;</P></TD>
-    <TD class="tr5 td3" style="border: 0;"><P class="p0 ft0">&amp;nbsp;</P></TD>
-    <TD class="tr5 td4" style="border: 0;"><P class="p0 ft0">&amp;nbsp;</P></TD>
-    <TD class="tr5 td5" style="border: 0;"><P class="p0 ft0">&amp;nbsp;</P></TD>
-    <TD class="tr5 td6" style="border: 0;"><P class="p0 ft0">&amp;nbsp;</P></TD>
-    <TD class="tr5 td7" style="border: 0;"><P class="p0 ft0">&amp;nbsp;</P></TD>
-    <TD class="tr5 td2" style="border: 0;"><P class="p0 ft0">&amp;nbsp;</P></TD>
-    <TD class="tr5 td18" style="border: 0;"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD colspan="2" class="tr5 td17"><P class="p0 ft2">BONOBO FRUIT S.L.</P></TD>
+    <TD class="tr5 td2"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr5 td3"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr5 td4"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr5 td5"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr5 td6"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr5 td7"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr5 td2"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr5 td18"><P class="p0 ft0">&amp;nbsp;</P></TD>
 </TR>
 <TR>
     <TD class="tr6 td0" ><P class="p0 ft2">NIF: ESB72644818</P></TD>
