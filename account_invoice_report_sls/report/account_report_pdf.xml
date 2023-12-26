@@ -392,7 +392,6 @@ body {
 </TR>
 <TR>
     <TD colspan="2" rowspan="2" class="tr6 td17"><P class="p0 ft2"><span t-field="o.company_id.street"/></P></TD>
-    <TD class="tr8 td20"><P class="p0 ft4">&amp;nbsp;</P></TD>
 </TR>
 <TR>
     <TD colspan="5" rowspan="2" class="tr9 td21"><P class="p5 ft5"><span t-field="o.partner_id.street"/></P></TD>
