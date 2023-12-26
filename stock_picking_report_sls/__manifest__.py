@@ -35,6 +35,7 @@
                     'account',
                 ],
     'data': [
+        'security/ir.model.access.csv',
         'stock_view.xml',
         'report/stock_report_pdf.xml',
         'report/stock_report_convencional_pdf.xml',

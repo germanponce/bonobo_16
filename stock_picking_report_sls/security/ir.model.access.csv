@@ -1,0 +1,5 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+bonobo_origin,bonobo.origin,model_bonobo_origin,,1,1,1,1
+bonobo_agricultura,bonobo.agricultura,model_bonobo_agricultura,,1,1,1,1
+bonobo_variedad,bonobo.variedad,model_bonobo_variedad,,1,1,1,1
+bonobo_calibre,bonobo.calibre,model_bonobo_calibre,,1,1,1,1

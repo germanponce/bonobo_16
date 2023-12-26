@@ -21,8 +21,6 @@
             <field name="uom_id" position="after">
                 <field
                     name="sale_secondary_uom_id"
-                    domain="[('product_tmpl_id', '=', id)]"
-                    options="{'no_create': True}"
                 />
             </field>
         </field>

@@ -23,9 +23,50 @@ from datetime import date, datetime, timedelta
 import logging
 _logger = logging.getLogger(__name__)
 
+class BonoboOrigin(models.Model):
+    _name = 'bonobo.origin'
+    _description = 'Bonobo Origen'
+    
+    name = fields.Char('Descripcion', size=128, required=True)
 
+class BonoboAgricultura(models.Model):
+    _name = 'bonobo.agricultura'
+    _description = 'Bonobo Agricultura'
+    
+    name = fields.Char('Descripcion', size=128, required=True)
+
+class BonoboVariedad(models.Model):
+    _name = 'bonobo.variedad'
+    _description = 'Bonobo Variedad'
+    
+    name = fields.Char('Descripcion', size=128, required=True)
+
+
+class BonoboCalibre(models.Model):
+    _name = 'bonobo.calibre'
+    _description = 'Bonobo Calibre'
+    
+    name = fields.Char('Descripcion', size=128, required=True)
+
+    
+    
+    
 class ProductTemplate(models.Model):
     _inherit ='product.template'
+
+    bonobo_origin = fields.Many2one('bonobo.origin', 'Origen')
+    bonobo_agricultrura = fields.Many2one('bonobo.agricultura', 'Agricultura')
+    bonobo_variedad = fields.Many2one('bonobo.variedad', 'Variedad')
+    bonobo_calibre = fields.Many2one('bonobo.calibre', 'Calibre')
+
+# Crear campos extras a Odoo en la ficha de Productos, Campos que hay que añadir; Origen, Agricultura, variedad, calibre
+# Doble unidad de medida para gestionar KG y Cajas
+
+# Creación de informe KARDEX para generar balances de masas: campos en el informe Origen, Agricultura, variedad, calibre, kg vendidos, cajas, 
+# vendidas Creación de informe en contabilidad para exportar en excel, adjunto es este email el ejemplo de que tiene que ser igual, 
+# diferenciando los impuestos Instalación, configuración y parametrización del módulo de la Oca de Odoo Instractac pruebas y puesta en marcha, 
+# Crear plantilla personalizada para enviar facturas y albaranes mediante el correo de Odoo automatizado
+
 
 class AccountMove(models.Model):
     _name = 'account.move'
