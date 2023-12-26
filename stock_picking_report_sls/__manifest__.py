@@ -37,7 +37,7 @@
     'data': [
         'stock_view.xml',
         'report/stock_report_pdf.xml',
-        'report/stock_report_pdf.xml',
+        'report/stock_report_convencional_pdf.xml',
         ],
     'installable': True,
 }
