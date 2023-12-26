@@ -605,10 +605,6 @@ body {
     <TD class="tr3 td55"><P class="p12 ft11">Total Factura (EUR):</P></TD>
     <TD class="tr3 td56"><P class="p11 ft11"><span class="text-nowrap" t-field="o.amount_total"/></P></TD>
 </TR>
-<TR>
-    <TD class="tr14 td55"><P class="p0 ft9">&amp;nbsp;</P></TD>
-    <TD class="tr14 td56"><P class="p0 ft9">&amp;nbsp;</P></TD>
-</TR>
 </TABLE>
 
 <br/>
