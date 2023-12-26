@@ -678,7 +678,7 @@ body {
                     <td style="font-size:11px;width: 15%;text-align: left;border: 1px solid #07190B;border-collapse: collapse;padding: 1px;border-bottom: 1px;border-left: 1px;border-right: 1px;">
                         <span t-esc="user.company_id.name"/>
                     </td>
-                    <td style="width: 15%;text-align: right;border: 1px solid #07190B;border-collapse: collapse;padding: 1px;border-bottom: 1px;border-left: 0px;border-right: 0px;">
+                    <td style="width: 15%;text-align: right;border: 1px solid white;">
 
                          <strong style="font-size:11px;text-align: center;"><span>   Pagina </span><span class="page"/> de <span class="topage"/></strong>                       
                     </td>
