@@ -89,7 +89,7 @@ class InvoiceExportAnalysis(models.TransientModel):
                         }
             for tax_name in taxes_name_list:
                 tax_name_amount = invoice_taxes_dict.get('tax_name',0.0)
-                line_data[tax] = tax_name_amount
+                line_data[tax_name] = tax_name_amount
             xlines.append(line_data)
 
 
