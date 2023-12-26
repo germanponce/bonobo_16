@@ -99,10 +99,10 @@ class InvoiceExportAnalysis(models.TransientModel):
                 ['EMPRESA', 'CHAR'],
                 ['NIF', 'CHAR'],
                 ['BASE IMPONIBLE', 'FLOAT'],
-                ['TOTAL', 'FLOAT'],
                 ]
         for tax_name in taxes_name_list:
             columns.append([tax_name, 'FLOAT'])
+        columns.append(['TOTAL', 'FLOAT'])
         return xlines,columns
    
     def prepare_worksheet(self, workbook, data_exists, row=3):
