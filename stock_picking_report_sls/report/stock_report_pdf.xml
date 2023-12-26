@@ -426,8 +426,7 @@ body {
     <TD class="tr13 td18"><P class="p0 ft8">&amp;nbsp;</P></TD>
 </TR>
 <TR>
-    <TD class="tr12 td34" colspan="9"><span style="padding-left: 10px;" t-esc="o.sale_id.project_reference"/></TD>
-    <TD class="tr12 td3"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr12 td34" colspan="10"><span style="padding-left: 10px;" t-esc="o.sale_id.project_reference"/></TD>
 </TR>
 <TR>
     <TD class="tr1 td0"><P class="p0 ft0">&amp;nbsp;</P></TD>
@@ -438,8 +437,8 @@ body {
     <TD class="tr1 td5"><P class="p0 ft0">&amp;nbsp;</P></TD>
     <TD class="tr1 td6"><P class="p0 ft0">&amp;nbsp;</P></TD>
     <TD class="tr1 td7"><P class="p0 ft0">&amp;nbsp;</P></TD>
-    <TD class="tr1 td2"><P class="p0 ft0">&amp;nbsp;</P></TD>
-    <TD class="tr1 td2"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr1 td7"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr1 td7"><P class="p0 ft0">&amp;nbsp;</P></TD>
 </TR>
 <TR>
     <TD class="tr2 td36" colspan="2"><P class="p6 ft2"/></TD>
@@ -550,7 +549,7 @@ body {
             
             <table style="width: 100%">
                 <tr>
-                    <td style="font-size:11px;width: 15%;text-align: left;border-top: 1px solid #07190B;border-left: 1px solid white;border-right: 1px solid white;">
+                    <td style="font-size:11px;width: 15%;text-align: left;border-top: 1px solid #07190B;border-left: 1px solid white;border-right: 1px solid white;border-bottom: 1px solid white;">
                         <span t-esc="user.company_id.name"/>
                     </td>
                     <td style="width: 15%;text-align: right;border-top: 1px solid #07190B;border-left: 1px solid white;border-right: 1px solid white;border-bottom: 1px solid white;">
