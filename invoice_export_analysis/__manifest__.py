@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 
 {
-    'name': 'Stock Kardex Report',
+    'name': 'Exportar Facturas',
     'version': '0.1.0',
-    'category': 'Stock',
+    'category': 'Accounting',
     'description': """
-    Report that shows a specific product stock moves
+    Report that shows a specific moves
     """,
     'author': 'German Ponce',
     'maintainer':"german.ponce@outlook.com",
@@ -13,7 +13,7 @@
     'depends': [
         "stock_account",
         "purchase_stock",
-        "stock_picking_report_sls",
+        "account",
         # "stock_landed_costs",
         # "l10n_mx_edi_landing",
     ],
