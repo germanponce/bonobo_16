@@ -485,6 +485,13 @@ class StockKardex(models.TransientModel):
                                     }
 
                 estado = stock_move_states.get(estado,estado)
+                bonobo_origin = rec.product_id.bonobo_origin_id.name if rec.product_id.bonobo_origin_id else ""
+                bonobo_agricultrura = rec.product_id.bonobo_agricultrura_id.name if rec.product_id.bonobo_agricultrura_id else ""
+                bonobo_variedad = rec.product_id.bonobo_variedad_id.name if rec.product_id.bonobo_variedad_id else ""
+                bonobo_calibre = rec.product_id.bonobo_calibre_id.name if rec.product_id.bonobo_calibre_id else ""
+                sale_secondary_uom = rec.product_id.sale_secondary_uom_id.name if rec.product_id.sale_secondary_uom_id else ""
+
+
                 line_data = {
                         'FECHA': fecha,
                         'MOVIMIENTO': movimiento or '',
@@ -507,6 +514,11 @@ class StockKardex(models.TransientModel):
                         'COSTO TOTAL': costo_total or 0.0,
                         'ESTADO': estado or '',
                         'TIPO': tipo or '',
+                        '2A UDM': sale_secondary_uom,
+                        'ORIGEN': bonobo_origin,
+                        'AGRICULTURA': bonobo_agricultrura,
+                        'VARIEDAD': bonobo_variedad,
+                        'CALIBRE': bonobo_calibre,
                         }
                 xlines.append(line_data)
 
@@ -557,6 +569,11 @@ class StockKardex(models.TransientModel):
                 ['ORIGEN', 'CHAR'],
                 ['DESTINO', 'CHAR'],
                 ['UDM', 'CHAR'],
+                ['2A UDM', 'CHAR'],
+                ['ORIGEN', 'CHAR'],
+                ['AGRICULTURA', 'CHAR'],
+                ['VARIEDAD', 'CHAR'],
+                ['CALIBRE', 'CHAR'],
                 ['ENTRADAS', 'FLOAT'],
                 ['SALIDAS', 'FLOAT'],
                 ['EXISTENCIA', 'FLOAT'],
