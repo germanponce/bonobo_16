@@ -1,0 +1,709 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+    <!-- <template id="fx_edtrailers_invoice_report.basic_layout">
+        <h1>HOLA MUNDO</h1>
+        <t t-if="o and 'company_id' in o">
+            <t t-set="company" t-value="o.company_id"></t>
+        </t>
+        <t t-if="not o or not 'company_id' in o">
+            <t t-set="company" t-value="res_company"></t>
+        </t>
+        <t t-raw="0" />
+    </template> -->
+
+  <template id="report_invoice_document_sls_convencional">
+    <t t-call="web.basic_layout">
+          <t t-set="o" t-value="o.with_context({'lang':o.partner_id.lang})"/>
+                <div class="page">
+    <title>Factura Convencional</title>
+        <style media="screen">
+        
+
+body {margin-top: 0px;margin-left: 0px;}
+
+#page_1 {position:relative; overflow: hidden;margin: 36px 0px 57px 46px;padding: 0px;border: none;width: 747px;}
+
+#page_1 #p1dimg1 {position:absolute;top:10px;left:0px;z-index:-1;width:700px;height:766px;}
+#page_1 #p1dimg1 #p1img1 {width:700px;height:766px;}
+
+
+
+
+.ft0{font: 1px 'Arial';line-height: 1px;}
+.ft1{font: bold 18px 'Arial';line-height: 21px;}
+.ft2{font: 11px 'Arial';line-height: 14px;}
+.ft3{font: bold 11px 'Arial';line-height: 14px;}
+.ft4{font: 1px 'Arial';line-height: 8px;}
+.ft5{font: 11px 'Arial';line-height: 13px;}
+.ft6{font: 1px 'Arial';line-height: 5px;}
+.ft7{font: 1px 'Arial';line-height: 13px;}
+.ft8{font: 1px 'Arial';line-height: 4px;}
+.ft9{font: 1px 'Arial';line-height: 9px;}
+.ft10{font: 1px 'Arial';line-height: 3px;}
+.ft11{font: bold 14px 'Arial';line-height: 16px;}
+.ft12{font: 14px 'Arial';line-height: 16px;}
+.ft13{font: 11px 'Arial';color: #8f8f8f;line-height: 14px;}
+
+.p0{text-align: left;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p1{text-align: left;padding-left: 36px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p2{text-align: right;padding-right: 23px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p3{text-align: right;padding-right: 14px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p4{text-align: right;padding-right: 32px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p5{text-align: left;padding-left: 10px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p6{text-align: left;padding-left: 9px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p7{text-align: right;padding-right: 55px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p8{text-align: right;padding-right: 42px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p9{text-align: right;padding-right: 17px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p10{text-align: right;padding-right: 9px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p11{text-align: right;padding-right: 10px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p12{text-align: left;padding-left: 301px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p13{text-align: left;padding-left: 88px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p14{text-align: center;padding-right: 43px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p15{text-align: center;padding-right: 27px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p16{text-align: center;padding-right: 37px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p17{text-align: center;padding-right: 44px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p18{text-align: center;padding-right: 26px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p19{text-align: center;padding-right: 36px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p20{text-align: left;padding-left: 26px;margin-top: 59px;margin-bottom: 0px;}
+.p21{text-align: left;padding-left: 238px;margin-top: 1px;margin-bottom: 0px;}
+.p22{text-align: center;padding-right: 46px;margin-top: 8px;margin-bottom: 0px;}
+
+.td0{padding: 0px;margin: 0px;width: 88px;vertical-align: bottom;border: 0;}
+.td1{padding: 0px;margin: 0px;width: 285px;vertical-align: bottom;border: 0;}
+.td2{padding: 0px;margin: 0px;width: 63px;vertical-align: bottom;border: 0;}
+.td3{padding: 0px;margin: 0px;width: 3px;vertical-align: bottom;border: 0;}
+.td4{padding: 0px;margin: 0px;width: 14px;vertical-align: bottom;border: 0;}
+.td5{padding: 0px;margin: 0px;width: 21px;vertical-align: bottom;border: 0;}
+.td6{padding: 0px;margin: 0px;width: 89px;vertical-align: bottom;border: 0;}
+.td7{padding: 0px;margin: 0px;width: 13px;vertical-align: bottom;border: 0;}
+.td8{padding: 0px;margin: 0px;width: 124px;vertical-align: bottom;border: 0;}
+.td9{padding: 0px;margin: 0px;width: 21px;vertical-align: bottom;background: #dfdfdf;border: 0;}
+.td10{padding: 0px;margin: 0px;width: 89px;vertical-align: bottom;background: #dfdfdf;border: 0;}
+.td11{padding: 0px;margin: 0px;width: 13px;vertical-align: bottom;background: #dfdfdf;border: 0;}
+.td12{padding: 0px;margin: 0px;width: 124px;vertical-align: bottom;background: #f0f0f0;border: 0;}
+.td13{padding: 0px;margin: 0px;width: 21px;vertical-align: bottom;background: #dfdfdf;border: 0;}
+.td14{padding: 0px;margin: 0px;width: 89px;vertical-align: bottom;background: #dfdfdf;border: 0;}
+.td15{padding: 0px;margin: 0px;width: 13px;vertical-align: bottom;background: #dfdfdf;border: 0;}
+.td16{padding: 0px;margin: 0px;width: 124px;vertical-align: bottom;background: #f0f0f0;border: 0;}
+.td17{padding: 0px;margin: 0px;width: 373px;vertical-align: bottom;border: 0;}
+.td18{padding: 0px;margin: 0px;width: 61px;vertical-align: bottom;border: 0;}
+.td19{padding: 0px;margin: 0px;width: 266px;vertical-align: bottom;background: #f0f0f0;border: 0;}
+.td20{padding: 0px;margin: 0px;width: 61px;vertical-align: bottom;background: #f0f0f0;border: 0;}
+.td21{padding: 0px;margin: 0px;width: 190px;vertical-align: bottom;background: #f0f0f0;border: 0;}
+.td22{padding: 0px;margin: 0px;width: 13px;vertical-align: bottom;background: #f0f0f0;border: 0;}
+.td23{padding: 0px;margin: 0px;width: 63px;vertical-align: bottom;background: #f0f0f0;border: 0;}
+.td24{padding: 0px;margin: 0px;width: 101px;vertical-align: bottom;background: #f0f0f0;border: 0;}
+.td25{padding: 0px;margin: 0px;width: 89px;vertical-align: bottom;background: #f0f0f0;border: 0;}
+.td26{padding: 0px;margin: 0px;width: 3px;vertical-align: bottom;background: #f0f0f0;border: 0;}
+.td27{padding: 0px;margin: 0px;width: 14px;vertical-align: bottom;background: #f0f0f0;border: 0;}
+.td28{padding: 0px;margin: 0px;width: 21px;vertical-align: bottom;background: #f0f0f0;border: 0;}
+.td29{padding: 0px;margin: 0px;width: 110px;vertical-align: bottom;border: 0;}
+.td30{padding: 0px;margin: 0px;width: 373px;vertical-align: bottom;background: #dfdfdf;border: 0;}
+.td31{padding: 0px;margin: 0px;width: 63px;vertical-align: bottom;background: #dfdfdf;border: 0;}
+.td32{padding: 0px;margin: 0px;width: 124px;vertical-align: bottom;background: #dfdfdf;border: 0;}
+.td33{padding: 0px;margin: 0px;width: 61px;vertical-align: bottom;background: #dfdfdf;border: 0;}
+.td34{padding: 0px;margin: 0px;width: 88px;vertical-align: bottom;background: #f0f0f0;border: 0;}
+.td35{padding: 0px;margin: 0px;width: 285px;vertical-align: bottom;background: #f0f0f0;border: 0;}
+.td36{padding: 0px;margin: 0px;width: 88px;vertical-align: bottom;background: #dfdfdf;border: 0;}
+.td37{padding: 0px;margin: 0px;width: 285px;vertical-align: bottom;background: #dfdfdf;border: 0;}
+.td38{padding: 0px;margin: 0px;width: 63px;vertical-align: bottom;background: #dfdfdf;border: 0;}
+.td39{padding: 0px;margin: 0px;width: 3px;vertical-align: bottom;background: #dfdfdf;border: 0;}
+.td40{padding: 0px;margin: 0px;width: 14px;vertical-align: bottom;background: #dfdfdf;border: 0;}
+.td41{padding: 0px;margin: 0px;width: 76px;vertical-align: bottom;background: #dfdfdf;border: 0;}
+.td42{padding: 0px;margin: 0px;width: 61px;vertical-align: bottom;background: #dfdfdf;border: 0;}
+.td43{padding: 0px;margin: 0px;width: 348px;vertical-align: bottom;background: #dfdfdf;border: 0;}
+.td44{padding: 0px;margin: 0px;width: 386px;vertical-align: bottom;border: 0;}
+.td45{padding: 0px;margin: 0px;width: 76px;vertical-align: bottom;border: 0;}
+.td46{padding: 0px;margin: 0px;width: 88px;vertical-align: bottom;border: 0;}
+.td47{padding: 0px;margin: 0px;width: 285px;vertical-align: bottom;border: 0;}
+.td48{padding: 0px;margin: 0px;width: 63px;vertical-align: bottom;border: 0;}
+.td49{padding: 0px;margin: 0px;width: 3px;vertical-align: bottom;border: 0;}
+.td50{padding: 0px;margin: 0px;width: 14px;vertical-align: bottom;border: 0;}
+.td51{padding: 0px;margin: 0px;width: 21px;vertical-align: bottom;border: 0;}
+.td52{padding: 0px;margin: 0px;width: 89px;vertical-align: bottom;border: 0;}
+.td53{padding: 0px;margin: 0px;width: 13px;vertical-align: bottom;border: 0;}
+.td54{padding: 0px;margin: 0px;width: 61px;vertical-align: bottom;border: 0;}
+.td55{padding: 0px;margin: 0px;width: 541px;vertical-align: bottom;background: #dfdfdf;border: 0;}
+.td56{padding: 0px;margin: 0px;width: 159px;vertical-align: bottom;background: #dfdfdf;border: 0;}
+.td57{padding: 0px;margin: 0px;width: 248px;vertical-align: bottom;border: 0;}
+.td58{padding: 0px;margin: 0px;width: 109px;vertical-align: bottom;border: 0;}
+.td59{padding: 0px;margin: 0px;width: 176px;vertical-align: bottom;border: 0;}
+.td60{padding: 0px;margin: 0px;width: 167px;vertical-align: bottom;border: 0;}
+.td61{padding: 0px;margin: 0px;width: 248px;vertical-align: bottom;border: 0;}
+.td62{padding: 0px;margin: 0px;width: 109px;vertical-align: bottom;border: 0;}
+.td63{padding: 0px;margin: 0px;width: 176px;vertical-align: bottom;border: 0;}
+.td64{padding: 0px;margin: 0px;width: 167px;vertical-align: bottom;border: 0;}
+
+.tr0{height: 32px;border: 0;}
+.tr1{height: 17px;border: 0;}
+.tr2{height: 18px;border: 0;}
+.tr3{height: 28px;border: 0;}
+.tr4{height: 27px;border: 0;}
+.tr5{height: 19px;border: 0;}
+.tr6{height: 16px;border: 0;}
+.tr7{height: 24px;border: 0;}
+.tr8{height: 8px;border: 0;}
+.tr9{height: 13px;border: 0;}
+.tr10{height: 5px;border: 0;}
+.tr11{height: 14px;border: 0;}
+.tr12{height: 20px;border: 0;}
+.tr13{height: 4px;border: 0;}
+.tr14{height: 9px;border: 0;}
+.tr15{height: 21px;border: 0;}
+.tr16{height: 15px;border: 0;}
+.tr17{height: 3px;border: 0;}
+.tr18{height: 23px;border: 0;}
+.tr19{height: 43px;border: 0;}
+
+.t0{width: 100%;font: 11px 'Arial';}
+.t1{width: 100%;margin-top: 20px;font: bold 14px 'Arial';}
+.t2{width: 100%;margin-top: 20px;font: 11px 'Arial';}
+        </style>
+
+<style media="print">
+        body {
+            font-family: 'Segoe UI','Microsoft Sans Serif',sans-serif;
+        }
+
+        header:before, header:after {
+            content: " ";
+            display: table;
+        }
+
+        header:after {
+            clear: both;
+        }
+
+        .invoiceNbr {
+            font-size: 30pt;
+            margin-right: 30pt;
+            margin-top: 30pt;
+            float: right;
+        }
+
+        .invoiceNbrCFDI {
+            font-size: 12pt;
+            margin-right: 30pt;
+            margin-top: 30pt;
+            float: right;
+        }
+
+        .companyNM {
+            font-size: 30pt;
+        }
+
+        .logo {
+            float: left;
+        }
+
+        .from {
+            float: left;
+        }
+
+        .to {
+            float: right;
+        }
+
+        .fromto {
+            margin: 10pt;
+            min-width: 400pt;
+        }
+
+        .fromtocontent {
+            margin: 10pt;
+            margin-right: 15pt;
+        }
+
+        .panel {
+            background-color: #646464;
+            padding: 7pt;
+        }
+
+        .items {
+            clear: both;
+            display: table;
+            padding: 20pt;
+        }
+
+        div[class^="col-"] {
+            display: table-cell;
+            padding: 7pt;
+        }
+
+        .col-1-10 {
+            width: 10%;
+        }
+
+        .col-1-52 {
+            width: 52%;
+        }
+
+        .row {
+            display: table-row;
+            page-break-inside: avoid;
+        }
+
+body {
+            font-family: 'Segoe UI','Microsoft Sans Serif',sans-serif;
+        }
+
+        /*
+            These next two styles are apparently the modern way to clear a float. This allows the logo
+            and the word "Invoice" to remain above the From and To sections. Inserting an empty div
+            between them with clear:both also works but is bad style.
+            Reference:
+            http://stackoverflow.com/questions/490184/what-is-the-best-way-to-clear-the-css-style-float
+        */
+        header:before, header:after {
+            content: " ";
+            display: table;
+        }
+
+        header:after {
+            clear: both;
+        }
+
+        .invoiceNbr {
+            font-size: 40px;
+            margin-right: 30px;
+            margin-top: 30px;
+            float: right;
+        }
+
+        .logo {
+            float: left;
+        }
+
+        .from {
+            float: left;
+        }
+
+        .to {
+            float: right;
+        }
+
+        .fromto {
+            margin: 20px;
+            min-width: 200px;
+        }
+
+        .fromtocontent {
+            margin: 10px;
+            margin-right: 15px;
+        }
+
+        .panel {
+            background-color: #646464;
+            padding: 7px;
+        }
+
+        .items {
+            clear: both;
+            display: table;
+            padding: 20px;
+        }
+
+        /* Factor out common styles for all of the "col-" classes.*/
+        div[class^="col-"] {
+            display: table-cell;
+            padding: 7px;
+        }
+
+        /*for clarity name column styles by the percentage of width */
+        .col-1-10 {
+            width: 10%;
+        }
+
+        .col-1-52 {
+            width: 52%;
+        }
+
+        .row {
+            display: table-row;
+            page-break-inside: avoid;
+        }
+
+    </style>
+
+<header class="header">
+    <div>
+        <table width="100%" style="font-size:12px; padding: 5px;" id="company_address_data">
+            <tr>
+                <td width="30%" style="vertical-align: middle;text-align: center;border: 1px solid white;" >
+                    <img t-if="o.company_id.logo"  t-att-src="image_data_uri(o.company_id.logo)" style="max-width:260px;max-height:89px;" alt="Logo"/>
+                    <br/>
+                </td>
+                <td width="30%" align="center" valign="top" style="border: 1px solid white;">
+                    
+                </td>
+                <td width="40%" align="center" valign="top" style="border: 1px solid white;">
+                        <strong>
+                            <strong>
+                              <span style="font-size:26px;color: #000000;text-align: right;" t-if="o.move_type == 'out_invoice'">
+                                FACTURA
+                              </span>
+                              <span style="font-size:26px;color: #000000;text-align: right;" t-if="o.move_type == 'out_refund'">
+                                NOTA CREDITO
+                              </span>
+                            <br/></strong>
+                        </strong>
+                        <table class="table table-condensed table-bordered" style="font: bold 14px 'Arial';">
+                          <tr>
+                            <td style="padding: 2px; background-color: #dfdfdf; color: #000000;text-align: center;border: 4px solid white;">
+                              <strong style="color: #000000;text-align: center;">Nº Factura</strong>
+                            </td>
+                            <td style="padding: 2px; text-align: center;background-color: #f0f0f0;border: 4px solid white;">
+                               <span t-field="o.name"/>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td style="padding: 2px; background-color: #dfdfdf; color: #000000;text-align: center;border: 4px solid white;">
+                               <strong style="color: #000000;text-align: center;">Fecha Factura</strong>
+                            </td>
+                            <td style="padding: 2px; text-align: center;background-color: #f0f0f0;border: 4px solid white;">
+                               <span t-field="o.invoice_date" t-options="{&quot;widget&quot;: &quot;date&quot;, &quot;format&quot;: &quot;dd/MM/yyyy&quot;}"/>
+                            </td>
+                          </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+<TABLE cellpadding="0" cellspacing="0" width="100%" style="font: 11px 'Arial';width: 100%">
+<TR>
+    <TD class="tr5 td17" style="border: 1px solid white;"><P class="p0 ft2">BONOBO FRUIT S.L.</P></TD>
+    <TD class="tr7 td19" style="border: 1px solid white;"><P class="p5 ft3"> <span t-field="o.partner_id.name"/></P></TD>
+</TR>
+<TR>
+    <TD class="tr6 td0" style="border: 1px solid white;"><P class="p0 ft2">NIF: ESB72644818</P></TD>
+    <TD class="tr9 td21" style="border: 1px solid white;"><P class="p5 ft5"><span t-field="o.partner_id.street"/></P></TD>
+</TR>
+
+<TR>
+    <TD class="tr6 td17" style="border: 1px solid white;"><P class="p0 ft2"><span t-field="o.company_id.street"/></P></TD>
+    <TD class="tr9 td21" style="border: 1px solid white;"><P class="p5 ft5"><span t-field="o.partner_id.street2"/></P></TD>
+</TR>
+<TR>
+    <TD class="tr11 td17" style="border: 1px solid white;"><P class="p0 ft2"><span t-field="o.company_id.zip"/></P></TD>
+    <TD class="tr11 td24" style="border: 1px solid white;"><P class="p5 ft2"><span t-field="o.partner_id.zip"/> <span t-field="o.partner_id.city"/></P></TD>
+</TR>
+<TR>
+    <TD class="tr6 td0" style="border: 1px solid white;"><P class="p0 ft2">Málaga - España</P></TD>
+    <TD class="tr6 td24" style="border: 1px solid white;"><P class="p5 ft2"><span t-field="o.partner_id.country_id.name"/></P></TD>
+</TR>
+<TR>
+    <TD class="tr6 td17" style="border: 1px solid white;"><P class="p0 ft2">Tlf: <span t-field="o.company_id.phone"/></P></TD>
+    <TD class="tr12 td24" style="border: 1px solid white;"><P class="p5 ft3">NIF: <span t-field="o.partner_id.vat"/></P></TD>
+</TR>
+<TR>
+    <TD class="tr9 td17" style="border: 1px solid white;"><P class="p0 ft5"><span t-field="o.company_id.email"/></P></TD>
+    <TD class="tr13 td25" style="border: 1px solid white;"><P class="p0 ft8">&amp;nbsp;</P></TD>
+</TR>
+<TR>
+    <TD colspan="2" class="tr5 td17" style="border: 1px solid white;"><P class="p0 ft2"><span t-field="o.company_id.website"/></P></TD>
+    <TD class="tr1 td18" style="border: 1px solid white;"><P class="p0 ft0">&amp;nbsp;</P></TD>
+</TR>
+</TABLE>
+
+<TABLE cellpadding="0" cellspacing="0" style="font: 11px 'Arial';width: 100%">
+<TR>
+    <TD colspan="2" class="tr12 td30"><P class="p6 ft2">Dirección de Entrega:</P></TD>
+    <TD class="tr12 td31"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr15 td3"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD colspan="3" class="tr12 td32"><P class="p7 ft2">Nº PEDIDO:</P></TD>
+    <TD class="tr12 td15"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr12 td31"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr12 td33"><P class="p0 ft0">&amp;nbsp;</P></TD>
+</TR>
+<TR>
+    <TD class="tr13 td0"><P class="p0 ft8">&amp;nbsp;</P></TD>
+    <TD class="tr13 td1"><P class="p0 ft8">&amp;nbsp;</P></TD>
+    <TD class="tr13 td2"><P class="p0 ft8">&amp;nbsp;</P></TD>
+    <TD class="tr13 td3"><P class="p0 ft8">&amp;nbsp;</P></TD>
+    <TD class="tr13 td4"><P class="p0 ft8">&amp;nbsp;</P></TD>
+    <TD class="tr13 td5"><P class="p0 ft8">&amp;nbsp;</P></TD>
+    <TD class="tr13 td6"><P class="p0 ft8">&amp;nbsp;</P></TD>
+    <TD class="tr13 td7"><P class="p0 ft8">&amp;nbsp;</P></TD>
+    <TD class="tr13 td2"><P class="p0 ft8">&amp;nbsp;</P></TD>
+    <TD class="tr13 td18"><P class="p0 ft8">&amp;nbsp;</P></TD>
+</TR>
+<TR>
+    <TD class="tr12 td34" colspan="3"><span style="padding-left: 10px;" t-esc="o.project_reference"/></TD>
+    <TD class="tr12 td3"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr12 td27" colspan="6"><span style="padding-left: 30px;" t-esc="o.get_sale_order_name()"/></TD>
+</TR>
+<TR>
+    <TD class="tr1 td0"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr1 td1"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr1 td2"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr1 td3"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr1 td4"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr1 td5"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr1 td6"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr1 td7"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr1 td2"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr1 td18"><P class="p0 ft0">&amp;nbsp;</P></TD>
+</TR>
+</TABLE>
+<TABLE cellpadding="0" cellspacing="0" style="font: 13px 'Arial';width: 100%">
+
+<TR>
+    <TD class="tr2 td36"><P class="p6 ft2">Código</P></TD>
+    <TD class="tr2 td37"><P class="p0 ft2">Concepto</P></TD>
+    <TD class="tr2 td38"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr2 td39"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr2 td40"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr2 td9"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr2 td10"><P class="p8 ft2">Cantidad</P></TD>
+    <TD class="tr2 td10"><P class="p8 ft2">Cantidad Secundaria</P></TD>
+    <TD class="tr2 td41"><P class="p9 ft2">Precio unit.</P></TD>
+    <TD class="tr2 td41"><P class="p9 ft2">Descuento</P></TD>
+    <TD class="tr2 td42"><P class="p10 ft2">Total</P></TD>
+</TR>
+
+<t t-set="lines" t-value="o.invoice_line_ids.sorted(key=lambda l: (-l.sequence, l.date, l.move_name, -l.id), reverse=True)"/>
+
+<t t-foreach="lines" t-as="line">
+    <TR>
+        <TD class="tr1 td0"><P class="p6 ft2">
+                                <span t-field="line.product_id.default_code"/>
+                            </P>
+        </TD>
+        <TD colspan="5" class="tr1 td44"><P class="p0 ft2">
+                                            <span t-field="line.product_id.name"/>
+                                        </P>
+        </TD>
+        <TD class="tr1 td6"><P class="p8 ft2">
+                                <span t-field="line.quantity"/>
+                                <span t-field="line.product_uom_id"  groups="uom.group_uom"/>
+                            </P>
+        </TD>
+
+          <TD class="tr1 td6"><P class="p8 ft2">
+                                <span t-field="line.secondary_uom_qty"/>
+                                 <span t-field="line.secondary_uom_id" />
+                            </P>
+        </TD>
+        
+        <TD class="tr1 td45"><P class="p9 ft2">
+                                            <span class="text-nowrap" t-field="line.price_unit"/>
+                                        </P>
+        </TD>
+        <TD class="tr1 td45"><P class="p9 ft2">
+                                            <span class="text-nowrap" t-field="line.discount"/>
+                                        </P>
+        </TD>
+        <TD class="tr1 td18"><P class="p11 ft2">
+                                <span class="text-nowrap" t-field="line.price_subtotal" groups="account.group_show_line_subtotals_tax_excluded"/>
+                                <span class="text-nowrap" t-field="line.price_total" groups="account.group_show_line_subtotals_tax_included"/>
+                            </P>
+        </TD>
+    </TR>
+</t>
+</TABLE>
+
+
+<TABLE cellpadding="0" cellspacing="0" class="t1">
+<TR>
+    <TD class="tr18 td55"><P class="p12 ft11">Total neto:</P></TD>
+    <TD class="tr18 td56"><P class="p11 ft11"><span t-field="o.amount_untaxed"/></P></TD>
+</TR>
+<t t-set="tax_totals" t-value="o.tax_totals"/>
+<!-- <t t-foreach="o.amount_by_group" t-as="amount_by_group"> -->
+<t t-foreach="tax_totals['subtotals']" t-as="subtotal">
+
+    <tr style="">
+        <TR>
+            <TD class="tr18 td55"><P class="p12 ft12"><span class="text-nowrap" t-esc="subtotal['name']"/></P></TD>
+            <TD class="tr18 td56"><P class="p11 ft12"><span class="text-nowrap" t-esc="subtotal['formatted_amount']"/></P></TD>
+        </TR>
+    </tr>
+</t>                              
+
+<TR>
+    <TD class="tr3 td55"><P class="p12 ft11">Total Factura (EUR):</P></TD>
+    <TD class="tr3 td56"><P class="p11 ft11"><span class="text-nowrap" t-field="o.amount_total"/></P></TD>
+</TR>
+<TR>
+    <TD class="tr14 td55"><P class="p0 ft9">&amp;nbsp;</P></TD>
+    <TD class="tr14 td56"><P class="p0 ft9">&amp;nbsp;</P></TD>
+</TR>
+</TABLE>
+<br/>
+<span><strong>LOTE(s)/SERIE(s):</strong></span>
+<t t-set="lot_values" t-value="o._get_invoiced_lot_values()"/>
+<t t-if="lot_values">
+    <br/>
+    <table groups="sale_stock.group_lot_on_invoice" class="table table-sm" style="width: 70%;" name="invoice_snln_table">
+        <thead>
+            <tr>
+                <th  style="font: 11px 'Arial';"><span>Product</span></th>
+                <th class="text-right" style="font: 11px 'Arial';"><span>Quantity</span></th>
+                <th class="text-right" style="font: 11px 'Arial';"><span>SN/LN</span></th>
+            </tr>
+        </thead>
+        <tbody>
+            <t t-foreach="lot_values" t-as="snln_line">
+                <tr>
+                    <td style="font: 11px 'Arial';"><t t-esc="snln_line['product_name']"/></td>
+                    <td style="font: 11px 'Arial';" class="text-right">
+                        <t t-esc="snln_line['quantity']"/>
+                        <t t-esc="snln_line['uom_name']" groups="uom.group_uom"/>
+                    </td>
+                    <td class="text-right" style="font: 11px 'Arial';"><t t-esc="snln_line['lot_name']"/></td>
+                </tr>
+            </t>
+        </tbody>
+    </table>
+</t>
+
+<span t-raw="o.company_id.x_footer_info" t-if="o.company_id.x_footer_info"/>
+  
+
+<!-- <div>
+    <span style="font: 11px 'Arial';line-height: 14px;text-align: left;">
+        <strong>
+        Producto procedente de la Agricultura Ecológica
+        <br/>
+        Certificado por ECOAND-22-C17/22
+        <br/>
+        INSTRUCCIONES DE PAGO :
+        </strong>
+    </span>
+    <br/>
+    <span style="font: 11px 'Arial';line-height: 14px;text-align: left;">
+        <ul>
+            <li>
+                <strong>Vencimiento:</strong> TRANSFERENCIA 30 DÍAS
+            </li>
+            <li>
+                <strong>Banco:</strong> ABANCA
+            </li>
+            <li>
+                <strong>IBAN:</strong> ES52 2080 1134 2030 4010 4979
+            </li>
+            <li>
+                <strong>Swift Code:</strong> CAGLESMMXXX
+            </li>
+            <li>
+                <strong>Beneficiario:</strong> BONOBO FRUIT, S.L. 
+            </li>
+        </ul>
+      </span>
+</div> -->
+
+</div> <!-- Fin del  div class page -->
+
+        <div class="footer">
+            
+            <table style="width: 100%">
+                <tr>
+                  <td width="40%" style="padding: 0px;border: 1px solid white;">
+                    <span style="font: 8px 'Arial';text-align: left;">
+                          <strong>
+                          Producto procedente de la Agricultura Convencional
+                          <br/>
+                          Certificado por ES-ECO-011-AN
+                          <br/>
+                          INSTRUCCIONES DE PAGO :
+                          </strong>
+                      </span>
+                      <br/>
+                      <span style="font: 8px 'Arial';text-align: left;">
+                          <ul>
+                              <li>
+                                  <strong>Vencimiento:</strong> TRANSFERENCIA 30 DÍAS
+                              </li>
+                              <li>
+                                  <strong>Banco:</strong> ABANCA
+                              </li>
+                              <li>
+                                  <strong>IBAN:</strong> ES52 2080 1134 2030 4010 4979
+                              </li>
+                              <li>
+                                  <strong>Swift Code:</strong> CAGLESMMXXX
+                              </li>
+                              <li>
+                                  <strong>Beneficiario:</strong> BONOBO FRUIT, S.L. 
+                              </li>
+                          </ul>
+                      </span>
+                  </td>
+                  <td width="70%" align="justify" style="padding: 0px;border: 1px solid white;">
+                    <span style="font: 8px 'Arial';padding: 0px;" align="justify">
+                      Entrega intracomunitaria exenta por aplicación del art. 25 de la Ley 37/1992, del IVA. Operación asegurada por Solunion España. REGISTRO MERCANTIL DE MÁLAGA, TOMO 6235, LIBRO 5142, FOLIO 223, HOJA MA169974.
+                      En cumplimiento con lo establecido en la ley de protección de datos, le comunicamos que los datos que usted nos facilite quedarán incorporados y serán tratados en los ficheros de titularidad BONOBO FRUIT, S.L., únicamente, por motivos contables y fiscales. Para ejecer los derechos de acceso, rectificación, cancelación y oposición de sus datos de carácter personal. Debe dirigirse a BONOBO FRUIT, S.L.
+                    </span>
+
+                  </td>
+                </tr>
+                
+            </table>
+            
+            
+            <table style="width: 100%">
+                <tr>
+                    <td style="font-size:11px;width: 15%;text-align: center;border: 1px solid #07190B;border-collapse: collapse;padding: 1px;border-bottom: 1px;border-left: 1px;border-right: 1px;">
+                        <span t-esc="user.company_id.name"/>
+                    </td>
+                    <td style="width: 20%;text-align: left;border: 1px solid #07190B;border-collapse: collapse;padding: 1px;border-bottom: 1px;border-left: 1px;border-right: 1px;">
+                    </td>
+                    <td style="width: 50%;text-align: center;border: 1px solid #07190B;border-collapse: collapse;padding: 1px;border-bottom: 1px;border-left: 1px;border-right: 1px;">
+                    </td>
+                    <td style="width: 15%;text-align: right;border: 1px solid #07190B;border-collapse: collapse;padding: 1px;border-bottom: 1px;border-left: 1px;border-right: 1px;">
+
+                         <strong style="font-size:11px;text-align: center;"><span>   Pagina </span><span class="page"/> de <span class="topage"/></strong>                       
+                    </td>
+                </tr>
+            </table>
+        </div>
+      </t>
+    </template>
+
+    <template id="report_invoice_sls_convencional">
+        <t t-call="web.html_container">
+            <t t-set="data_report_margin_top" t-value="8"/>
+            <t t-set="data_report_header_spacing" t-value="7"/>
+            <!--<t t-set="data_report_dpi" t-value="600"/>-->
+            <t t-foreach="docs" t-as="o">
+                <t t-call="account_invoice_report_sls.report_invoice_document_sls_convencional" t-lang="o.partner_id.lang"/>
+            </t>
+        </t>
+    </template>
+
+    
+    <record id="factura_bonobo_paper_a4_convencional" model="report.paperformat">
+        <field name="page_height">0</field>
+        <field name="page_width">0</field>
+        <field name="header_spacing">35</field>
+        <field name="margin_top">10</field>
+        <field name="margin_right">7</field>
+        <field name="margin_bottom">40</field>
+        <field name="margin_left">7</field>
+        <field name="header_line" eval="False"/>
+        <field name="name">A4 Factura (Bonobo)</field>
+        <field name="orientation">Portrait</field>
+        <field name="dpi">90</field>
+        <field name="default" eval="True"/>
+        <field name="format">A4</field>
+    </record>
+
+    
+    <record id="account_invoices_sls_convencional" model="ir.actions.report">
+        <field name="name">Factura Convencional (Bonobo)</field>
+        <field name="model">account.move</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">account_invoice_report_sls.report_invoice_sls_convencional</field>
+        <field name="report_file">account_invoice_report_sls.report_invoice_sls_convencional</field>
+        <field name="attachment_use" eval="True" />
+        <field name="print_report_name">(object.name or '').replace('/','_').replace(' ','_')  +'.pdf'</field>
+        <field name="binding_model_id" ref="model_account_move"/>
+        <field name="binding_type">report</field>
+        <field name="paperformat_id" ref="account_invoice_report_sls.factura_bonobo_paper_a4_convencional" />
+    </record>
+
+  </data>
+</odoo>

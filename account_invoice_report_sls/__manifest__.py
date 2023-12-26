@@ -37,6 +37,7 @@
     'data': [
         'account_view.xml',
         'report/account_report_pdf.xml',
+        'report/account_report_convencional_pdf.xml',
         ],
     'installable': True,
 }
