@@ -52,7 +52,7 @@ class InvoiceExportAnalysis(models.TransientModel):
         
         taxes_name_list = []
         for rec in move_obj.browse(active_ids):
-            print ("### o.tax_totals: ", o.tax_totals)
+            print ("### o.tax_totals: ", rec.tax_totals)
         for rec in move_obj.browse(active_ids):
             
             line_data = {
