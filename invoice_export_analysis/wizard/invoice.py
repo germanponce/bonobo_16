@@ -105,7 +105,7 @@ class InvoiceExportAnalysis(models.TransientModel):
         columns.append(['TOTAL', 'FLOAT'])
         return xlines,columns
    
-    def prepare_worksheet(self, workbook, data_exists, row=3):
+    def prepare_worksheet(self, workbook, data_exists, row=4):
         """
         crea una pestaña de excel
         regresa el workbook 
@@ -136,7 +136,7 @@ class InvoiceExportAnalysis(models.TransientModel):
             #SE CREA LA TABLA DEL REPORTE
             #SE CREAN LOS NOMBRES DE COLUMNAS
             #row = start_row # la primera sera en 7
-            worksheet.write(row ,0, "FACTURAS", cell_formats['BOLD'])
+            worksheet.write(row ,0, "REGISTROS SELECCIONADOS", cell_formats['BOLD'])
             row += 1
             column = 0
             column_titles = [x[0] for x in columns]
