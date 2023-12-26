@@ -675,7 +675,7 @@ body {
         <div class="footer">
             
             <table style="width: 100%">
-                <tr>
+                <tr style=";border: 0px;">
                   <td width="40%;padding: 0px;border: 0px;">
                     <span style="font: 8px 'Arial';text-align: left;">
                           <strong>
