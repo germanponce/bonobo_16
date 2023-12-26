@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Analisis -->
+        <record id="stock_kardex_line_tree" model="ir.ui.view">
+            <field name="name">stock.kardex.line.tree</field>
+            <field name="model">stock.kardex.line</field>
+            <field name="arch" type="xml">
+                <tree string="Kardex Productos" create="false" delete="false">
+                    <field name="warehouse_id" readonly="1"  optional="show"/>
+                    <field name="product_id" readonly="1"  optional="show"/>
+                    <field name="category_id" readonly="1"  optional="show"/>
+                    <field name="date" readonly="1"  optional="show"/>
+                    <field name="stock_move" readonly="1"  optional="show"/>
+                    <field name="stock_move_origin" readonly="1"  optional="show"/>
+                    <field name="invoice" readonly="1"  optional="show"/>
+                    <field name="import_info" readonly="1"  optional="show"/>
+                    <field name="lot_info" readonly="1"  optional="show"/>
+                    <field name="partner_name" readonly="1"  optional="show"/>
+                    <field name="account_move_name" readonly="1"  optional="show"/>
+                    <field name="origin" readonly="1"  optional="show"/>
+                    <field name="destiny" readonly="1"  optional="show"/>
+                    <field name="udm" readonly="1"  optional="show"/>
+                    <field name="entrancy_qty" readonly="1" sum="Total" optional="show"/>
+                    <field name="outgoing_qty" readonly="1" sum="Total" optional="show"/>
+                    <field name="stock_qty" readonly="1" sum="Total" optional="show"/>
+                    <field name="purchase_price" readonly="1" sum="Total" optional="show"/>
+                    <field name="cost_unit" readonly="1" sum="Total" optional="show"/>
+                    <field name="entrancy_qty_cost" readonly="1" sum="Total" optional="show"/>
+                    <field name="outgoing_qty_cost" readonly="1" sum="Total" optional="show"/>
+                    <field name="quantity_total" readonly="1" sum="Total" optional="show"/>
+                    <field name="state" readonly="1" optional="show" />
+                    <field name="move_type" readonly="1" optional="show"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="stock_kardex_line_form" model="ir.ui.view">
+            <field name="name">stock.kardex.line.form</field>
+            <field name="model">stock.kardex.line</field>
+            <field name="arch" type="xml">
+                <form string="Kardex Producto" create="false" delete="false">
+                    <sheet>
+                        <group>
+                            <field name="warehouse_id" readonly="1" />
+                            <field name="product_id" readonly="1" />
+                            <field name="category_id" readonly="1" />
+                            <field name="date" readonly="1" />
+                            <field name="stock_move" readonly="1" />
+                            <field name="stock_move_origin" readonly="1" />
+                            <field name="invoice" readonly="1" />
+                            <field name="import_info" readonly="1" />
+                            <field name="lot_info" readonly="1" />
+                            <field name="partner_name" readonly="1" />
+                            <field name="account_move_name" readonly="1" />
+                            <field name="origin" readonly="1" />
+                            <field name="destiny" readonly="1" />
+                            <field name="udm" readonly="1" />
+                            <field name="entrancy_qty" readonly="1" />
+                            <field name="outgoing_qty" readonly="1" />
+                            <field name="stock_qty" readonly="1" />
+                            <field name="purchase_price" readonly="1" />
+                            <field name="cost_unit" readonly="1" />
+                            <field name="entrancy_qty_cost" readonly="1" />
+                            <field name="outgoing_qty_cost" readonly="1" />
+                            <field name="quantity_total" readonly="1" />
+                            <field name="state" readonly="1" />
+                            <field name="move_type" readonly="1" />
+                        </group>
+                    </sheet>
+                    
+                </form>
+            </field>
+        </record>
+
+
+        <record id="stock_kardex_line_search" model="ir.ui.view">
+            <field name="name">stock.kardex.line.serch</field>
+            <field name="model">stock.kardex.line</field>
+            <field name="arch" type="xml">
+                <search string="Kardex Productos">
+                    <field name="warehouse_id" readonly="1" />
+                    <field name="product_id" readonly="1" />
+                    <field name="category_id" readonly="1" />
+                    <field name="date" readonly="1" />
+                    <field name="stock_move" readonly="1" />
+                    <field name="stock_move_origin" readonly="1" />
+                    <field name="invoice" readonly="1" />
+                    <field name="import_info" readonly="1" />
+                    <field name="lot_info" readonly="1" />
+                    <field name="partner_name" readonly="1" />
+                    <field name="account_move_name" readonly="1" />
+                    <field name="origin" readonly="1" />
+                    <field name="destiny" readonly="1" />
+                    <field name="udm" readonly="1" />
+                    <field name="state" readonly="1" />
+                    <field name="move_type" readonly="1" />
+                </search>
+            </field>
+        </record>
+
+        <record id="action_stock_kardex_line" model="ir.actions.act_window">
+            <field name="name">Kardex Productos</field>
+            <field name="res_model">stock.kardex.line</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="stock_kardex_line_tree"/>
+        </record>
+
+
+        <!-- Asistente -->
+        <record id="view_kardex_form" model="ir.ui.view">
+            <field name="name">stock.kardex.form</field>
+            <field name="model">stock.kardex</field>
+            <field name="priority">2</field>
+            <field name="arch" type="xml">
+                <form string="Kardex" create="false" edit="false">
+
+                    <header>
+                        <field name="datas_fname" invisible="1" />
+                        <field name="download_file" invisible="1" />
+                    </header>
+
+                    <sheet>
+                        <group>
+                            <field name="type_data" required="1" />
+                            <field name="product_ids" widget="many2many_tags" attrs="{'invisible':[('type_data','!=','products')],'required':[('type_data','=','products')]}" />
+                            <field name="category_ids" widget="many2many_tags" attrs="{'invisible':[('type_data','!=','category')],'required':[('type_data','=','category')]}" />
+                            <field name="include_categ_childs" attrs="{'invisible':[('type_data','!=','category')],'required':[('type_data','=','category')]}" />
+                            <field name="product_id" invisible="1" />
+                            <field name="warehouse_id" />
+                            <field name="start_date" />
+                            <field name="end_date" />
+
+                            <field name="output_type" required="1" />
+                        </group>
+                        <hr/>
+                        <div attrs="{'invisible':[('download_file','=',False)]}">
+                            <h2>Generación del Kardex Finalizado</h2>
+                            <p>Descargar: <field name="file" readonly="1" filename="datas_fname"/></p>
+                        </div>
+                    </sheet>
+                    <footer>
+                        <center>
+                            <button name="calculate" string="Generar Reporte" type="object"  icon="fa-cogs"/>
+                            o
+                            <button string="Cerrar" class="oe_link" special="cancel" icon="fa-window-close"/>
+                        </center>
+                    </footer>
+
+                </form>
+            </field>
+        </record>
+
+    <record id="action_kardex" model="ir.actions.act_window">
+      <field name="name">KARDEX</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">stock.kardex</field>
+      <field name="view_mode">form</field>
+      <field name="view_id" ref="kardex.view_kardex_form"/>
+      <field name="target">new</field>
+    </record>
+
+    <menuitem name="Reporte Kardex" 
+        action="action_kardex" 
+        id="menu_kardex_action" 
+        parent="stock.menu_warehouse_report" 
+        groups="kardex_user"/>
+
+
+    </data>
+</odoo>
