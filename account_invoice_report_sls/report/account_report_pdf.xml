@@ -586,21 +586,15 @@ body {
     <TD class="tr18 td55"><P class="p12 ft11">Total neto:</P></TD>
     <TD class="tr18 td56"><P class="p11 ft11"><span t-field="o.amount_untaxed"/></P></TD>
 </TR>
-<t t-foreach="o.amount_by_group" t-as="amount_by_group">
+<t t-set="tax_totals" t-value="o.tax_totals"/>
+<!-- <t t-foreach="o.amount_by_group" t-as="amount_by_group"> -->
+<t t-foreach="tax_totals['subtotals']" t-as="subtotal">
 
     <tr style="">
-        <t t-if="len(o.line_ids.filtered(lambda line: line.tax_line_id)) in [0, 1] and o.amount_untaxed == amount_by_group[2]">
-            <TR>
-                <TD class="tr18 td55"><P class="p12 ft12"><span class="text-nowrap" t-esc="amount_by_group[0]"/></P></TD>
-                <TD class="tr18 td56"><P class="p11 ft12"><span class="text-nowrap" t-esc="amount_by_group[3]"/></P></TD>
-            </TR>
-        </t>
-        <t t-else="">
-            <TR>
-                <TD class="tr18 td55"><P class="p12 ft12"><span class="text-nowrap" t-esc="amount_by_group[0]"/></P></TD>
-                <TD class="tr18 td56"><P class="p11 ft12"><span class="text-nowrap" t-esc="amount_by_group[3]"/></P></TD>
-            </TR>
-        </t>
+        <TR>
+            <TD class="tr18 td55"><P class="p12 ft12"><span class="text-nowrap" t-esc="subtotal['name']"/></P></TD>
+            <TD class="tr18 td56"><P class="p11 ft12"><span class="text-nowrap" t-esc="subtotal['formatted_amount']"/></P></TD>
+        </TR>
     </tr>
 </t>                              
 
