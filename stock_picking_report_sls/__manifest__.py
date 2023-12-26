@@ -33,6 +33,7 @@
                     'stock',
                     'sale_stock',
                     'account',
+                    'sale_order_secondary_unit',
                 ],
     'data': [
         'security/ir.model.access.csv',

@@ -80,7 +80,13 @@ class StockKardexLine(models.Model):
     move_type = fields.Char('Tipo Movimiento')
 
     user_id = fields.Many2one('Usuario', default=_get_current_user)
-    
+
+    bonobo_origin_id = fields.Many2one('bonobo.origin', 'Origen')
+    bonobo_agricultrura_id = fields.Many2one('bonobo.agricultura', 'Agricultura')
+    bonobo_variedad_id = fields.Many2one('bonobo.variedad', 'Variedad')
+    bonobo_calibre_id = fields.Many2one('bonobo.calibre', 'Calibre')
+
+    sale_secondary_uom_id = fields.Many2one(comodel_name="product.secondary.unit", string="2a Unida de Medida")
 
 class StockKardex(models.TransientModel):
     _name = 'stock.kardex'
@@ -532,6 +538,11 @@ class StockKardex(models.TransientModel):
                                 'state': estado or '', 
                                 'move_type': tipo or '', 
                                 'user_id': current_user_id,
+                                'bonobo_origin_id': rec.product_id.bonobo_origin_id.id if rec.product_id.bonobo_origin_id else False,
+                                'bonobo_agricultrura_id': rec.product_id.bonobo_agricultrura_id.id if rec.product_id.bonobo_agricultrura_id else False,
+                                'bonobo_variedad_id': rec.product_id.bonobo_variedad_id.id if rec.product_id.bonobo_variedad_id else False,
+                                'bonobo_calibre_id': rec.product_id.bonobo_calibre_id.id if rec.product_id.bonobo_calibre_id else False,
+                                'sale_secondary_uom_id': rec.product_id.sale_secondary_uom_id.id if rec.product_id.sale_secondary_uom_id else False,
                             }
                     kardex_id = kardex_obj.create(xline)
 
@@ -708,6 +719,7 @@ class StockKardex(models.TransientModel):
         start_date = self.start_date
         end_date = self.end_date
         product_name = self.product_id.name
+
         warehouse_name = self.warehouse_id.name
         company_name = self.company_id.name
         fname=tempfile.NamedTemporaryFile(suffix='.xlsx',delete=False)

@@ -61,6 +61,8 @@ class ProductTemplate(models.Model):
     bonobo_variedad_name = fields.Char('Variedad', related="bonobo_variedad_id.name", store=True)
     bonobo_calibre_name = fields.Char('Calibre', related="bonobo_calibre_id.name", store=True)
 
+    # sale_secondary_uom_id = fields.Many2one(comodel_name="product.secondary.unit", string="2a Unida de Medida")
+
 # Crear campos extras a Odoo en la ficha de Productos, Campos que hay que añadir; Origen, Agricultura, variedad, calibre
 # Doble unidad de medida para gestionar KG y Cajas
 

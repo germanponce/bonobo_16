@@ -11,6 +11,10 @@
                     <field name="warehouse_id" readonly="1"  optional="show"/>
                     <field name="product_id" readonly="1"  optional="show"/>
                     <field name="category_id" readonly="1"  optional="show"/>
+                    <field name="bonobo_origin_id" readonly="1"  optional="show"/>
+                    <field name="bonobo_agricultrura_id" readonly="1"  optional="show"/>
+                    <field name="bonobo_variedad_id" readonly="1"  optional="show"/>
+                    <field name="bonobo_calibre_id" readonly="1"  optional="show"/>
                     <field name="date" readonly="1"  optional="show"/>
                     <field name="stock_move" readonly="1"  optional="show"/>
                     <field name="stock_move_origin" readonly="1"  optional="show"/>
@@ -22,6 +26,7 @@
                     <field name="origin" readonly="1"  optional="show"/>
                     <field name="destiny" readonly="1"  optional="show"/>
                     <field name="udm" readonly="1"  optional="show"/>
+                    <field name="sale_secondary_uom_id" readonly="1" optional="show"/>
                     <field name="entrancy_qty" readonly="1" sum="Total" optional="show"/>
                     <field name="outgoing_qty" readonly="1" sum="Total" optional="show"/>
                     <field name="stock_qty" readonly="1" sum="Total" optional="show"/>
@@ -46,6 +51,10 @@
                             <field name="warehouse_id" readonly="1" />
                             <field name="product_id" readonly="1" />
                             <field name="category_id" readonly="1" />
+                            <field name="bonobo_origin_id" readonly="1" />
+                            <field name="bonobo_agricultrura_id" readonly="1" />
+                            <field name="bonobo_variedad_id" readonly="1" />
+                            <field name="bonobo_calibre_id" readonly="1" />
                             <field name="date" readonly="1" />
                             <field name="stock_move" readonly="1" />
                             <field name="stock_move_origin" readonly="1" />
@@ -57,6 +66,7 @@
                             <field name="origin" readonly="1" />
                             <field name="destiny" readonly="1" />
                             <field name="udm" readonly="1" />
+                            <field name="sale_secondary_uom_id" readonly="1" />
                             <field name="entrancy_qty" readonly="1" />
                             <field name="outgoing_qty" readonly="1" />
                             <field name="stock_qty" readonly="1" />
@@ -83,6 +93,10 @@
                     <field name="warehouse_id" readonly="1" />
                     <field name="product_id" readonly="1" />
                     <field name="category_id" readonly="1" />
+                    <field name="bonobo_origin_id" readonly="1" />
+                    <field name="bonobo_agricultrura_id" readonly="1" />
+                    <field name="bonobo_variedad_id" readonly="1" />
+                    <field name="bonobo_calibre_id" readonly="1" />
                     <field name="date" readonly="1" />
                     <field name="stock_move" readonly="1" />
                     <field name="stock_move_origin" readonly="1" />
@@ -94,6 +108,7 @@
                     <field name="origin" readonly="1" />
                     <field name="destiny" readonly="1" />
                     <field name="udm" readonly="1" />
+                    <field name="sale_secondary_uom_id" readonly="1" />
                     <field name="state" readonly="1" />
                     <field name="move_type" readonly="1" />
                 </search>

@@ -13,6 +13,7 @@
     'depends': [
         "stock_account",
         "purchase_stock",
+        "stock_picking_report_sls",
         # "stock_landed_costs",
         # "l10n_mx_edi_landing",
     ],
