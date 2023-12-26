@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Asistente -->
+        <record id="view_invoice_analysis_export_form" model="ir.ui.view">
+            <field name="name">invoice.export.analysis.form</field>
+            <field name="model">invoice.export.analysis</field>
+            <field name="priority">2</field>
+            <field name="arch" type="xml">
+                <form string="Exportar Facturas" create="false" edit="false">
+
+                    <header>
+                        <field name="datas_fname" invisible="1" />
+                        <field name="download_file" invisible="1" />
+                    </header>
+
+                    <sheet>
+                        <group>
+                            <field name="output_type" required="1" />
+                        </group>
+                        <hr/>
+                        <div attrs="{'invisible':[('download_file','=',False)]}">
+                            <h2>Generación del Reporte Finalizado</h2>
+                            <p>Descargar: <field name="file" readonly="1" filename="datas_fname"/></p>
+                        </div>
+                    </sheet>
+                    <footer>
+                        <center>
+                            <button name="calculate" string="Generar Reporte" type="object"  icon="fa-cogs"/>
+                            o
+                            <button string="Cerrar" class="oe_link" special="cancel" icon="fa-window-close"/>
+                        </center>
+                    </footer>
+
+                </form>
+            </field>
+        </record>
+
+    <record id="action_invoice_export_analysis" model="ir.actions.act_window">
+      <field name="name">Exportar Facturas</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">invoice.export.analysis</field>
+      <field name="view_mode">form</field>
+      <field name="binding_model_id" ref="account.model_account_move"/>
+      <field name="view_id" ref="invoice_export_analysis.invoice.export.analysis"/>
+      <field name="target">new</field>
+    </record>
+
+    <!-- <menuitem name="Exportar Facturas" 
+        action="action_invoice_export_analysis" 
+        id="menu_kardex_action" 
+        parent="stock.menu_warehouse_report" 
+        groups="kardex_user"/> -->
+
+
+    </data>
+</odoo>
