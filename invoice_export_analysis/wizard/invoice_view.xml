@@ -43,7 +43,7 @@
       <field name="res_model">invoice.export.analysis</field>
       <field name="view_mode">form</field>
       <field name="binding_model_id" ref="account.model_account_move"/>
-      <field name="view_id" ref="invoice_export_analysis.invoice.export.analysis"/>
+      <field name="view_id" ref="invoice_export_analysis.view_invoice_analysis_export_form"/>
       <field name="target">new</field>
     </record>
 
