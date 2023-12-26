@@ -47,17 +47,19 @@ class BonoboCalibre(models.Model):
     _description = 'Bonobo Calibre'
     
     name = fields.Char('Descripcion', size=128, required=True)
-
-    
-    
     
 class ProductTemplate(models.Model):
     _inherit ='product.template'
 
-    bonobo_origin = fields.Many2one('bonobo.origin', 'Origen')
-    bonobo_agricultrura = fields.Many2one('bonobo.agricultura', 'Agricultura')
-    bonobo_variedad = fields.Many2one('bonobo.variedad', 'Variedad')
-    bonobo_calibre = fields.Many2one('bonobo.calibre', 'Calibre')
+    bonobo_origin_id = fields.Many2one('bonobo.origin', 'Origen')
+    bonobo_agricultrura_id = fields.Many2one('bonobo.agricultura', 'Agricultura')
+    bonobo_variedad_id = fields.Many2one('bonobo.variedad', 'Variedad')
+    bonobo_calibre_id = fields.Many2one('bonobo.calibre', 'Calibre')
+
+    bonobo_origin = fields.Char('Origen', related="bonobo_origin_id.name", store=True)
+    bonobo_agricultrura = fields.Char('Agricultura', related="bonobo_agricultrura_id.name", store=True)
+    bonobo_variedad = fields.Char('Variedad', related="bonobo_variedad_id.name", store=True)
+    bonobo_calibre = fields.Char('Calibre', related="bonobo_calibre_id.name", store=True)
 
 # Crear campos extras a Odoo en la ficha de Productos, Campos que hay que añadir; Origen, Agricultura, variedad, calibre
 # Doble unidad de medida para gestionar KG y Cajas

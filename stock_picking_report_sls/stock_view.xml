@@ -20,7 +20,16 @@
         <field name="arch" type="xml">
             <field name="uom_id" position="after">
                 <field
-                    name="sale_secondary_uom_id"
+                    name="bonobo_origin_id"
+                />
+                <field
+                    name="bonobo_agricultrura_id"
+                />
+                <field
+                    name="bonobo_variedad_id"
+                />
+                <field
+                    name="bonobo_calibre_id"
                 />
             </field>
         </field>
