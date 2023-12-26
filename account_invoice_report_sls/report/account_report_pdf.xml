@@ -388,7 +388,7 @@ body {
 <TR>
     <TD class="tr6 td0" style="border: 1px solid white;"><P class="p0 ft2">NIF: ESB72644818</P></TD>
     <TD class="tr6 td1" style="border: 1px solid white;"><P class="p0 ft0">&amp;nbsp;</P></TD>
-    <TD colspan="7" rowspan="2" class="tr7 td19" style="border: 1px solid white;"><P class="p5 ft3"> <span t-field="o.partner_id.name"/></P></TD>
+    <TD colspan="7" rowspan="2" class="tr7 td19" style="border: 1px solid #f0f0f0;"><P class="p5 ft3"> <span t-field="o.partner_id.name"/></P></TD>
     <TD class="tr6 td20" style="border: 1px solid white;"><P class="p0 ft0">&amp;nbsp;</P></TD>
 </TR>
 <TR>
