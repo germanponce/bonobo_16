@@ -340,7 +340,7 @@ body {
         <table width="100%" style="font-size:12px; border-collapse: collapse;padding: 5px;" id="company_address_data">
             <tr>
                 <td width="30%" style="vertical-align: middle;text-align: center;">
-                    <img t-if="o.company_id.logo" t-att-src="'data:image/png;base64,%s' % to_text(o.company_id.logo)" style="max-height: 90px;height: 90px;"/>
+                    <img t-if="o.company_id.logo"  t-att-src="image_data_uri(o.company_id.logo)" style="max-width:260px;max-height:89px;" alt="Logo"/>
                     <br/>
                 </td>
                 <td width="30%" align="center" valign="top">
