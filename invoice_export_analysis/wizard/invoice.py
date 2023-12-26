@@ -74,7 +74,7 @@ class InvoiceExportAnalysis(models.TransientModel):
                 ]
         return xlines,columns
    
-    def prepare_worksheet(self, workbook, data_exists, row=7):
+    def prepare_worksheet(self, workbook, data_exists, row=3):
         """
         crea una pestaña de excel
         regresa el workbook 

@@ -17,7 +17,7 @@
 
                     <sheet>
                         <group>
-                            <field name="output_type" required="1" />
+                            <field name="output_type" required="1" readonly="1" />
                         </group>
                         <hr/>
                         <div attrs="{'invisible':[('download_file','=',False)]}">
