@@ -52,6 +52,8 @@ class InvoiceExportAnalysis(models.TransientModel):
         
         taxes_name_list = []
         for rec in move_obj.browse(active_ids):
+            print ("### o.tax_totals: ", o.tax_totals)
+        for rec in move_obj.browse(active_ids):
             
             line_data = {
                             'FECHA': rec.invoice_date,
@@ -105,7 +107,7 @@ class InvoiceExportAnalysis(models.TransientModel):
             #SE CREA LA TABLA DEL REPORTE
             #SE CREAN LOS NOMBRES DE COLUMNAS
             #row = start_row # la primera sera en 7
-            worksheet.write(row ,0, self.company_id.vat, cell_formats['BOLD'])
+            worksheet.write(row ,0, "NIF: "+str(self.company_id.vat or ""), cell_formats['BOLD'])
             row += 1
             column = 0
             column_titles = [x[0] for x in columns]
