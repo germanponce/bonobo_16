@@ -79,10 +79,10 @@ body {margin-top: 0px;margin-left: 0px;}
 .td6{padding: 0px;margin: 0px;width: 89px;vertical-align: bottom;border: 1px solid white;}
 .td7{padding: 0px;margin: 0px;width: 13px;vertical-align: bottom;border: 1px solid white;}
 .td8{padding: 0px;margin: 0px;width: 124px;vertical-align: bottom;border: 1px solid white;}
-.td9{padding: 0px;margin: 0px;width: 21px;vertical-align: bottom;background: #dfdfdf;border: 1px solid white;}
-.td10{padding: 0px;margin: 0px;width: 89px;vertical-align: bottom;background: #dfdfdf;border: 1px solid white;}
-.td11{padding: 0px;margin: 0px;width: 13px;vertical-align: bottom;background: #dfdfdf;border: 1px solid white;}
-.td12{padding: 0px;margin: 0px;width: 124px;vertical-align: bottom;background: #f0f0f0;border: 1px solid white;}
+.td9{padding: 0px;margin: 0px;width: 21px;vertical-align: bottom;background: #dfdfdf;}
+.td10{padding: 0px;margin: 0px;width: 89px;vertical-align: bottom;background: #dfdfdf;}
+.td11{padding: 0px;margin: 0px;width: 13px;vertical-align: bottom;background: #dfdfdf;}
+.td12{padding: 0px;margin: 0px;width: 124px;vertical-align: bottom;background: #f0f0f0;}
 .td13{border-bottom: #dfdfdf 1px solid;padding: 0px;margin: 0px;width: 21px;vertical-align: bottom;background: #dfdfdf;border: 1px solid white;}
 .td14{border-bottom: #dfdfdf 1px solid;padding: 0px;margin: 0px;width: 89px;vertical-align: bottom;background: #dfdfdf;border: 1px solid white;}
 .td15{border-bottom: #dfdfdf 1px solid;padding: 0px;margin: 0px;width: 13px;vertical-align: bottom;background: #dfdfdf;border: 1px solid white;}
