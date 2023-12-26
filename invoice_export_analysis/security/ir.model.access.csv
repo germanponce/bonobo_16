@@ -1,3 +1,2 @@
 id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
-stock_kardex_admin,stock_kardex_admin,model_stock_kardex,base.group_user,1,1,1,1
-stock_kardex_line_access,stock.kardex.line,model_stock_kardex_line,base.group_user,1,1,1,1
+invoice_export_analysis,invoice.export.analysis,model_invoice_export_analysis,,1,1,1,1
