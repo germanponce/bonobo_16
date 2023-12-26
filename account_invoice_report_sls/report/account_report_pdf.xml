@@ -70,23 +70,23 @@ body {margin-top: 0px;margin-left: 0px;}
 .p21{text-align: left;padding-left: 238px;margin-top: 1px;margin-bottom: 0px;}
 .p22{text-align: center;padding-right: 46px;margin-top: 8px;margin-bottom: 0px;}
 
-.td0{padding: 0px;margin: 0px;width: 88px;vertical-align: bottom;border: 0px solid white;}
-.td1{padding: 0px;margin: 0px;width: 285px;vertical-align: bottom;border: 0px solid white;}
-.td2{padding: 0px;margin: 0px;width: 63px;vertical-align: bottom;border: 0px solid white;}
-.td3{padding: 0px;margin: 0px;width: 3px;vertical-align: bottom;border: 0px solid white;}
-.td4{padding: 0px;margin: 0px;width: 14px;vertical-align: bottom;border: 0px solid white;}
-.td5{padding: 0px;margin: 0px;width: 21px;vertical-align: bottom;border: 0px solid white;}
-.td6{padding: 0px;margin: 0px;width: 89px;vertical-align: bottom;border: 0px solid white;}
-.td7{padding: 0px;margin: 0px;width: 13px;vertical-align: bottom;border: 0px solid white;}
-.td8{padding: 0px;margin: 0px;width: 124px;vertical-align: bottom;border: 0px solid white;}
+.td0{padding: 0px;margin: 0px;width: 88px;vertical-align: bottom;border: 0px;}
+.td1{padding: 0px;margin: 0px;width: 285px;vertical-align: bottom;border: 0px;}
+.td2{padding: 0px;margin: 0px;width: 63px;vertical-align: bottom;border: 0px;}
+.td3{padding: 0px;margin: 0px;width: 3px;vertical-align: bottom;border: 0px;}
+.td4{padding: 0px;margin: 0px;width: 14px;vertical-align: bottom;border: 0px;}
+.td5{padding: 0px;margin: 0px;width: 21px;vertical-align: bottom;border: 0px;}
+.td6{padding: 0px;margin: 0px;width: 89px;vertical-align: bottom;border: 0px;}
+.td7{padding: 0px;margin: 0px;width: 13px;vertical-align: bottom;border: 0px;}
+.td8{padding: 0px;margin: 0px;width: 124px;vertical-align: bottom;border: 0px;}
 .td9{padding: 0px;margin: 0px;width: 21px;vertical-align: bottom;background: #dfdfdf;border: 1px solid #dfdfdf;}
 .td10{padding: 0px;margin: 0px;width: 89px;vertical-align: bottom;background: #dfdfdf;border: 1px solid #dfdfdf;}
 .td11{padding: 0px;margin: 0px;width: 13px;vertical-align: bottom;background: #dfdfdf;border: 1px solid #dfdfdf;}
 .td12{padding: 0px;margin: 0px;width: 124px;vertical-align: bottom;background: #f0f0f0;border: 1px solid #dfdfdf;}
-.td13{border-bottom: #dfdfdf 1px solid;padding: 0px;margin: 0px;width: 21px;vertical-align: bottom;background: #dfdfdf;}
-.td14{border-bottom: #dfdfdf 1px solid;padding: 0px;margin: 0px;width: 89px;vertical-align: bottom;background: #dfdfdf;}
-.td15{border-bottom: #dfdfdf 1px solid;padding: 0px;margin: 0px;width: 13px;vertical-align: bottom;background: #dfdfdf;}
-.td16{border-bottom: #f0f0f0 1px solid;padding: 0px;margin: 0px;width: 124px;vertical-align: bottom;background: #f0f0f0;}
+.td13{padding: 0px;margin: 0px;width: 21px;vertical-align: bottom;background: #dfdfdf;}
+.td14{padding: 0px;margin: 0px;width: 89px;vertical-align: bottom;background: #dfdfdf;}
+.td15{padding: 0px;margin: 0px;width: 13px;vertical-align: bottom;background: #dfdfdf;}
+.td16{padding: 0px;margin: 0px;width: 124px;vertical-align: bottom;background: #f0f0f0;}
 .td17{padding: 0px;margin: 0px;width: 373px;vertical-align: bottom;border: 1px solid white;}
 .td18{padding: 0px;margin: 0px;width: 61px;vertical-align: bottom;border: 1px solid white;}
 .td19{padding: 0px;margin: 0px;width: 266px;vertical-align: bottom;background: #f0f0f0;border: 0px;}
@@ -100,7 +100,7 @@ body {margin-top: 0px;margin-left: 0px;}
 .td27{padding: 0px;margin: 0px;width: 14px;vertical-align: bottom;background: #f0f0f0;border: 0px;}
 .td28{padding: 0px;margin: 0px;width: 21px;vertical-align: bottom;background: #f0f0f0;border: 0px;}
 .td29{padding: 0px;margin: 0px;width: 110px;vertical-align: bottom;border: 1px solid white;}
-.td30{border-bottom: #dfdfdf 1px solid;padding: 0px;margin: 0px;width: 373px;vertical-align: bottom;background: #dfdfdf;border: 1px solid white;}
+.td30{padding: 0px;margin: 0px;width: 373px;vertical-align: bottom;background: #dfdfdf;border: 1px solid white;}
 .td31{border-bottom: #dfdfdf 1px solid;padding: 0px;margin: 0px;width: 63px;vertical-align: bottom;background: #dfdfdf;border: 1px solid white;}
 .td32{border-bottom: #dfdfdf 1px solid;padding: 0px;margin: 0px;width: 124px;vertical-align: bottom;background: #dfdfdf;border: 1px solid white;}
 .td33{border-bottom: #dfdfdf 1px solid;padding: 0px;margin: 0px;width: 61px;vertical-align: bottom;background: #dfdfdf;border: 1px solid white;}
