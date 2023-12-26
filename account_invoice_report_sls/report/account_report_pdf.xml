@@ -394,16 +394,10 @@ body {
     <TD colspan="2" rowspan="2" class="tr6 td17"><P class="p0 ft2"><span t-field="o.company_id.street"/></P></TD>
 </TR>
 <TR>
-    <TD colspan="5" rowspan="2" class="tr9 td21"><P class="p5 ft5"><span t-field="o.partner_id.street"/></P></TD>
-    <TD class="tr8 td22"><P class="p0 ft4">&amp;nbsp;</P></TD>
-    <TD class="tr8 td23"><P class="p0 ft4">&amp;nbsp;</P></TD>
-    <TD class="tr8 td20"><P class="p0 ft4">&amp;nbsp;</P></TD>
+    <TD colspan="10" rowspan="2" class="tr9 td21"><P class="p5 ft5"><span t-field="o.partner_id.street"/></P></TD>
 </TR>
 <TR>
-    <TD colspan="2" rowspan="2" class="tr2 td17"><P class="p0 ft2"><span t-field="o.company_id.street2"/></P></TD>
-    <TD class="tr10 td22"><P class="p0 ft6">&amp;nbsp;</P></TD>
-    <TD class="tr10 td23"><P class="p0 ft6">&amp;nbsp;</P></TD>
-    <TD class="tr10 td20"><P class="p0 ft6">&amp;nbsp;</P></TD>
+    <TD colspan="10" rowspan="2" class="tr2 td17"><P class="p0 ft2"><span t-field="o.company_id.street2"/></P></TD>
 </TR>
 <TR>
     <TD colspan="5" class="tr9 td21"><P class="p5 ft5"><span t-field="o.partner_id.street2"/></P></TD>
