@@ -375,15 +375,15 @@ body {
 
 <TABLE cellpadding="0" cellspacing="0" style="font: 11px 'Arial';width: 100%">
 <TR>
-    <TD colspan="2" class="tr5 td17"><P class="p0 ft2">BONOBO FRUIT S.L.</P></TD>
-    <TD class="tr5 td2"><P class="p0 ft0">&amp;nbsp;</P></TD>
-    <TD class="tr5 td3"><P class="p0 ft0">&amp;nbsp;</P></TD>
-    <TD class="tr5 td4"><P class="p0 ft0">&amp;nbsp;</P></TD>
-    <TD class="tr5 td5"><P class="p0 ft0">&amp;nbsp;</P></TD>
-    <TD class="tr5 td6"><P class="p0 ft0">&amp;nbsp;</P></TD>
-    <TD class="tr5 td7"><P class="p0 ft0">&amp;nbsp;</P></TD>
-    <TD class="tr5 td2"><P class="p0 ft0">&amp;nbsp;</P></TD>
-    <TD class="tr5 td18"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD colspan="2" class="tr5 td17" style="border: 0;"><P class="p0 ft2">BONOBO FRUIT S.L.</P></TD>
+    <TD class="tr5 td2" style="border: 0;"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr5 td3" style="border: 0;"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr5 td4" style="border: 0;"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr5 td5" style="border: 0;"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr5 td6" style="border: 0;"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr5 td7" style="border: 0;"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr5 td2" style="border: 0;"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr5 td18" style="border: 0;"><P class="p0 ft0">&amp;nbsp;</P></TD>
 </TR>
 <TR>
     <TD class="tr6 td0" ><P class="p0 ft2">NIF: ESB72644818</P></TD>
