@@ -375,36 +375,36 @@ body {
 <TABLE cellpadding="0" cellspacing="0" width="100%" style="font: 11px 'Arial';width: 100%">
 <TR>
     <TD class="tr5 td17" style="border: 1px solid white;"><P class="p0 ft2">BONOBO FRUIT S.L.</P></TD>
-    <TD class="tr7 td19" style="border: 0;"><P class="p5 ft3"> <span t-field="o.partner_id.name"/></P></TD>
+    <TD class="tr7 td19" style="border: 1px solid white;"><P class="p5 ft3"> <span t-field="o.partner_id.name"/></P></TD>
 </TR>
 <TR>
     <TD class="tr6 td0" style="border: 1px solid white;"><P class="p0 ft2">NIF: ESB72644818</P></TD>
-    <TD class="tr9 td21" style="border: 0;"><P class="p5 ft5"><span t-field="o.partner_id.street"/></P></TD>
+    <TD class="tr9 td21" style="border: 1px solid white;"><P class="p5 ft5"><span t-field="o.partner_id.street"/></P></TD>
 </TR>
 
 <TR>
     <TD class="tr6 td17" style="border: 1px solid white;"><P class="p0 ft2"><span t-field="o.company_id.street"/></P></TD>
-    <TD class="tr9 td21" style="border: 0;"><P class="p5 ft5"><span t-field="o.partner_id.street2"/></P></TD>
+    <TD class="tr9 td21" style="border: 1px solid white;"><P class="p5 ft5"><span t-field="o.partner_id.street2"/></P></TD>
 </TR>
 <TR>
     <TD class="tr11 td17" style="border: 1px solid white;"><P class="p0 ft2"><span t-field="o.company_id.zip"/></P></TD>
-    <TD class="tr11 td24" style="border: 0;"><P class="p5 ft2"><span t-field="o.partner_id.zip"/> <span t-field="o.partner_id.city"/></P></TD>
+    <TD class="tr11 td24" style="border: 1px solid white;"><P class="p5 ft2"><span t-field="o.partner_id.zip"/> <span t-field="o.partner_id.city"/></P></TD>
 </TR>
 <TR>
     <TD class="tr6 td0" style="border: 1px solid white;"><P class="p0 ft2">Málaga - España</P></TD>
-    <TD class="tr6 td24" style="border: 0;"><P class="p5 ft2"><span t-field="o.partner_id.country_id.name"/></P></TD>
+    <TD class="tr6 td24" style="border: 1px solid white;"><P class="p5 ft2"><span t-field="o.partner_id.country_id.name"/></P></TD>
 </TR>
 <TR>
     <TD class="tr6 td17" style="border: 1px solid white;"><P class="p0 ft2">Tlf: <span t-field="o.company_id.phone"/></P></TD>
-    <TD class="tr12 td24" style="border: 0;"><P class="p5 ft3">NIF: <span t-field="o.partner_id.vat"/></P></TD>
+    <TD class="tr12 td24" style="border: 1px solid white;"><P class="p5 ft3">NIF: <span t-field="o.partner_id.vat"/></P></TD>
 </TR>
 <TR>
     <TD class="tr9 td17" style="border: 1px solid white;"><P class="p0 ft5"><span t-field="o.company_id.email"/></P></TD>
-    <TD class="tr13 td25" style="border: 0;"><P class="p0 ft8">&amp;nbsp;</P></TD>
+    <TD class="tr13 td25" style="border: 1px solid white;"><P class="p0 ft8">&amp;nbsp;</P></TD>
 </TR>
 <TR>
     <TD colspan="2" class="tr5 td17" style="border: 1px solid white;"><P class="p0 ft2"><span t-field="o.company_id.website"/></P></TD>
-    <TD class="tr1 td18" style="border: 0;"><P class="p0 ft0">&amp;nbsp;</P></TD>
+    <TD class="tr1 td18" style="border: 1px solid white;"><P class="p0 ft0">&amp;nbsp;</P></TD>
 </TR>
 </TABLE>
 
