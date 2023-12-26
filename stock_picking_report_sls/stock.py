@@ -24,6 +24,9 @@ import logging
 _logger = logging.getLogger(__name__)
 
 
+class ProductTemplate(models.Model):
+    _inherit ='product.template'
+
 class AccountMove(models.Model):
     _name = 'account.move'
     _inherit ='account.move'
