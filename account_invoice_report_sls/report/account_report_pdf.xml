@@ -388,7 +388,7 @@ body {
 <TR>
     <TD class="tr6 td0" ><P class="p0 ft2">NIF: ESB72644818</P></TD>
     <TD class="tr6 td1"><P class="p0 ft0">&amp;nbsp;</P></TD>
-    <TD colspan="7" rowspan="3" class="tr7 td19"><P class="p5 ft3"> <span t-field="o.partner_id.name"/></P></TD>
+    <TD colspan="8" rowspan="3" class="tr7 td19"><P class="p5 ft3"> <span t-field="o.partner_id.name"/></P></TD>
 </TR>
 <TR>
     <TD colspan="2" rowspan="2" class="tr6 td17"><P class="p0 ft2"><span t-field="o.company_id.street"/></P></TD>
