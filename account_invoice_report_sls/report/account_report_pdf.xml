@@ -71,14 +71,15 @@ body {margin-top: 0px;margin-left: 0px;}
 .p22{text-align: center;padding-right: 46px;margin-top: 8px;margin-bottom: 0px;}
 
 .td0{padding: 0px;margin: 0px;width: 88px;vertical-align: bottom;border-top: 1px solid black;border-right: 1px solid black;border-bottom: 1px solid black;border-left: 1px solid black;}
-.td1{padding: 0px;margin: 0px;width: 285px;vertical-align: bottom;border-top: 1px solid white;border-right: 1px solid white;border-bottom: 1px solid white;border-left: 1px solid white;}
-.td2{padding: 0px;margin: 0px;width: 63px;vertical-align: bottom;border-top: 1px solid white;border-right: 1px solid white;border-bottom: 1px solid white;border-left: 1px solid white;}
-.td3{padding: 0px;margin: 0px;width: 3px;vertical-align: bottom;border-top: 1px solid white;border-right: 1px solid white;border-bottom: 1px solid white;border-left: 1px solid white;}
-.td4{padding: 0px;margin: 0px;width: 14px;vertical-align: bottom;border-top: 1px solid white;border-right: 1px solid white;border-bottom: 1px solid white;border-left: 1px solid white;}
-.td5{padding: 0px;margin: 0px;width: 21px;vertical-align: bottom;border-top: 1px solid white;border-right: 1px solid white;border-bottom: 1px solid white;border-left: 1px solid white;}
-.td6{padding: 0px;margin: 0px;width: 89px;vertical-align: bottom;border-top: 1px solid white;border-right: 1px solid white;border-bottom: 1px solid white;border-left: 1px solid white;}
-.td7{padding: 0px;margin: 0px;width: 13px;vertical-align: bottom;border-top: 1px solid white;border-right: 1px solid white;border-bottom: 1px solid white;border-left: 1px solid white;}
-.td8{padding: 0px;margin: 0px;width: 124px;vertical-align: bottom;border-top: 1px solid white;border-right: 1px solid white;border-bottom: 1px solid white;border-left: 1px solid white;}
+.td1{padding: 0px;margin: 0px;width: 285px;vertical-align: bottom;border-top: 1px solid black;border-right: 1px solid black;border-bottom: 1px solid black;border-left: 1px solid black;}
+.td2{padding: 0px;margin: 0px;width: 63px;vertical-align: bottom;border-top: 1px solid black;border-right: 1px solid black;border-bottom: 1px solid black;border-left: 1px solid black;}
+.td3{padding: 0px;margin: 0px;width: 3px;vertical-align: bottom;border-top: 1px solid black;border-right: 1px solid black;border-bottom: 1px solid black;border-left: 1px solid black;}
+.td4{padding: 0px;margin: 0px;width: 14px;vertical-align: bottom;border-top: 1px solid black;border-right: 1px solid black;border-bottom: 1px solid black;border-left: 1px solid black;}
+.td5{padding: 0px;margin: 0px;width: 21px;vertical-align: bottom;border-top: 1px solid black;border-right: 1px solid black;border-bottom: 1px solid black;border-left: 1px solid black;}
+.td6{padding: 0px;margin: 0px;width: 89px;vertical-align: bottom;border-top: 1px solid black;border-right: 1px solid black;border-bottom: 1px solid black;border-left: 1px solid black;}
+.td7{padding: 0px;margin: 0px;width: 13px;vertical-align: bottom;border-top: 1px solid black;border-right: 1px solid black;border-bottom: 1px solid black;border-left: 1px solid black;}
+.td8{padding: 0px;margin: 0px;width: 124px;vertical-align: bottom;border-top: 1px solid black;border-right: 1px solid black;border-bottom: 1px solid white;border-left: 1px solid white;}
+
 .td9{padding: 0px;margin: 0px;width: 21px;vertical-align: bottom;background: #dfdfdf;border-top: 1px solid white;border-right: 1px solid white;border-bottom: 1px solid white;border-left: 1px solid white;}
 .td10{padding: 0px;margin: 0px;width: 89px;vertical-align: bottom;background: #dfdfdf;border-top: 1px solid white;border-right: 1px solid white;border-bottom: 1px solid white;border-left: 1px solid white;}
 .td11{padding: 0px;margin: 0px;width: 13px;vertical-align: bottom;background: #dfdfdf;border-top: 1px solid white;border-right: 1px solid white;border-bottom: 1px solid white;border-left: 1px solid white;}
