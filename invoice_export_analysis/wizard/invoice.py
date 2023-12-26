@@ -136,7 +136,7 @@ class InvoiceExportAnalysis(models.TransientModel):
             #SE CREA LA TABLA DEL REPORTE
             #SE CREAN LOS NOMBRES DE COLUMNAS
             #row = start_row # la primera sera en 7
-            worksheet.write(row ,0, "NIF: "+str(self.company_id.vat or ""), cell_formats['BOLD'])
+            worksheet.write(row ,0, "FACTURAS", cell_formats['BOLD'])
             row += 1
             column = 0
             column_titles = [x[0] for x in columns]
@@ -227,8 +227,9 @@ class InvoiceExportAnalysis(models.TransientModel):
 
         #ENCABEZADO####################################################
         worksheet.write('A1', self.company_id.name.upper(), cell_formats['TITLE'])
-        worksheet.write('A2', report_title, cell_formats['TITLE'])
-        worksheet.write('B2', date, cell_formats['BOLD'])
+        worksheet.write('A2', "NIF: "+str(self.company_id.vat or ""), cell_formats['TITLE'])
+        worksheet.write('A3', report_title, cell_formats['TITLE'])
+        worksheet.write('B3', date, cell_formats['BOLD'])
         return worksheet
 
     
