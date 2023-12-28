@@ -71,7 +71,9 @@ class InvoiceExportAnalysis(models.TransientModel):
             for subtotal in tax_subtotals:
                 subtotal_to_show = subtotal['name']
                 tax_details = tax_totals['groups_by_subtotal'][subtotal_to_show]
+                print ("### tax_details: ", tax_details)
                 for tax_d in tax_details:
+                    print ("### tax_d: ", tax_d)
                     tax_group_name = tax_d.get('tax_group_name','')
                     tax_group_amount = tax_d.get('tax_group_amount', 0.0)
                     if tax_group_name.upper() not in invoice_taxes_dict:
