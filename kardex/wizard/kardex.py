@@ -494,26 +494,26 @@ class StockKardex(models.TransientModel):
 
                 line_data = {
                         'FECHA': fecha,
-                        'MOVIMIENTO': movimiento or '',
-                        'DOCUMENTO ORIGEN': pedido_origen or '',
-                        'FACTURA(S)': facturas or '',
-                        'PEDIMENTO(S)': pedimentos or '',
-                        'LOTE(S)': lotes or '',
-                        'EMPRESA': empresa or '',
-                        'MOVIMIENTO CONTABLE': movimientos_contables or '',
+                        #'MOVIMIENTO': movimiento or '',
+                        #'DOCUMENTO ORIGEN': pedido_origen or '',
+                        #'FACTURA(S)': facturas or '',
+                        #'PEDIMENTO(S)': pedimentos or '',
+                        #'LOTE(S)': lotes or '',
+                        #'EMPRESA': empresa or '',
+                        #'MOVIMIENTO CONTABLE': movimientos_contables or '',
                         'ORIGEN': origen_completo or '',
-                        'DESTINO': destino_completo or '',
-                        'UDM': udm or '',
-                        'ENTRADAS': entradas or 0.0,
+                        #'DESTINO': destino_completo or '',
+                        #'UDM': udm or '',
+                        #'ENTRADAS': entradas or 0.0,
                         'SALIDAS': salidas or 0.0,
-                        'EXISTENCIA': existencia or 0.0,
-                        'PRECIO DE COMPRA': precio_compra or 0.0,
-                        titulo_colulmna_coste: costo_unitario or 0.0,
-                        'COSTO ENTRADAS': costo_entradas or 0.0,
-                        'COSTO SALIDAS': costo_salidas or 0.0,
-                        'COSTO TOTAL': costo_total or 0.0,
-                        'ESTADO': estado or '',
-                        'TIPO': tipo or '',
+                        #'EXISTENCIA': existencia or 0.0,
+                        #'PRECIO DE COMPRA': precio_compra or 0.0,
+                        #titulo_colulmna_coste: costo_unitario or 0.0,
+                        #'COSTO ENTRADAS': costo_entradas or 0.0,
+                        #'COSTO SALIDAS': costo_salidas or 0.0,
+                        #'COSTO TOTAL': costo_total or 0.0,
+                        #'ESTADO': estado or '',
+                        #'TIPO': tipo or '',
                         '2A UDM': sale_secondary_uom,
                         'ORIGEN': bonobo_origin,
                         'AGRICULTURA': bonobo_agricultrura,
@@ -559,31 +559,31 @@ class StockKardex(models.TransientModel):
                     kardex_id = kardex_obj.create(xline)
 
         columns = [['FECHA', 'DATE'],
-                ['MOVIMIENTO', 'CHAR'],
-                ['DOCUMENTO ORIGEN', 'CHAR'],
-                ['FACTURA(S)', 'CHAR'],
-                ['PEDIMENTO(S)', 'CHAR'],
-                ['LOTE(S)', 'CHAR'],
-                ['EMPRESA', 'CHAR'],
-                ['MOVIMIENTO CONTABLE', 'CHAR'],
+                #['MOVIMIENTO', 'CHAR'],
+                #['DOCUMENTO ORIGEN', 'CHAR'],
+                #['FACTURA(S)', 'CHAR'],
+                #['PEDIMENTO(S)', 'CHAR'],
+                #['LOTE(S)', 'CHAR'],
+                #['EMPRESA', 'CHAR'],
+                #['MOVIMIENTO CONTABLE', 'CHAR'],
                 ['ORIGEN', 'CHAR'],
-                ['DESTINO', 'CHAR'],
-                ['UDM', 'CHAR'],
+                #['DESTINO', 'CHAR'],
+                #['UDM', 'CHAR'],
                 ['2A UDM', 'CHAR'],
                 ['ORIGEN', 'CHAR'],
                 ['AGRICULTURA', 'CHAR'],
                 ['VARIEDAD', 'CHAR'],
                 ['CALIBRE', 'CHAR'],
-                ['ENTRADAS', 'FLOAT'],
+                #['ENTRADAS', 'FLOAT'],
                 ['SALIDAS', 'FLOAT'],
-                ['EXISTENCIA', 'FLOAT'],
-                ['PRECIO DE COMPRA', 'FLOAT'],
-                [titulo_colulmna_coste, 'FLOAT'],
-                ['COSTO ENTRADAS', 'FLOAT'],
-                ['COSTO SALIDAS', 'FLOAT'],
-                ['COSTO TOTAL', 'FLOAT'],
-                ['ESTADO', 'CHAR'],
-                ['TIPO', 'CHAR'],
+                #['EXISTENCIA', 'FLOAT'],
+                #['PRECIO DE COMPRA', 'FLOAT'],
+                #[titulo_colulmna_coste, 'FLOAT'],
+                #['COSTO ENTRADAS', 'FLOAT'],
+                #['COSTO SALIDAS', 'FLOAT'],
+                #['COSTO TOTAL', 'FLOAT'],
+                #['ESTADO', 'CHAR'],
+                #['TIPO', 'CHAR'],
                 ]
         return xlines,columns,existencia_inicial,costo_inicial
    
@@ -626,13 +626,13 @@ class StockKardex(models.TransientModel):
                 column_titles = [x[0] for x in columns]
                 for title in column_titles:
                     ##################################33
-                    if title == 'EXISTENCIA':
-                        worksheet.write(row-1 ,column-1, 'EXISTENCIA INICIAL', cell_formats['BLUE_BG'])
-                        worksheet.write(row-1 ,column, existencia_inicial, cell_formats['FLOAT'])
+                    # if title == 'EXISTENCIA':
+                    #     worksheet.write(row-1 ,column-1, 'EXISTENCIA INICIAL', cell_formats['BLUE_BG'])
+                    #     worksheet.write(row-1 ,column, existencia_inicial, cell_formats['FLOAT'])
 
-                    if title == 'COSTO TOTAL':
-                        worksheet.write(row-1 ,column-1, 'COSTO INICIAL', cell_formats['BLUE_BG'])
-                        worksheet.write(row-1 ,column, costo_inicial, cell_formats['FLOAT'])
+                    # if title == 'COSTO TOTAL':
+                    #     worksheet.write(row-1 ,column-1, 'COSTO INICIAL', cell_formats['BLUE_BG'])
+                    #     worksheet.write(row-1 ,column, costo_inicial, cell_formats['FLOAT'])
                     ##################################
                     worksheet.write(row ,column, title, cell_formats['BLUE_BG'])
                     column += 1
