@@ -76,6 +76,8 @@ class InvoiceExportAnalysis(models.TransientModel):
                     print ("### tax_d: ", tax_d)
                     tax_group_name = tax_d.get('tax_group_name','')
                     tax_group_amount = tax_d.get('tax_group_amount', 0.0)
+                    print ("### tax_group_name: ", tax_group_name)
+                    print ("### tax_group_amount: ", tax_group_amount)
                     if tax_group_name.upper() not in invoice_taxes_dict:
                         invoice_taxes_dict[tax_group_name.upper()] = tax_group_amount
             line_data = {
