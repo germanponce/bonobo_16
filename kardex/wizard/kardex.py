@@ -491,36 +491,37 @@ class StockKardex(models.TransientModel):
                 bonobo_calibre = rec.product_id.bonobo_calibre_id.name if rec.product_id.bonobo_calibre_id else ""
                 sale_secondary_uom = rec.product_id.sale_secondary_uom_id.name if rec.product_id.sale_secondary_uom_id else ""
 
-
-                line_data = {
-                        'FECHA': fecha,
-                        #'MOVIMIENTO': movimiento or '',
-                        #'DOCUMENTO ORIGEN': pedido_origen or '',
-                        #'FACTURA(S)': facturas or '',
-                        #'PEDIMENTO(S)': pedimentos or '',
-                        #'LOTE(S)': lotes or '',
-                        #'EMPRESA': empresa or '',
-                        #'MOVIMIENTO CONTABLE': movimientos_contables or '',
-                        'ORIGEN': origen_completo or '',
-                        #'DESTINO': destino_completo or '',
-                        #'UDM': udm or '',
-                        #'ENTRADAS': entradas or 0.0,
-                        'SALIDAS': salidas or 0.0,
-                        #'EXISTENCIA': existencia or 0.0,
-                        #'PRECIO DE COMPRA': precio_compra or 0.0,
-                        #titulo_colulmna_coste: costo_unitario or 0.0,
-                        #'COSTO ENTRADAS': costo_entradas or 0.0,
-                        #'COSTO SALIDAS': costo_salidas or 0.0,
-                        #'COSTO TOTAL': costo_total or 0.0,
-                        #'ESTADO': estado or '',
-                        #'TIPO': tipo or '',
-                        '2A UDM': sale_secondary_uom,
-                        'ORIGEN': bonobo_origin,
-                        'AGRICULTURA': bonobo_agricultrura,
-                        'VARIEDAD': bonobo_variedad,
-                        'CALIBRE': bonobo_calibre,
-                        }
-                xlines.append(line_data)
+                ###### Solo Salidas #######
+                if salidas:
+                    line_data = {
+                            'FECHA': fecha,
+                            #'MOVIMIENTO': movimiento or '',
+                            #'DOCUMENTO ORIGEN': pedido_origen or '',
+                            #'FACTURA(S)': facturas or '',
+                            #'PEDIMENTO(S)': pedimentos or '',
+                            #'LOTE(S)': lotes or '',
+                            #'EMPRESA': empresa or '',
+                            #'MOVIMIENTO CONTABLE': movimientos_contables or '',
+                            'ORIGEN': origen_completo or '',
+                            #'DESTINO': destino_completo or '',
+                            #'UDM': udm or '',
+                            #'ENTRADAS': entradas or 0.0,
+                            'SALIDAS': salidas or 0.0,
+                            #'EXISTENCIA': existencia or 0.0,
+                            #'PRECIO DE COMPRA': precio_compra or 0.0,
+                            #titulo_colulmna_coste: costo_unitario or 0.0,
+                            #'COSTO ENTRADAS': costo_entradas or 0.0,
+                            #'COSTO SALIDAS': costo_salidas or 0.0,
+                            #'COSTO TOTAL': costo_total or 0.0,
+                            #'ESTADO': estado or '',
+                            #'TIPO': tipo or '',
+                            '2A UDM': sale_secondary_uom,
+                            'ORIGEN': bonobo_origin,
+                            'AGRICULTURA': bonobo_agricultrura,
+                            'VARIEDAD': bonobo_variedad,
+                            'CALIBRE': bonobo_calibre,
+                            }
+                    xlines.append(line_data)
 
                 if self.output_type == 'view':
                     xline = {
