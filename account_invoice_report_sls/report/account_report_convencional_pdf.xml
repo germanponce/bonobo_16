@@ -514,13 +514,15 @@ body {
 <t t-set="tax_totals" t-value="o.tax_totals"/>
 <!-- <t t-foreach="o.amount_by_group" t-as="amount_by_group"> -->
 <t t-foreach="tax_totals['subtotals']" t-as="subtotal">
-
-    <tr style="">
-        <TR>
-            <TD class="tr18 td55"><P class="p12 ft12"><span class="text-nowrap" t-esc="subtotal['name']"/></P></TD>
-            <TD class="tr18 td56"><P class="p11 ft12"><span class="text-nowrap" t-esc="subtotal['formatted_amount']"/></P></TD>
-        </TR>
-    </tr>
+    <t t-set="subtotal_to_show" t-value="subtotal['name']"/>
+    <t t-foreach="tax_totals['groups_by_subtotal'][subtotal_to_show]" t-as="amount_by_group">
+        <tr style="">
+            <TR>
+                <TD class="tr18 td55"><P class="p12 ft12"><span class="text-nowrap" t-esc="amount_by_group['tax_group_name']"/></P></TD>
+                <TD class="tr18 td56"><P class="p11 ft12"><span class="text-nowrap" t-esc="amount_by_group['formatted_tax_group_amount']"/></P></TD>
+            </TR>
+        </tr>
+    </t>
 </t>                              
 
 <TR>
