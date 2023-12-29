@@ -45,7 +45,6 @@ class SaleOrderLine(models.Model):
                 self.onchange_product_uom_for_secondary()
             else:
                 self.product_uom_qty = line_uom_qty
-        return res
 
     @api.depends("secondary_uom_qty", "product_uom_qty", "price_unit")
     def _compute_secondary_uom_unit_price(self):
