@@ -415,10 +415,14 @@ body {
 
 <TABLE cellpadding="0" cellspacing="0" style="font: 13px 'Arial';width: 100%">
 <TR>
-    <TD colspan="2" class="tr12 td30"><P class="p6 ft2">Dirección de Entrega:</P></TD>
+    <TD colspan="2" class="tr12 td30"><P class="p6 ft2">Referencia Cliente:</P></TD>
     <TD class="tr12 td31"><P class="p0 ft0">&amp;nbsp;</P></TD>
     <TD class="tr15 td3"><P class="p0 ft0">&amp;nbsp;</P></TD>
-    <TD colspan="3" class="tr12 td32"><P class="p7 ft2">Expiración:</P></TD>
+    <TD colspan="3" class="tr12 td32">
+        <!-- <P class="p7 ft2">
+            Expiración:
+        </P> -->
+    </TD>
     <TD class="tr12 td15"><P class="p0 ft0">&amp;nbsp;</P></TD>
     <TD class="tr12 td31"><P class="p0 ft0">&amp;nbsp;</P></TD>
     <TD class="tr12 td33"><P class="p0 ft0">&amp;nbsp;</P></TD>
@@ -438,7 +442,9 @@ body {
 <TR>
     <TD class="tr12 td34" colspan="3"><span style="padding-left: 10px;" t-esc="o.project_reference"/></TD>
     <TD class="tr12 td3"><P class="p0 ft0">&amp;nbsp;</P></TD>
-    <TD class="tr12 td27" colspan="6"><span style="padding-left: 10px;" t-field="o.validity_date" t-options="{&quot;widget&quot;: &quot;date&quot;, &quot;format&quot;: &quot;dd/MM/yyyy&quot;}"/></TD>
+    <TD class="tr12 td27" colspan="6">
+        <!-- <span style="padding-left: 10px;" t-field="o.validity_date" t-options="{&quot;widget&quot;: &quot;date&quot;, &quot;format&quot;: &quot;dd/MM/yyyy&quot;}"/> -->
+    </TD>
 </TR>
 </TABLE>
 <TABLE cellpadding="0" cellspacing="0" style="font: 13px 'Arial';width: 100%">
@@ -465,7 +471,7 @@ body {
     <TD class="tr2 td10"><P class="p8 ft2">Cantidad</P></TD>
     <TD class="tr2 td10"><P class="p8 ft2">Cantidad Secundaria</P></TD>
     <TD class="tr2 td41"><P class="p9 ft2">Precio unit.</P></TD>
-    <TD class="tr2 td41"><P class="p9 ft2">Descuento</P></TD>
+    <TD class="tr2 td41"><P class="p9 ft2"></P></TD>
     <TD class="tr2 td42"><P class="p10 ft2">Total</P></TD>
 </TR>
 
@@ -506,7 +512,7 @@ body {
                                         </P>
         </TD>
         <TD class="tr1 td45"><P class="p9 ft2">
-                                            <span class="text-nowrap" t-field="line.discount"/>
+                                            <!-- <span class="text-nowrap" t-field="line.discount"/> -->
                                         </P>
         </TD>
         <TD class="tr1 td18"><P class="p11 ft2">
