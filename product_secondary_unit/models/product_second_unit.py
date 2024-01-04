@@ -45,11 +45,19 @@ class ProductSecondaryUnit(models.Model):
     def name_get(self):
         result = []
         for unit in self:
+            # result.append(
+            #     (
+            #         unit.id,
+            #         "{unit_name}-{factor}".format(
+            #             unit_name=unit.name, factor=unit.factor
+            #         ),
+            #     )
+            # )
             result.append(
                 (
                     unit.id,
-                    "{unit_name}-{factor}".format(
-                        unit_name=unit.name, factor=unit.factor
+                    "{unit_name}".format(
+                        unit_name=unit.name
                     ),
                 )
             )
