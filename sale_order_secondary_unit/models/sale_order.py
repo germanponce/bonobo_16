@@ -126,7 +126,7 @@ class AccountMoveLine(models.Model):
 
     def _get_factor_line(self):
         return self.secondary_uom_id.factor * (
-            uom_line.factor
+            self.product_uom_id.factor
             if self.product_uom_id != self.secondary_uom_id
             else 1.0
         )
