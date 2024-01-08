@@ -86,7 +86,7 @@ class AccountMoveLine(models.Model):
     def _compute_product_uom_qty(self):
         self._compute_helper_target_field_qty()
 
-    @api.onchange("product_uom")
+    @api.onchange("product_uom_id")
     def onchange_product_uom_for_secondary(self):
         self._onchange_helper_product_uom_for_secondary()
 
