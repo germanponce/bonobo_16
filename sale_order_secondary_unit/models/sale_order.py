@@ -69,12 +69,27 @@ class AccountMoveLine(models.Model):
         "uom_field": "product_uom_id",
     }
 
+    secondary_uom_qty = fields.Float(string="2nd Qty", digits="Product Unit of Measure")
+    secondary_uom_id = fields.Many2one(
+        comodel_name="product.secondary.unit",
+        string="2nd uom",
+        ondelete="restrict",
+    )
+
+    secondary_uom_unit_price = fields.Float(
+        string="2nd unit price",
+        digits="Product Unit of Measure",
+        store=False,
+        readonly=True,
+        compute="_compute_secondary_uom_unit_price",
+    )
+
     quantity = fields.Float(
         store=True, readonly=False, compute="_compute_product_qty", copy=True
     )
 
 
-    @api.depends("secondary_uom_qty", "secondary_uom_id", "product_uom_qty")
+    @api.depends("secondary_uom_qty", "secondary_uom_id", "quantity")
     def _compute_product_uom_qty(self):
         self._compute_helper_target_field_qty()
 
