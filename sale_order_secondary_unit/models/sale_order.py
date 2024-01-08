@@ -122,7 +122,7 @@ class AccountMoveLine(models.Model):
                 rec.onchange_product_uom_for_secondary()
         return res
 
-    @api.depends("secondary_uom_qty", "product_uom_qty", "price_unit")
+    @api.depends("secondary_uom_qty", "quantity", "price_unit")
     def _compute_secondary_uom_unit_price(self):
         for line in self:
             if line.secondary_uom_id:
