@@ -76,13 +76,6 @@ class AccountMoveLine(models.Model):
         ondelete="restrict",
     )
 
-    secondary_uom_unit_price = fields.Float(
-        string="2nd unit price",
-        digits="Product Unit of Measure",
-        store=False,
-        readonly=True,
-        compute="_compute_secondary_uom_unit_price",
-    )
 
     quantity = fields.Float(
         store=True, readonly=False, compute="_compute_product_uom_qty", copy=True
