@@ -95,18 +95,18 @@ class AccountMoveLine(models.Model):
 
     def _compute_helper_target_field_qty(self):
         """Set the target qty field defined in model"""
-        default_qty_field_value = _secondary_unit_fields['qty_field']
+        default_qty_field_value = self._secondary_unit_fields['qty_field']
         for rec in self:
             if not rec.secondary_uom_id:
-                rec[rec._secondary_unit_fields["qty_field"]] = (
-                    rec._origin[rec._secondary_unit_fields["qty_field"]]
+                rec[self._secondary_unit_fields["qty_field"]] = (
+                    rec._origin[self._secondary_unit_fields["qty_field"]]
                     or default_qty_field_value
                 )
                 continue
             if rec.secondary_uom_id.dependency_type == "independent":
-                if rec[rec._secondary_unit_fields["qty_field"]] == 0.0:
+                if rec[self._secondary_unit_fields["qty_field"]] == 0.0:
                     rec[
-                        rec._secondary_unit_fields["qty_field"]
+                        self._secondary_unit_fields["qty_field"]
                     ] = default_qty_field_value
                 continue
             # To avoid recompute secondary_uom_qty field when
@@ -119,7 +119,7 @@ class AccountMoveLine(models.Model):
                 rec.secondary_uom_qty * factor,
                 precision_rounding=rec._get_uom_line().rounding,
             )
-            rec[rec._secondary_unit_fields["qty_field"]] = qty
+            rec[self._secondary_unit_fields["qty_field"]] = qty
 
     @api.onchange("product_uom_id")
     def onchange_product_uom_for_secondary(self):
