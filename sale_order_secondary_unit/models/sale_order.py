@@ -125,7 +125,6 @@ class AccountMoveLine(models.Model):
                 self.with_context(no_triggered=True).quantity = quantity
 
     def _get_factor_line(self):
-        uom_line = self._get_uom_line()
         return self.secondary_uom_id.factor * (
             uom_line.factor
             if self.product_uom_id != self.secondary_uom_id
