@@ -102,7 +102,6 @@ class AccountMoveLine(models.Model):
         print ("###### factor: ", factor)
         if not no_triggered:
             print ("### 1111")
-            factor =
 
     @api.onchange('secondary_uom_qty')
     def onchange_2nd_secondary_uom_qty(self):
