@@ -16,10 +16,9 @@ class PurchaseOrderLine(models.Model):
         store=True, readonly=False, compute="_compute_product_qty", copy=True
     )
 
-    @api.depends("product_qty", "secondary_uom_id","product_packaging_qty")
-    def _compute_product_qty(self):
-        if hasattr(super(), "_compute_product_qty"):
-            return super()._compute_product_qty()
+    @api.depends("secondary_uom_qty", "secondary_uom_id","product_packaging_qty")
+    def _compute_product_uom_qty(self):
+        
         return self._compute_helper_target_field_qty()
 
     @api.onchange("product_uom")
