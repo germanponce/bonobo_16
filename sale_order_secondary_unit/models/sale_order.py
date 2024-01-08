@@ -115,7 +115,7 @@ class AccountMoveLine(models.Model):
         print ("########### onchange_2nd_secondary_uom_qty > ")
         factor = self._get_factor_line()
         print ("###### factor: ", factor)
-        if not no_triggered:
+        if not no_triggered and self.secondary_uom_id:
             print ("### 1111")
             if factor < 1:
                 quantity = self.secondary_uom_qty * factor
