@@ -62,7 +62,7 @@ class SaleOrderLine(models.Model):
 
 class AccountMoveLine(models.Model):
     # _inherit = ["account.move.line", "product.secondary.unit.mixin"]
-    _name = "account.move.line"
+    _inherit = "account.move.line"
 
     # _secondary_unit_fields = {
     #     "qty_field": "quantity",
