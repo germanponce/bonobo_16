@@ -98,7 +98,7 @@ class AccountMoveLine(models.Model):
     def onchange_2nd_quantity(self):
         no_triggered = self._context.get('no_triggered', False)
         print ("########### onchange_2nd_quantity > ")
-        factor = rec._get_factor_line()
+        factor = self._get_factor_line()
         print ("###### factor: ", factor)
         if not no_triggered:
             print ("### 1111")
@@ -107,7 +107,7 @@ class AccountMoveLine(models.Model):
     def onchange_2nd_secondary_uom_qty(self):
         no_triggered = self._context.get('no_triggered', False)
         print ("########### onchange_2nd_secondary_uom_qty > ")
-        factor = rec._get_factor_line()
+        factor = self._get_factor_line()
         print ("###### factor: ", factor)
         if not no_triggered:
             print ("### 1111")
