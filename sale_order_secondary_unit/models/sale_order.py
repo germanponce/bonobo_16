@@ -112,26 +112,4 @@ class AccountMoveLine(models.Model):
     #         self.onchange_product_uom_for_secondary()
     #     return res
 
-    @api.onchange('product_id')
-    def _inverse_product_id(self):
-        res = super()._inverse_product_id()
-        for rec in self:
-            rec.secondary_uom_id = rec.product_id.sale_secondary_uom_id
-            if rec.secondary_uom_id:
-                rec.secondary_uom_qty = 1.0
-                rec.onchange_product_uom_for_secondary()
-        return res
-
-    @api.depends("secondary_uom_qty", "quantity", "price_unit")
-    def _compute_secondary_uom_unit_price(self):
-        for line in self:
-            if line.secondary_uom_id:
-                try:
-                    line.secondary_uom_unit_price = (
-                        line.price_subtotal / line.secondary_uom_qty
-                    )
-                except ZeroDivisionError:
-                    line.secondary_uom_unit_price = 0
-            else:
-                line.secondary_uom_unit_price = 0
 
