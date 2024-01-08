@@ -88,6 +88,11 @@ class AccountMoveLine(models.Model):
         store=True, readonly=False, compute="_compute_product_uom_qty", copy=True
     )
 
+    quantity = fields.Float(
+        store=True, readonly=False, compute="_compute_product_qty", copy=True
+    )
+
+
     @api.depends("secondary_uom_qty", "secondary_uom_id", "product_uom_qty")
     def _compute_product_uom_qty(self):
         self._compute_helper_target_field_qty()
