@@ -85,7 +85,7 @@ class AccountMoveLine(models.Model):
     )
 
     quantity = fields.Float(
-        store=True, readonly=False, compute="_compute_product_uom_qty", copy=True
+        store=True, readonly=False, compute="_compute_product_qty", copy=True
     )
 
 
