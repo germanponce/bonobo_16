@@ -114,10 +114,11 @@ class AccountMoveLine(models.Model):
     @api.onchange('product_id')
     def _inverse_product_id(self):
         res = super()._inverse_product_id()
-        self.secondary_uom_id = self.product_id.sale_secondary_uom_id
-        if self.secondary_uom_id:
-            self.secondary_uom_qty = 1.0
-            self.onchange_product_uom_for_secondary()
+        for rec in self:
+            rec.secondary_uom_id = rec.product_id.sale_secondary_uom_id
+            if rec.secondary_uom_id:
+                rec.secondary_uom_qty = 1.0
+                rec.onchange_product_uom_for_secondary()
         return res
 
     @api.depends("secondary_uom_qty", "product_uom_qty", "price_unit")
