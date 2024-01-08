@@ -36,6 +36,8 @@ class PurchaseOrderLine(models.Model):
         res = super().onchange_product_id()
         # Check to avoid executing onchange unnecessarily,
         # which can sometimes cause tests of other modules to fail
+        print ("######## self.secondary_uom_id: ", self.secondary_uom_id)
+        print ("######## elf.product_id.purchase_secondary_uom_id: ", self.elf.product_id.purchase_secondary_uom_id)
         if not self.secondary_uom_id:
             print ("######## 0000000000 >>>>>>>>>> ")
             self.secondary_uom_id = self.product_id.purchase_secondary_uom_id.id
