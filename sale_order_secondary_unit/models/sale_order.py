@@ -76,6 +76,13 @@ class AccountMoveLine(models.Model):
         ondelete="restrict",
     )
 
+    secondary_uom_unit_price = fields.Float(
+        string="2nd unit price",
+        digits="Product Unit of Measure",
+        store=False,
+        readonly=True,
+        compute="_compute_secondary_uom_unit_price",
+    )
 
     quantity = fields.Float(
         store=True, readonly=False, compute="_compute_product_uom_qty", copy=True
@@ -105,4 +112,16 @@ class AccountMoveLine(models.Model):
     #         self.onchange_product_uom_for_secondary()
     #     return res
 
+    @api.depends("secondary_uom_qty", "quantity", "price_unit")
+    def _compute_secondary_uom_unit_price(self):
+        for line in self:
+            if line.secondary_uom_id:
+                try:
+                    line.secondary_uom_unit_price = (
+                        line.price_subtotal / line.secondary_uom_qty
+                    )
+                except ZeroDivisionError:
+                    line.secondary_uom_unit_price = 0
+            else:
+                line.secondary_uom_unit_price = 0
 
