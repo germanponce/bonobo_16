@@ -84,14 +84,30 @@ class AccountMoveLine(models.Model):
         compute="_compute_secondary_uom_unit_price",
     )
 
-    quantity = fields.Float(
-        store=True, readonly=False, compute="_compute_product_uom_qty", copy=True
-    )
+    # quantity = fields.Float(
+    #     store=True, readonly=False, compute="_compute_product_uom_qty", copy=True
+    # )
 
 
-    @api.depends("secondary_uom_qty", "secondary_uom_id", "quantity")
-    def _compute_product_uom_qty(self):
-        self._compute_helper_target_field_qty()
+    # @api.depends("secondary_uom_qty", "secondary_uom_id", "quantity")
+    # def _compute_product_uom_qty(self):
+    #     self._compute_helper_target_field_qty()
+
+
+    @api.onchange('quantity')
+    def onchange_2nd_quantity(self):
+        no_triggered = self._context.get('no_triggered', False)
+        print ("########### onchange_2nd_quantity > ", onchange_2nd_quantity)
+        if not no_triggered:
+            print ("### 1111")
+
+    @api.onchange('secondary_uom_qty')
+    def onchange_2nd_secondary_uom_qty(self):
+        no_triggered = self._context.get('no_triggered', False)
+        print ("########### onchange_2nd_secondary_uom_qty > ", onchange_2nd_secondary_uom_qty)
+        if not no_triggered:
+            print ("### 1111")
+    
 
     def _compute_helper_target_field_qty(self):
         """Set the target qty field defined in model"""
@@ -121,24 +137,6 @@ class AccountMoveLine(models.Model):
             )
             rec[self._secondary_unit_fields["qty_field"]] = qty
 
-    @api.onchange("product_uom_id")
-    def onchange_product_uom_for_secondary(self):
-        self._onchange_helper_product_uom_for_secondary()
-
-    # @api.onchange("product_id")
-    # def _onchange_product_id(self):
-    #     """
-    #     If default sales secondary unit set on product, put on secondary
-    #     quantity 1 for being the default quantity. We override this method,
-    #     that is the one that sets by default 1 on the other quantity with that
-    #     purpose.
-    #     """
-    #     res = super()._onchange_product_id()
-    #     self.secondary_uom_id = self.product_id.sale_secondary_uom_id
-    #     if self.secondary_uom_id:
-    #         self.secondary_uom_qty = 1.0
-    #         self.onchange_product_uom_for_secondary()
-    #     return res
 
     @api.depends("secondary_uom_qty", "quantity", "price_unit")
     def _compute_secondary_uom_unit_price(self):
