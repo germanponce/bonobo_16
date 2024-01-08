@@ -61,13 +61,13 @@ class SaleOrderLine(models.Model):
 
 
 class AccountMoveLine(models.Model):
-    _inherit = ["account.move.line", "product.secondary.unit.mixin"]
+    # _inherit = ["account.move.line", "product.secondary.unit.mixin"]
     _name = "account.move.line"
 
-    _secondary_unit_fields = {
-        "qty_field": "quantity",
-        "uom_field": "product_uom_id",
-    }
+    # _secondary_unit_fields = {
+    #     "qty_field": "quantity",
+    #     "uom_field": "product_uom_id",
+    # }
 
     secondary_uom_qty = fields.Float(string="2nd Qty", digits="Product Unit of Measure")
     secondary_uom_id = fields.Many2one(
@@ -84,14 +84,14 @@ class AccountMoveLine(models.Model):
         compute="_compute_secondary_uom_unit_price",
     )
 
-    quantity = fields.Float(
-        store=True, readonly=False, compute="_compute_product_uom_qty", copy=True
-    )
+    # quantity = fields.Float(
+    #     store=True, readonly=False, compute="_compute_product_uom_qty", copy=True
+    # )
 
 
-    @api.depends("secondary_uom_qty", "secondary_uom_id", "quantity")
-    def _compute_product_uom_qty(self):
-        self._compute_helper_target_field_qty()
+    # @api.depends("secondary_uom_qty", "secondary_uom_id", "quantity")
+    # def _compute_product_uom_qty(self):
+    #     self._compute_helper_target_field_qty()
 
 
     @api.onchange('quantity')
@@ -100,8 +100,14 @@ class AccountMoveLine(models.Model):
         print ("########### onchange_2nd_quantity > ")
         factor = self._get_factor_line()
         print ("###### factor: ", factor)
-        if not no_triggered:
+        if not no_triggered and self.secondary_uom_id:
             print ("### 1111")
+            if factor < 1:
+                secondary_uom_qty = self.quantity / factor
+                self.with_context(no_triggered=True).secondary_uom_qty = secondary_uom_qty
+            else:
+                secondary_uom_qty = self.quantity  *  factor
+                self.with_context(no_triggered=True).secondary_uom_qty = secondary_uom_qty
 
     @api.onchange('secondary_uom_qty')
     def onchange_2nd_secondary_uom_qty(self):
@@ -111,36 +117,20 @@ class AccountMoveLine(models.Model):
         print ("###### factor: ", factor)
         if not no_triggered:
             print ("### 1111")
-    
+            if factor < 1:
+                quantity = self.secondary_uom_qty * factor
+                self.with_context(no_triggered=True).quantity = quantity
+            else:
+                quantity = self.secondary_uom_qty  /  factor
+                self.with_context(no_triggered=True).quantity = quantity
 
-    def _compute_helper_target_field_qty(self):
-        """Set the target qty field defined in model"""
-        default_qty_field_value = self._secondary_unit_fields['qty_field']
-        for rec in self:
-            if not rec.secondary_uom_id:
-                rec[self._secondary_unit_fields["qty_field"]] = (
-                    rec._origin[self._secondary_unit_fields["qty_field"]]
-                    or default_qty_field_value
-                )
-                continue
-            if rec.secondary_uom_id.dependency_type == "independent":
-                if rec[self._secondary_unit_fields["qty_field"]] == 0.0:
-                    rec[
-                        self._secondary_unit_fields["qty_field"]
-                    ] = default_qty_field_value
-                continue
-            # To avoid recompute secondary_uom_qty field when
-            # secondary_uom_id changes.
-            rec.env.remove_to_compute(
-                field=rec._fields["secondary_uom_qty"], records=rec
-            )
-            factor = rec._get_factor_line()
-            qty = float_round(
-                rec.secondary_uom_qty * factor,
-                precision_rounding=rec._get_uom_line().rounding,
-            )
-            rec[self._secondary_unit_fields["qty_field"]] = qty
-
+    def _get_factor_line(self):
+        uom_line = self._get_uom_line()
+        return self.secondary_uom_id.factor * (
+            uom_line.factor
+            if self.product_uom_id != self.secondary_uom_id
+            else 1.0
+        )
 
     @api.depends("secondary_uom_qty", "quantity", "price_unit")
     def _compute_secondary_uom_unit_price(self):
